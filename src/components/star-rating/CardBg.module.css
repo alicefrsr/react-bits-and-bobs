@@ -1,0 +1,11 @@
+/* *************** */
+/* CARD BG COMPONENT */
+/* *************** */
+
+.card {
+  width: 40rem;
+  height: 40rem;
+  background-color: #252d37;
+  border-radius: 1.25rem;
+  padding: 1.4rem;
+}

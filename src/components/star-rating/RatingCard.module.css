@@ -1,0 +1,84 @@
+/* *************** */
+/* RATING CARD COMPONENT */
+/* *************** */
+
+.starContainer {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background-color: #323d49;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.mainStar {
+  fill: #fb7413;
+}
+
+.title {
+  color: #fff;
+  margin: 2rem 0 1rem 0;
+}
+
+.text {
+  color: hsl(217, 12%, 63%);
+  line-height: 1.6;
+  font-size: 1.8rem;
+  margin-bottom: 1.4rem;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.btnCircle {
+  text-align: center;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  border: transparent;
+  background-color: #323843;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #959eac;
+  color: #afafaf;
+  font-weight: 700;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.btnCircle:hover {
+  background-color: #7c8798;
+  color: #fff;
+}
+.btnCircle.active {
+  color: #fff;
+  background-color: #fb7413;
+}
+
+.btnSubmit {
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 1.2rem 0;
+  background-color: #fb7413;
+  color: #fff;
+  border-radius: 2.5rem;
+  letter-spacing: 1.5px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.btnSubmit:active {
+  background-color: #fff;
+  color: #fb7413;
+}
