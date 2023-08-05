@@ -5,7 +5,7 @@ import ClipLoader from 'react-spinners/ClipLoader';
 export default function App() {
   const [advice, setAdvice] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   async function getAdvice() {
     try {
