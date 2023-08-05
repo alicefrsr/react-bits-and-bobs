@@ -20,15 +20,23 @@
   gap: 2rem;
 }
 
-.number {
+.count {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
+.cardBg {
+  width: 55rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .advice {
   color: #3d3d3d;
-  /* font-weight: 400; */
-  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .btn {
