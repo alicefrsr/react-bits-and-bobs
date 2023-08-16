@@ -18,7 +18,7 @@ export default function App() {
       setAdvice(data.slip.advice);
       setCount(c => c + 1); // not setCount(count + 1): when the new state depends on a previous state it's best practice to pass in the previous state then update it.
     } catch (error) {
-      console.log('Something went wrong:', error.message);
+      console.log('Something went wrong: ', error.message);
     }
   }
 

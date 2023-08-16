@@ -8,6 +8,7 @@ import StarRatingApp from './components/star-rating/StarRatingApp';
 import GetAdvice from './components/adviceAPI/GetAdvice';
 import PageNotFound from './components/page-not-found/PageNotFound';
 import PackitApp from './components/packit/PackitApp';
+import EatAndSplitApp from './components/eat-and-split/EatAndSplitApp';
 
 function App() {
   return (
@@ -46,6 +47,10 @@ function App() {
           <Route
             path='/packit'
             element={<PackitApp />}
+          />
+          <Route
+            path='/eat-and-split'
+            element={<EatAndSplitApp />}
           />
           <Route
             path='*'

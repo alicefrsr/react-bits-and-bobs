@@ -31,7 +31,7 @@ const Menu = () => {
 
   return (
     <main className={styles.menu}>
-      <h2>Today's menu</h2>
+      <h2>Today&#39;s menu</h2>
       {pizzas.length > 0 ? (
         <>
           <p>Authentic italian cuisine. 6 delicious pizzas to choose from. Straight out from our stone oven, all made with organic and local ingredients.</p>

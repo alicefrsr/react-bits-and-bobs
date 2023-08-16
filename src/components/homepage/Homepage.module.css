@@ -55,6 +55,9 @@
   /* display: flex;
   flex-direction: column; */
 }
+span {
+  color: #483bdb;
+}
 
 .introSection img {
   width: 12rem;

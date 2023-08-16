@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import codingDuddel from '../../assets/coding_hairup.png';
 import styles from './Homepage.module.css';
+// import { BsGithub } from 'react-icons/bs';
 
 function Homepage() {
   return (
@@ -10,8 +11,8 @@ function Homepage() {
         <div className={styles.introSection}>
           <div className={styles.introText}>
             <p>
-              A random collection of simple React components built in the process of learning how React works, to practice, repeat and experiment. I put this
-              site together while learning about routing and React Router.
+              A random collection of <span>simple React components</span> and <span>mini-apps</span> built in the process of learning how React works, to
+              practice and experiment. I put this site together while learning about routing and React Router, and css modules.
             </p>
             <p></p>
             <p>
@@ -55,6 +56,9 @@ function Homepage() {
           </li>
           <li>
             <NavLink to='/packit'>Packit App</NavLink>
+          </li>
+          <li>
+            <NavLink to='/eat-and-split'>Eat & Split App</NavLink>
           </li>
           <li>
             <NavLink
