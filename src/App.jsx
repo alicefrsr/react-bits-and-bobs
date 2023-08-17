@@ -5,7 +5,7 @@ import Flashcards from './components/flashcards/Flashcards';
 import Stopwatch from './components/stopwatch/Stopwatch';
 import PizzaMenuApp from './components/pizza-menu/PizzaMenuApp';
 import StarRatingApp from './components/star-rating/StarRatingApp';
-import StarRatingReusable from './components/star-rating-reusable/StarRatingReusable';
+import ReusableStarRatingApp from './components/star-rating-reusable/ReusableStarRatingApp';
 import GetAdvice from './components/adviceAPI/GetAdvice';
 import PageNotFound from './components/page-not-found/PageNotFound';
 import PackitApp from './components/packit/PackitApp';
@@ -48,7 +48,7 @@ function App() {
           />
           <Route
             path='/star-rating-reusable'
-            element={<StarRatingReusable />}
+            element={<ReusableStarRatingApp />}
           />
           <Route
             path='/packit'
