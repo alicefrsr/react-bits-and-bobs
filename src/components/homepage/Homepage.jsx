@@ -12,7 +12,7 @@ function Homepage() {
           <div className={styles.introText}>
             <p>
               A random collection of <span>simple React components</span> and <span>mini-apps</span> built in the process of learning how React works, to
-              practice and experiment. I put this site together while learning about routing and React Router, and css modules.
+              practice and experiment. I put this site together while learning about React Router and css modules, picking up quite a bit of CSS along the way.
             </p>
             <p></p>
             <p>
@@ -55,18 +55,25 @@ function Homepage() {
             <NavLink to='/star-rating'>Rating component</NavLink>
           </li>
           <li>
+            <NavLink to='/star-rating-reusable'>Star-Rating reusable</NavLink>
+          </li>
+          <li>
             <NavLink to='/packit'>Packit App</NavLink>
           </li>
           <li>
             <NavLink to='/eat-and-split'>Eat & Split App</NavLink>
           </li>
           <li>
+            <NavLink to='/use-popcorn'>Movie App (usePopcorn)</NavLink>
+          </li>
+
+          {/* <li className={styles.disabled}>
             <NavLink
               to='/'
               className={styles.todo}>
               404 Page not found (todo)
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </nav>
 

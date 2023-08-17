@@ -22,7 +22,12 @@ const Stopwatch = () => {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
-        <h1 className={styles.title}>Stopwatch</h1>
+        <h1
+          className={styles.title}
+          aria-label='stopwatch'>
+          {' '}
+          ⏱{' '}
+        </h1>
         <div className={styles.counter}>
           <span>{('0' + Math.floor((timer / 60000) % 60)).slice(-2)}:</span>
           <span>{('0' + Math.floor((timer / 1000) % 60)).slice(-2)}:</span>

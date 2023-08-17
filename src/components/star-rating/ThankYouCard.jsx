@@ -34,7 +34,7 @@ const ThankYouCard = ({ rating }) => {
         <div className={styles.selected}>
           <p>You selected {rating} out of 5</p>
         </div>
-        <h2 className={styles.title}>Thank you!</h2>
+        <h2 className={styles.thankyouTitle}>Thank you!</h2>
         <div className={styles.text}>{message()}</div>
       </CardBg>
     </div>

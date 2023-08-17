@@ -19,13 +19,17 @@
 }
 
 .title {
-  font-weight: 400;
+  /* font-weight: 400; */
+  font-size: 8rem;
   margin-bottom: 3rem;
 }
 
 .counter {
-  font-size: 5rem;
+  font-size: 8rem;
   margin-bottom: 1rem;
+}
+.counter span {
+  color: black;
 }
 
 .btn {

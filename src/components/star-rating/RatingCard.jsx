@@ -23,7 +23,7 @@ const RatingCard = ({ rating, onSelectRating, onShowThankYouCard }) => {
         <div className={styles.starContainer}>
           <FaStar className={styles.mainStar} />
         </div>
-        <h1 className={styles.title}>How did we do?</h1>
+        <h1 className={styles.ratingTitle}>How did we do?</h1>
         <p className={styles.text}>Please let us know how we did with your support request. All feedback is appreciated to improve our service!</p>
 
         <div className={styles.btns}>
