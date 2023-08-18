@@ -11,7 +11,7 @@ const MovieListApp = () => {
   const [watched, setWatched] = useState(tempWatchedData);
 
   return (
-    <div className={styles.app}>
+    <div className={styles.MovieApp}>
       <Navbar>
         <Search />
         <NumResults movies={movies} />

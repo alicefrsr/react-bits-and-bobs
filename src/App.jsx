@@ -4,13 +4,15 @@ import AccordionApp from './components/accordion/AccordionApp';
 import Flashcards from './components/flashcards/Flashcards';
 import Stopwatch from './components/stopwatch/Stopwatch';
 import PizzaMenuApp from './components/pizza-menu/PizzaMenuApp';
-import StarRatingApp from './components/star-rating/StarRatingApp';
+import StarRatingApp from './components/rating/StarRatingApp';
 import ReusableStarRatingApp from './components/star-rating-reusable/ReusableStarRatingApp';
+import TextExpanderApp from './components/text-expander-reusable/TextExpanderApp';
 import GetAdvice from './components/adviceAPI/GetAdvice';
-import PageNotFound from './components/page-not-found/PageNotFound';
 import PackitApp from './components/packit/PackitApp';
 import EatAndSplitApp from './components/eat-and-split/EatAndSplitApp';
 import MovieListApp from './components/movieAPI/MovieListApp';
+import PageNotFound from './components/page-not-found/PageNotFound';
+import PageNotFoundGif from './components/page-not-found-gif/PageNotFoundGif';
 
 function App() {
   return (
@@ -43,7 +45,11 @@ function App() {
             element={<AccordionApp />}
           />
           <Route
-            path='/star-rating'
+            path='/packit'
+            element={<PackitApp />}
+          />
+          <Route
+            path='/rating'
             element={<StarRatingApp />}
           />
           <Route
@@ -51,9 +57,10 @@ function App() {
             element={<ReusableStarRatingApp />}
           />
           <Route
-            path='/packit'
-            element={<PackitApp />}
+            path='/text-expander-reusable'
+            element={<TextExpanderApp />}
           />
+
           <Route
             path='/eat-and-split'
             element={<EatAndSplitApp />}
@@ -61,6 +68,14 @@ function App() {
           <Route
             path='/use-popcorn'
             element={<MovieListApp />}
+          />
+          <Route
+            path='page-not-found'
+            element={<PageNotFound />}
+          />
+          <Route
+            path='page-not-found-gif'
+            element={<PageNotFoundGif />}
           />
           <Route
             path='*'

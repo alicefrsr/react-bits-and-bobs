@@ -75,6 +75,7 @@
   font-weight: 700;
   font-size: 1.8rem;
   cursor: pointer;
+  text-align: left;
 }
 
 .formInputs input:focus {
@@ -118,6 +119,7 @@
   border: none;
   border-radius: 0.6rem;
   cursor: pointer;
+  color: #5a3e2b;
 }
 .actions button {
   background-color: #f4a226;

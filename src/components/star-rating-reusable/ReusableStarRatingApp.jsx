@@ -14,17 +14,20 @@ const starContainerStyle = {
 
 function OtherComponentWhichNeedsToUseStarRating() {
   const [movieRating, setMovieRating] = useState(0);
+
   return (
     <div>
       <ReusableStarRating
         maxRating={10}
         size={24}
         starColor='blue'
-        ratingColor='red'
+        ratingColor='blue'
         onSetRating={setMovieRating}
       />
+      <p style={{ paddingTop: '2rem' }}>(Outside component:)</p>
+
       <p>
-        This movie was rated <span style={{ color: 'red' }}>{movieRating}</span>
+        This movie was rated <span style={{ color: 'blue', fontWeight: 'bold' }}>{movieRating}</span>
       </p>
     </div>
   );
@@ -33,54 +36,80 @@ function OtherComponentWhichNeedsToUseStarRating() {
 const ReusableStarRatingApp = () => {
   return (
     <div className={styles.app}>
-      <h1>Custom star-rating component</h1>
+      <h1>Customisable star-rating component</h1>
 
-      <ul className={styles.exampleList}>
-        <li className={styles.example}>
-          <div className={styles.description}>
-            <h2>Default props:</h2>
-            <p>The following props can be passed to the component to customise it. Defaults values apply when props omitted:</p>
-            <p className={styles.code}> maxRating = 5</p>
-            <p className={styles.code}> defaultRating = 0 </p>
-            <p className={styles.code}> starColor = '#fcc419' </p>
-            <p className={styles.code}> ratingColor = '#000'</p>
-            <p className={styles.code}> size = 48</p>
-            <p className={styles.code}> className = ''</p>
-            <p className={styles.code}> messages = []</p>
-            <p className={styles.code}> onSetRating</p>
+      <div className={styles.intro}>
+        <div className={styles.description}>
+          <h2>Default props:</h2>
+          <p>The following props can be passed to the component to customise it. Defaults values apply when props omitted:</p>
+          <div className={styles.code}>
+            <p> maxRating=5</p>
+            <p> defaultRating=0 </p>
+            <p> starColor='#fcc419' </p>
+            <p> ratingColor='#000'</p>
+            <p> size=48</p>
+            <p> className=''</p>
+            <p> messages=[]</p>
+            <p> onSetRating</p>
+            {/* 
+            <p>Maximum number of stars</p>
+            <p>Default rating is 0</p>
+            <p>Star color is yellow</p>
+            <p>Rating colr is black</p>
+            <p>Star and rating size set to 48px</p>
+            <p>You can pass in a class</p>
+            <p>You can pass in messages displayed for each rating</p>
+            <p>State can be passed in to be used outside component</p> */}
           </div>
-          <div className={styles.demo}>
+        </div>
+        <div className={styles.demo}>
+          <div>
             <ReusableStarRating />
           </div>
-        </li>
+        </div>
+      </div>
 
+      <ul className={styles.examples}>
         <li className={styles.example}>
-          <div className={styles.description}>
-            <h2>Example 1:</h2>
-            <p className={styles.code}> maxRating = {3} </p>
-            <p className={styles.code}> starColor = 'red' </p>
-            <p className={styles.code}> size = {32} </p>
-            <p className={styles.code}> messages={['Terrible', 'Okay', 'Excellent']} </p>
+          <div>
+            <h3>Example 1</h3>
+            <div className={styles.description}>
+              <p></p>
+              <div className={styles.code}>
+                <p style={{ fontWeight: 'bold', fontFamily: 'Helvetica Neue' }}>Props:</p>
+                <p> maxRating=&#123;3&#125;</p>
+                <p> starColor='red' </p>
+                <p> size=&#123;32&#125; </p>
+                <p> messages=&#123;['Terrible', 'Okay', 'Excellent']&#125; </p>
+              </div>
+            </div>
           </div>
           <div className={styles.demo}>
-            <ReusableStarRating
-              maxRating={3}
-              starColor='red'
-              size={32}
-              messages={['Terrible', 'Okay', 'Excellent']}
-            />
+            <div className={styles.marginl}>
+              <ReusableStarRating
+                maxRating={3}
+                starColor='red'
+                size={32}
+                messages={['Terrible', 'Okay', 'Excellent']}
+              />
+            </div>
           </div>
         </li>
 
         <li className={styles.example}>
-          <div className={styles.description}>
-            <h2>Example 2:</h2>
-            <p>setState can be passed to onSetRating to be used anywhere outside the component:</p>
-            <p className={styles.code}> maxRating = {10} </p>
-            <p className={styles.code}> size = {24} </p>
-            <p className={styles.code}> starColor = 'blue' </p>
-            <p className={styles.code}> ratingColor = 'red'</p>
-            <p className={styles.code}> onSetRating =\setMovieRating\ </p>
+          <div>
+            <h3>Example 2</h3>
+            <div className={styles.description}>
+              <p>setState can be passed to onSetRating to be used anywhere outside the component:</p>
+              <div className={styles.code}>
+                <p style={{ fontWeight: 'bold', fontFamily: 'Helvetica Neue' }}>Props:</p>
+                <p> maxRating=&#123;10&#125; </p>
+                <p> size=&#123;24&#125; </p>
+                <p> starColor='blue' </p>
+                <p> ratingColor='red'</p>
+                <p> onSetRating=&#123;setMovieRating&#125; </p>
+              </div>
+            </div>
           </div>
           <div className={styles.demo}>
             <OtherComponentWhichNeedsToUseStarRating />
@@ -91,7 +120,7 @@ const ReusableStarRatingApp = () => {
   );
 };
 
-// COMPONENT
+// REUSABLE COMPONENT
 export const ReusableStarRating = ({
   maxRating = 5,
   defaultRating = 0,

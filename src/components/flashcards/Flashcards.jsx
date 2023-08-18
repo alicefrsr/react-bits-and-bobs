@@ -22,27 +22,21 @@ const flashcards = [
     category: '',
   },
   {
-    id: 102,
+    id: 103,
     question: 'How to pass data from parent to child components?',
     answer: 'Props',
     category: 'state management',
   },
   {
-    id: 103,
+    id: 104,
     question: 'How to give components memory?',
     answer: 'useState hook',
     category: 'state management',
   },
   {
-    id: 104,
+    id: 105,
     question: 'What do we call an input element that is completely synchronised with state?',
     answer: 'Controlled element',
-  },
-  {
-    id: 105,
-    question: 'What is reconciliation?',
-    answer: 'Deciding which DOM elements actually need to be inserted, deleted, or updated in order to reflect the latest state changes',
-    category: 'render',
   },
   {
     id: 106,
@@ -52,18 +46,24 @@ const flashcards = [
   },
   {
     id: 107,
+    question: 'What is reconciliation?',
+    answer: 'Deciding which DOM elements actually need to be inserted, deleted, or updated in order to reflect the latest state changes',
+    category: 'render',
+  },
+  {
+    id: 108,
     question: 'What is the reconciler and what other name is it referred to as?',
     answer: 'It is the engine of React, also known as Fiber',
     category: 'render',
   },
   {
-    id: 108,
+    id: 109,
     question: 'What is the key prop?',
     answer: 'A special prop we use to tell the diffing algo that an element is unique',
     category: 'render',
   },
   {
-    id: 109,
+    id: 110,
     question: 'How does the key prop work behind the scenes?',
     answer:
       'It allows React to distinguish between multiple instances of the same component type. Whenever a key stays the same across renders, the element will be kep in the DOM (even is the positon in the tree changes)',

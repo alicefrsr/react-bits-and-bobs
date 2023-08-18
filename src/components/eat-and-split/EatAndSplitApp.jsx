@@ -71,7 +71,12 @@ const EatAndSplitApp = () => {
   };
 
   return (
-    <div className={styles.app}>
+    <div className={styles.EatNSplitApp}>
+      <div className={styles.intro}>
+        <h1>Split bills with your friends</h1>
+        <p>Choose a friend you want split a bill with, or add a new friend to your list.</p>
+        <p>Enter the bill amount, who paid, how much, and the app keeps track of who owes who so you don't have to.</p>
+      </div>
       <div className={styles.container}>
         <div className={styles.sidebar}>
           <FriendsList

@@ -10,6 +10,7 @@
   color: #252525;
   background-color: #f7f2e9;
   min-height: 100vh;
+  width: 100vw;
   padding: 4rem;
   display: flex;
   flex-direction: column;
@@ -19,7 +20,27 @@
   align-items: center;
 }
 
-.exampleList {
+.intro {
+  display: flex;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 2rem;
+  justify-content: space-between;
+  width: 90rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  width: 58%;
+}
+
+.description h2 {
+  text-align: left;
+}
+
+.examples {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -27,27 +48,28 @@
 }
 
 .example {
+  display: flex;
   background-color: #fff;
   border-radius: 5px;
   padding: 2rem;
-  display: flex;
-  gap: 3rem;
+  /* justify-content: center; */
 }
 
-.example h2 {
-  display: flex;
+.marginl {
+  margin-left: 15rem;
 }
-
-.description {
-  flex: 1;
-}
-
 .demo {
   display: flex;
-  align-items: center;
-  flex: 1;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  width: 40%;
 }
 
 .code {
   font-family: 'Roboto Mono', sans-serif;
+  padding: 1rem;
+  background-color: aliceblue;
+  font-size: 1.5rem;
+  width: 45rem;
 }
