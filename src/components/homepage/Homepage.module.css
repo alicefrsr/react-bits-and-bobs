@@ -17,24 +17,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
 }
 
-/**************************/
-/* HEADER SECTION */
+/**********/
+/* HEADER */
+/**********/
 
 .header {
   display: flex;
   flex-direction: column;
   width: 60%;
-  /* border: 3px solid var(--cartoon-blue); */
 }
 
 .header h1 {
   font-family: 'Londrina Sketch', cursive;
   font-size: 5.2rem;
   letter-spacing: 0.3rem;
-  /* padding: 0 5.6rem; */
   margin: 3rem 0 3rem 0;
   color: var(--cartoon-blue);
 }
@@ -44,10 +42,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 70%; */
   padding: 4.8rem 5.6rem 0 5.6rem;
-  /* border-radius: 8px; */
-  /* box-shadow: 10px 10px 30px rgb(0, 0, 0, 0.2); */
   border-top: 2px solid var(--cartoon-blue);
   border-bottom: 2px solid var(--cartoon-blue);
 }
@@ -58,6 +53,7 @@
   flex-direction: column;
   padding-bottom: 4.8rem;
 }
+
 .introText span {
   color: #483bdb;
 }
@@ -67,14 +63,15 @@
 }
 
 .introSection a {
+  display: inline;
   border-radius: 5px;
   padding: 0.6rem 0.8rem;
   flex-shrink: 0;
+  transition-duration: 300ms;
 }
 
 .introSection a:link,
 .introSection a:visited {
-  /* text-decoration: none; */
   color: purple;
 }
 
@@ -84,17 +81,15 @@
   color: var(--white);
 }
 
-/**************************/
-/* NAV SECTION */
-/**************************/
+/********/
+/* NAV  */
+/********/
 
 .navSection {
-  /* border: 3px solid var(--cartoon-blue); */
   width: 60%;
   height: 50rem;
-  /* padding: 3.2rem; */
   align-self: center;
-  margin: 4.8rem 0;
+  margin: 4.8rem 0 15rem 0;
   line-height: 2.6;
 }
 
@@ -113,6 +108,7 @@
   padding: 1.2rem;
   flex-shrink: 0;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+  transition-duration: 300ms;
 }
 
 .navSection li a:link,
@@ -136,23 +132,9 @@
   font-size: 1.4rem;
   padding: 3rem;
   text-align: center;
-  margin: auto 0;
   width: 100%;
 }
-
-/* .rudi-link:link,
-.rudi-link:visited {
-  color: var(--black);
-} */
 
 .footer a[href^='http'] {
   color: var(--cartoon-blue);
 }
-
-/*
-SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
-
-FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
-*/

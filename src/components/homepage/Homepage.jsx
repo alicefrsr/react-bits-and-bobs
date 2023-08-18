@@ -14,18 +14,17 @@ function Homepage() {
           <div className={styles.introText}>
             <p>
               A random collection of simple <span> React components</span> and <span>mini-apps</span> built in the process of learning how React works, to
-              practice, experiment and have some fun. I put this site together while learning about React Router and css modules, to have all these bits and
-              bobs in one place. Everything works but I polish the code when I have the time.
+              practice, experiment and have all these bits and bobs in one place. I put this site together while learning about React Router and CSS modules.
             </p>
             <p className={styles.githubLink}>
-              GitHub repo:
+              GitHub repo
               <a
                 target='blank'
                 rel='noopener'
                 href='https://github.com/alicefrsr/React-bits-and-bobs'>
                 here
               </a>
-              . Feel free to check it out or mess around with it if you are learning too.
+              : Feel free to check it out or mess around with it if you are learning too.
             </p>
           </div>
           <img
@@ -73,9 +72,9 @@ function Homepage() {
           <li>
             <NavLink to='/page-not-found'>404 Page not found</NavLink>
           </li>
-          {/* <li>
-            <NavLink to='/page-not-found-gif'>404 Page not found GIF</NavLink>
-          </li> */}
+          <li>
+            <NavLink to='/page-not-found-gif'>404 GIF</NavLink>
+          </li>
         </ul>
       </nav>
 

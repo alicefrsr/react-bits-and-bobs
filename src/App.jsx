@@ -79,7 +79,7 @@ function App() {
           />
           <Route
             path='*'
-            element={<PageNotFound />}
+            element={<PageNotFoundGif />}
           />
         </Routes>
       </BrowserRouter>
