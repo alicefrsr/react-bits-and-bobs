@@ -3,16 +3,16 @@ import styles from './EatAndSplit.module.css';
 
 const initialFriends = [
   {
-    id: 118836,
-    name: 'Bob',
-    image: 'https://i.pravatar.cc/48?u=118836',
-    balance: -7,
-  },
-  {
     id: 933372,
     name: 'Alice',
     image: 'https://i.pravatar.cc/48?u=933372',
     balance: 20,
+  },
+  {
+    id: 118836,
+    name: 'Bob',
+    image: 'https://i.pravatar.cc/48?u=118836',
+    balance: -7,
   },
   {
     id: 499476,
@@ -35,10 +35,11 @@ const Button = ({ children, onClick }) => {
 const EatAndSplitApp = () => {
   // state to display AddFriend Form based on 'Add friend' btn
   const [showFormAddFriend, setShowFormAddFriend] = useState(false);
+
   // state to display SplitBill Form based on 'Select' friend btn
   const [selectedFriend, setSelectedFriend] = useState(null);
 
-  // friendS state created in FormAddFriend is needed here to be passed down as props to all other components that need it
+  // friend*S* state created in FormAddFriend is needed here to be passed down as props to all other components that need it
   const [friends, setFriends] = useState(initialFriends);
   // this is also the state we are updating with splitBill event
 
@@ -71,11 +72,11 @@ const EatAndSplitApp = () => {
   };
 
   return (
-    <div className={styles.EatNSplitApp}>
+    <div className={styles.app}>
       <div className={styles.intro}>
         <h1>Split bills with your friends</h1>
         <p>Choose a friend you want split a bill with, or add a new friend to your list.</p>
-        <p>Enter the bill amount, who paid, how much, and the app keeps track of who owes who so you don't have to.</p>
+        <p>Enter the bill amount, who paid, how much, and the app keeps track of who owes who so you don&#39;t have to.</p>
       </div>
       <div className={styles.container}>
         <div className={styles.sidebar}>
@@ -104,7 +105,7 @@ const EatAndSplitApp = () => {
 const FriendsList = ({ friends, onSelection, selectedFriend }) => {
   return (
     <>
-      <h2>Choose your splitter</h2>
+      <h2>Who&#39;s up for splitting?</h2>
       <ul>
         {friends.map(friend => (
           <FriendCard

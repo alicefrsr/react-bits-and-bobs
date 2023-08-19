@@ -1,7 +1,18 @@
+/* COLOURS */
+
+/* 
+  --react-blue: #61dbfb;
+  --grey-lightest: #f7f7f7;
+  --grey-light: #e7e7e7;
+
+*/
+
 .app {
   font-family: sans-serif;
   font-size: 2rem;
-  padding: 4rem;
+  background-color: white;
+  height: 100vh;
+  padding: 10rem;
 }
 
 .flashcards {
@@ -11,29 +22,28 @@
 }
 
 .flashcard {
-  border: 1px solid #e7e7e7;
   background-color: #f7f7f7;
-  border-radius: 7px;
   aspect-ratio: 2 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: 1px solid #e7e7e7;
+  border-radius: 7px;
   padding: 20px;
   cursor: pointer;
 }
 
 .selected {
-  border: 1px solid #61dbfb;
+  font-weight: bold;
   background-color: #61dbfb;
   color: #fff;
+  border: 1px solid #61dbfb;
   border-radius: 7px;
-  /* aspect-ratio: 2 / 1; */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 20px;
   cursor: pointer;
-  font-weight: bold;
 }

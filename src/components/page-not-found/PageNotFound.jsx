@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 const PageNotFound = () => {
   return (
-    <div className={styles.PageNotFound}>
+    <div className={styles.app}>
       <div className={styles.container}>
         <img
           className='intro-img'

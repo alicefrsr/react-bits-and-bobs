@@ -1,13 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 
-/* *************** */
+/* COLOURS */
+
+/* 
+  --grey-bg-lightest: #eeeeee;
+  --grey-text-dark: #3d3d3d;
+  --grey-medium: #8f8f8f;
+  --grey-shadow-light: #d2ceb6a3;
+  --yellow-medium: #e5c10ea3;
+  --yellow-shadow: #d3b831a3;
+*/
+
+/* ************* */
 /* APP COMPONENT */
-/* *************** */
+/* ************* */
 
 .app {
-  font-family: Roboto Mono;
-  color: #343a40;
-  line-height: 1;
+  font-family: 'Roboto Mono', sans-serif;
+  background-color: #eeeeee;
+  color: #3d3d3d;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* DO NOT JUSTIFY-CENTER HERE, for ACC ITEM to OPEN */
+  /* justify-content: center; */
 }
 
 .app h1 {
@@ -15,36 +31,40 @@
   margin-top: 5rem;
 }
 
-/* *************** */
+.app span {
+  font-size: 5rem;
+}
+
+/* ******************* */
 /* ACCORDION COMPONENT */
-/* *************** */
+/* ******************* */
 
 .accordion {
   width: 80rem;
-  margin: 10rem auto;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  margin: 10rem auto;
 }
 
-/* *************** */
-/* ACCORDIONITEM COMPONENT */
-/* *************** */
-.accordionItem {
-}
+/* *********************** */
+/* ACCORDION ITEM COMPONENT */
+/* *********************** */
+
 .itemClosed {
   background-color: white;
-  box-shadow: 5px 5px 15px #dec962a3;
-  padding: 2rem 2.4rem;
-  padding-right: 4.8rem;
-  cursor: pointer;
-  border-top: 4px solid #8f8f8f;
 
   display: grid;
   grid-template-columns: auto 1fr auto;
   column-gap: 2.4rem;
   row-gap: 3.2rem;
   align-items: center;
+
+  box-shadow: 5px 5px 15px #d2ceb6a3;
+  border-top: 4px solid #8f8f8f;
+  padding: 2rem 2.4rem;
+  padding-right: 4.8rem;
+  cursor: pointer;
 }
 
 .numberClosed {
@@ -55,33 +75,36 @@
 
 .question,
 .icon {
-  font-size: 1.6rem;
-  line-height: 1.6;
+  font-size: 1.8rem;
   font-weight: 500;
+  line-height: 1.6;
 }
 
 .answer {
   grid-column: 2 / -1;
-  padding-bottom: 1.6rem;
   line-height: 1.6;
+  padding-bottom: 1.6rem;
 }
 
 /* OPEN STATE */
 .itemOpen {
   background-color: white;
-  box-shadow: 5px 5px 15px #d7cc95a3;
-  padding: 2rem 2.4rem;
-  padding-right: 4.8rem;
-  cursor: pointer;
-  border-top: 4px solid #8f8f8f;
-  border-top: 4px solid #e5c10ea3;
-
   display: grid;
   grid-template-columns: auto 1fr auto;
   column-gap: 2.4rem;
   row-gap: 3.2rem;
   align-items: center;
+  box-shadow: 5px 5px 30px #d3b831a3;
+  border-top: 4px solid #e5c10ea3;
+  padding: 2rem 2.4rem;
+  padding-right: 4.8rem;
+  cursor: pointer;
 }
+
+/* .other {
+  box-shadow: 5px 5px 30px #cc480fa3;
+  border-top: 4px solid #eb831b;
+} */
 
 .numberOpen {
   font-size: 2.4rem;

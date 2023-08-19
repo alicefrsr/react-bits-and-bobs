@@ -5,7 +5,9 @@ import { useState } from 'react';
 function AccordionApp() {
   return (
     <div className={styles.app}>
-      <h1>💡 Lightbulbs FAQs </h1>
+      <h1>
+        <span>💡 </span>Lightbulbs FAQs{' '}
+      </h1>
       <Accordion data={faqs} />
     </div>
   );
@@ -17,7 +19,7 @@ const Accordion = ({ data }) => {
   const [currOpen, setCurrOpen] = useState(null);
 
   return (
-    <div className={styles.accordion}>
+    <ol className={styles.accordion}>
       {data.map((el, index) => (
         <AccordionItem
           key={index}
@@ -29,16 +31,17 @@ const Accordion = ({ data }) => {
           {el.answer}
         </AccordionItem>
       ))}
-      <AccordionItem
-        // key={index} not mapping anymore
+      {/* <AccordionItem
+        // key={index} // not mapping this one
         num={42}
         question={"What's the difference between this Accordion Item and the ones above?"}
         // answer={el.answer} // replace with children to be reusable
         currOpen={currOpen}
-        onOpen={setCurrOpen}>
+        onOpen={setCurrOpen}
+        classname={styles.other}>
         {'It uses the children props to be customisable and reusable. The ones above come from mapping through an array of silly jokes.'}
-      </AccordionItem>
-    </div>
+      </AccordionItem> */}
+    </ol>
   );
 };
 
@@ -47,7 +50,7 @@ const AccordionItem = ({ num, question, currOpen, onOpen, children }) => {
   // const [isOpen, setIsOpen] = useState(false);
 
   // v2
-  // with currOpen item can calc whether it is open or not
+  // with currOpen, item can calc whether it is open or not
   const isOpen = num === currOpen;
 
   const handleToggle = () => {
@@ -65,7 +68,7 @@ const AccordionItem = ({ num, question, currOpen, onOpen, children }) => {
 
   return (
     // Version 1: each item controls its own state
-    // <div
+    // <li
     //   //className={isOpen ? 'item open' : 'item'}
     //   className={`item ${isOpen} && open`}
     //   className={`item ${isOpen ? 'open' : ''}`}
@@ -74,26 +77,26 @@ const AccordionItem = ({ num, question, currOpen, onOpen, children }) => {
     //   <p className='question'>{question}</p>
     //   <p className='icon'>{isOpen ? '-' : '+'}</p>
     //   {isOpen && <div className='content-box'>{answer}</div>}
-    // </div>
+    // </li>
 
     //   // Version 2: item controlled by parent
-    // <div
+    // <li
     //   className={`item ${isOpen ? 'open' : ''}`}
     //   onClick={handleToggle}>
     //   <p className='number'>{num < 9 ? `0${num}` : num}</p>
     //   <p className='question'>{question}</p>
     //   <p className='icon'>{isOpen ? '-' : '+'}</p>
     //   {isOpen && <div className='content-box'>{children}</div>}
-    // </div>
-    <div
-      // className={`item ${isOpen ? 'open' : ''}`}
+    // </li>
+    // the above conditional rendering translate as follows with css modules:
+    <li
       className={isOpen ? styles.itemOpen : styles.itemClosed}
       onClick={handleToggle}>
       <p className={isOpen ? styles.numberOpen : styles.numberClosed}>{num < 9 ? `0${num}` : num}</p>
       <p className={styles.question}>{question}</p>
       <p className={styles.icon}>{isOpen ? '-' : '+'}</p>
       {isOpen && <div className={styles.answer}>{children}</div>}
-    </div>
+    </li>
   );
 };
 

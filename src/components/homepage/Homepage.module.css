@@ -1,22 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Londrina+Sketch&display=swap');
 
-:root {
-  --black: #000;
-  --dark-grey: #343a40;
-  --light-grey: #f4f4f6;
-  --white: #fff;
-  --cartoon-blue: #483bdb;
-}
-
-.Homepage {
+.app {
   font-family: 'IBM Plex Mono', monospace;
-  background-color: var(--white);
-  color: var(--dark-grey);
-  width: 100vw;
-  height: 100vh;
+  background-color: white;
+  color: var(--home-dark-grey);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 11rem;
 }
 
 /**********/
@@ -34,39 +27,36 @@
   font-size: 5.2rem;
   letter-spacing: 0.3rem;
   margin: 3rem 0 3rem 0;
-  color: var(--cartoon-blue);
+  color: var(--home-cartoon-blue);
 }
 
 .introSection {
-  background-color: var(--light-grey);
+  background-color: var(--home-light-grey);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 4.8rem 5.6rem 0 5.6rem;
-  border-top: 2px solid var(--cartoon-blue);
-  border-bottom: 2px solid var(--cartoon-blue);
+  border-top: 2px solid var(--home-cartoon-blue);
+  border-bottom: 2px solid var(--home-cartoon-blue);
 }
 
 .introText {
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
   padding-bottom: 4.8rem;
 }
 
 .introText span {
-  color: #483bdb;
+  color: var(--home-cartoon-blue);
 }
 
 .introSection img {
   width: 14rem;
+  height: 14rem;
 }
 
 .introSection a {
-  display: inline;
   border-radius: 5px;
   padding: 0.6rem 0.8rem;
-  flex-shrink: 0;
   transition-duration: 300ms;
 }
 
@@ -77,8 +67,8 @@
 
 .introSection a:hover,
 .introSection a:active {
-  background-color: var(--cartoon-blue);
-  color: var(--white);
+  background-color: var(--home-cartoon-blue);
+  color: white;
 }
 
 /********/
@@ -87,9 +77,7 @@
 
 .navSection {
   width: 60%;
-  height: 50rem;
   align-self: center;
-  margin: 4.8rem 0 15rem 0;
   line-height: 2.6;
 }
 
@@ -101,9 +89,9 @@
 }
 
 .navSection li a {
-  border: 2px solid var(--cartoon-blue);
-  color: var(--cartoon-blue);
-  background-color: var(--light-grey);
+  border: 2px solid var(--home-cartoon-blue);
+  color: var(--home-cartoon-blue);
+  background-color: var(--home-light-grey);
   border-radius: 5px;
   padding: 1.2rem;
   flex-shrink: 0;
@@ -114,13 +102,13 @@
 .navSection li a:link,
 .navSection li a:visited {
   text-decoration: none;
-  color: var(--cartoon-blue);
+  color: var(--home-cartoon-blue);
 }
 
 .navSection li a:hover,
 .navSection li a:active {
-  background-color: var(--cartoon-blue);
-  color: var(--white);
+  background-color: var(--home-cartoon-blue);
+  color: white;
 }
 
 /**************************/
@@ -128,7 +116,7 @@
 /**************************/
 
 .footer {
-  background-color: var(--light-grey);
+  background-color: var(--home-light-grey);
   font-size: 1.4rem;
   padding: 3rem;
   text-align: center;
@@ -136,5 +124,5 @@
 }
 
 .footer a[href^='http'] {
-  color: var(--cartoon-blue);
+  color: black;
 }

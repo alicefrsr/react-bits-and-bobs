@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap');
 
+/* COLOURS */
+
+/* 
+  --brown: #5a3e2b;
+  --cream: #ffebb3;
+  --bg-orange-light: #f4a226;
+  --bg-orange-dark: #e5771f;
+  --bg-turquoise: #76c7ad;
+
+*/
+
 /* *************** */
 /* APP COMPONENT */
 /* *************** */
@@ -7,25 +18,25 @@
 .app {
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
-  width: 100%;
   color: #5a3e2b;
-  height: 100vh;
 
+  height: 100vh;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   font-size: 2.4rem;
 }
 
-/* *************** */
+/* **************** */
 /* HEADER COMPONENT */
-/* *************** */
+/* **************** */
+
 .header {
   background-color: #f4a226;
   padding: 2.4rem 0;
 }
 
 .header h1 {
-  font-family: 'Monoton';
+  font-family: 'Monoton', cursive;
   font-weight: 400;
   font-size: 8rem;
   text-transform: uppercase;
@@ -33,14 +44,16 @@
   word-spacing: 30px;
   letter-spacing: -5px;
 }
+
 .header h2 {
   text-align: center;
   font-size: 2rem;
 }
 
-/* *************** */
+/* ************** */
 /* FORM COMPONENT */
-/* *************** */
+/* ************** */
+
 .addForm {
   background-color: #e5771f;
   padding: 2.8rem;
@@ -69,13 +82,13 @@
   background-color: #ffebb3;
   color: #5a3e2b;
   font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: left;
   border: none;
   border-radius: 0.6rem;
   padding: 1.2rem 3.2rem;
-  font-weight: 700;
-  font-size: 1.8rem;
   cursor: pointer;
-  text-align: left;
 }
 
 .formInputs input:focus {
@@ -83,8 +96,8 @@
 }
 
 .formInputs button {
-  text-transform: uppercase;
   background-color: #76c7ad;
+  text-transform: uppercase;
   margin-left: 1.2rem;
 }
 .formInputs button:hover {
@@ -92,9 +105,9 @@
   color: #76c7ad;
 }
 
-/* *************** */
+/* ********************* */
 /* PACKINGLIST COMPONENT */
-/* *************** */
+/* ********************* */
 
 .listSection {
   background-color: #5a3e2b;
@@ -111,25 +124,26 @@
 .actions button,
 .listSection select {
   font-family: inherit;
-  text-transform: uppercase;
-  padding: 0.8rem 2.4rem;
   font-size: 1.4rem;
   font-weight: 700;
-  margin: 0 0.8rem;
+  color: #5a3e2b;
+  text-transform: uppercase;
   border: none;
   border-radius: 0.6rem;
+  padding: 0.8rem 2.4rem;
+  margin: 0 0.8rem;
   cursor: pointer;
-  color: #5a3e2b;
 }
+
 .actions button {
   background-color: #f4a226;
 }
+
 .actions button:hover {
   background-color: #e5771f;
 }
 
 .listSection ul {
-  /* list-style: none; */
   width: 80%;
   overflow: scroll;
   /* display: grid;
@@ -139,9 +153,9 @@
   gap: 1.2rem;
 }
 
-/* *************** */
+/* ************** */
 /* ITEM COMPONENT */
-/* *************** */
+/* ************** */
 
 .listSection li {
   display: flex;
@@ -157,11 +171,11 @@ input[type='checkbox'] {
 }
 
 .listSection li button {
-  cursor: pointer;
+  font-size: 1.6rem;
   background: none;
   border: none;
-  font-size: 1.6rem;
   padding: 0.8rem;
+  cursor: pointer;
 }
 
 /* *************** */
@@ -170,7 +184,7 @@ input[type='checkbox'] {
 
 .stats {
   background-color: #76c7ad;
-  text-align: center;
   font-weight: 700;
+  text-align: center;
   padding: 3.2rem 0;
 }

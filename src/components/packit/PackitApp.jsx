@@ -19,7 +19,6 @@ function PackitApp() {
   const handleTogglePackedItem = id => {
     const updatedItems = items => items.map(item => (item.id === id ? { ...item, packed: !item.packed } : item));
     setItems(updatedItems);
-    // console.log('new array including the toggled item: ', items);
   };
 
   const handleAddItem = item => {

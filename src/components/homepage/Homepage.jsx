@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { HiArrowNarrowRight } from 'react-icons/hi';
+// import { HiArrowNarrowRight } from 'react-icons/hi';
 
 import codingDuddel from '../../assets/coding_hairup.png';
 import styles from './Homepage.module.css';
@@ -7,7 +7,7 @@ import styles from './Homepage.module.css';
 
 function Homepage() {
   return (
-    <div className={styles.Homepage}>
+    <div className={styles.app}>
       <header className={styles.header}>
         <h1>bits&bobs</h1>
         <div className={styles.introSection}>
@@ -61,13 +61,13 @@ function Homepage() {
             <NavLink to='/star-rating-reusable'>Customisable star-rating</NavLink>
           </li>
           <li>
-            <NavLink to='/text-expander-reusable'>Customisable text expander</NavLink>
+            <NavLink to='/text-expander-reusable'>Customisable text-expander</NavLink>
           </li>
           <li>
-            <NavLink to='/eat-and-split'>Eat & Split App</NavLink>
+            <NavLink to='/eat-and-split'>Eat&Split App</NavLink>
           </li>
           <li>
-            <NavLink to='/use-popcorn'>Movie App (usePopcorn)</NavLink>
+            <NavLink to='/use-popcorn'>MovieList App (usePopcorn)</NavLink>
           </li>
           <li>
             <NavLink to='/page-not-found'>404 Page not found</NavLink>

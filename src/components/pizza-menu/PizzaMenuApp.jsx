@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { pizzaData } from './data/data.js';
 import styles from './pizzaMenuApp.module.css';
 
@@ -75,7 +75,6 @@ const Order = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // const [timeDisplay, setTimeDisplay] = useState(new Date().toLocaleTimeString());
-
   // useEffect(() => {
   //   setInterval(() => {
   //     setTimeDisplay(new Date().toLocaleTimeString());
@@ -113,7 +112,7 @@ const Order = () => {
 const Modal = () => {
   return (
     <div className={styles.modal}>
-      <p>This button doesn't do anything.</p>
+      <p>This button doesn&#39;t do anything.</p>
     </div>
   );
 };

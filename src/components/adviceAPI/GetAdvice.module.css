@@ -1,23 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
 
+/* COLOURS */
+
+/* 
+  --grey-text-dark: #3d3d3d;
+*/
+
 .app {
+  font-family: 'Nunito Sans';
+  /* font-family: 'Courier New', Courier, monospace; */
+  background-color: white;
+  color: #3d3d3d;
   height: 100vh;
   display: flex;
   align-items: center;
-  font-family: 'Nunito Sans';
-  color: #3d3d3d;
-  /* font-family: 'Courier New', Courier, monospace; */
 }
 
 .container {
   width: 55rem;
-  margin: 0 auto;
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .count {
@@ -35,23 +42,21 @@
 }
 
 .advice {
-  color: #3d3d3d;
   text-align: center;
 }
 
 .btn {
-  border-radius: 8px;
-  /* border: 2px solid #3d3d3d; */
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: inherit;
   background-color: #ffffff;
-  color: #3d3d3d;
+  border-radius: 8px;
+  border: 2px solid #3d3d3d;
   text-transform: uppercase;
   margin: 1.2rem;
   padding: 1rem 1.2rem;
   cursor: pointer;
-  font-size: 1.8rem;
-  font-weight: 700;
-  font-family: inherit;
-  /* letter-spacing: 0.1rem; */
 }
 
 .btn:hover {

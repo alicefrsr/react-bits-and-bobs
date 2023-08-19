@@ -24,7 +24,7 @@ function OtherComponentWhichNeedsToUseStarRating() {
         ratingColor='blue'
         onSetRating={setMovieRating}
       />
-      <p style={{ paddingTop: '2rem' }}>(Outside component:)</p>
+      <p style={{ paddingTop: '2rem' }}>(Outside of component:)</p>
 
       <p>
         This movie was rated <span style={{ color: 'blue', fontWeight: 'bold' }}>{movieRating}</span>
@@ -51,15 +51,6 @@ const ReusableStarRatingApp = () => {
             <p> className=''</p>
             <p> messages=[]</p>
             <p> onSetRating</p>
-            {/* 
-            <p>Maximum number of stars</p>
-            <p>Default rating is 0</p>
-            <p>Star color is yellow</p>
-            <p>Rating colr is black</p>
-            <p>Star and rating size set to 48px</p>
-            <p>You can pass in a class</p>
-            <p>You can pass in messages displayed for each rating</p>
-            <p>State can be passed in to be used outside component</p> */}
           </div>
         </div>
         <div className={styles.demo}>
@@ -78,9 +69,9 @@ const ReusableStarRatingApp = () => {
               <div className={styles.code}>
                 <p style={{ fontWeight: 'bold', fontFamily: 'Helvetica Neue' }}>Props:</p>
                 <p> maxRating=&#123;3&#125;</p>
-                <p> starColor='red' </p>
+                <p> starColor=&#39;red&#39; </p>
                 <p> size=&#123;32&#125; </p>
-                <p> messages=&#123;['Terrible', 'Okay', 'Excellent']&#125; </p>
+                <p> messages=&#123;[&#39;Terrible&#39;, &#39;Okay&#39;, &#39;Excellent&#39;]&#125; </p>
               </div>
             </div>
           </div>
@@ -105,8 +96,8 @@ const ReusableStarRatingApp = () => {
                 <p style={{ fontWeight: 'bold', fontFamily: 'Helvetica Neue' }}>Props:</p>
                 <p> maxRating=&#123;10&#125; </p>
                 <p> size=&#123;24&#125; </p>
-                <p> starColor='blue' </p>
-                <p> ratingColor='red'</p>
+                <p> starColor=&#39;blue&#39; </p>
+                <p> ratingColor=&#39;red&#39;</p>
                 <p> onSetRating=&#123;setMovieRating&#125; </p>
               </div>
             </div>

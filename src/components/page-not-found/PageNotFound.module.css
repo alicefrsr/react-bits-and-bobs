@@ -1,44 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Londrina+Sketch&display=swap');
 
-.PageNotFound {
+.app {
   font-family: 'IBM Plex Mono', monospace;
-  background-color: var(--white);
-  color: var(--dark-grey);
-  width: 100vw;
   height: 100vh;
   display: flex;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: center; */
 }
 
 .container {
-  background-color: var(--light-grey);
+  background-color: var(--home-light-grey);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   padding: 4.8rem 5.6rem 4.8rem 5.6rem;
-
-  /* border-radius: 8px; */
-  /* box-shadow: 10px 10px 30px rgb(0, 0, 0, 0.2); */
-  /* border-top: 2px solid var(--cartoon-blue); */
-  /* border-bottom: 2px solid var(--cartoon-blue); */
 }
 
-.PageNotFound img {
+.app img {
   width: 28rem;
   border-radius: 50%;
 }
 
-.PageNotFound h2 {
+.app h2 {
   font-family: 'Londrina Sketch', cursive;
   font-size: 7rem;
   letter-spacing: 0.1rem;
-  /* padding: 0 5.6rem; */
-  /* margin: 3rem 0 1rem 0; */
-  color: var(--cartoon-blue);
+  color: var(--home-cartoon-blue);
   padding-bottom: 1rem;
 }
 
@@ -55,9 +42,8 @@
 }
 
 .backHome a {
-  border: 2px solid var(--cartoon-blue);
-  color: var(--cartoon-blue);
-  background-color: var(--white);
+  border: 2px solid var(--home-cartoon-blue);
+  background-color: white;
   border-radius: 5px;
   padding: 1.2rem;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
@@ -67,12 +53,11 @@
 .backHome a:link,
 .backHome a:visited {
   text-decoration: none;
-  color: var(--cartoon-blue);
+  color: var(--home-cartoon-blue);
 }
 
 .backHome a:hover,
 .backHome a:active {
-  /* padding: 1.2rem; */
-  background-color: var(--cartoon-blue);
-  color: var(--white);
+  background-color: var(--home-cartoon-blue);
+  color: white;
 }

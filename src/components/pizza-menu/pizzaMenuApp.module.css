@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 
+/* COLOURS */
+
+/* 
+  --grey-text-dark: #252525;
+  --grey-text-medium: #888;
+  --salmon-bg-lightest: #f7f2e9;
+  --yellow-light: #edc84b;
+  --yellow-dark: #e9bb24;
+  --orange-modal: #ed8e4b;
+*/
+
 /* *************** */
 /* APP COMPONENT */
 /* *************** */
@@ -7,22 +18,22 @@
 .app {
   font-family: 'Roboto Mono', sans-serif;
   font-weight: 400;
-  color: #252525;
   background-color: #f7f2e9;
+  color: #252525;
   min-height: 100vh;
-  border-top: 1.6rem solid #edc84b;
-  border-bottom: 1.6rem solid #edc84b;
-  padding: 3.2rem;
-  padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+
+  border-top: 1.6rem solid #edc84b;
+  border-bottom: 1.6rem solid #edc84b;
+  padding: 3.2rem;
+  padding-bottom: 6rem;
 }
 
 .container {
   max-width: 80rem;
-  /* margin: 0 auto; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,6 +192,7 @@
 .message {
   display: flex;
 }
+
 .modal {
   max-width: 80rem;
   background-color: #ed8e4b;
