@@ -2,38 +2,51 @@ import { useEffect, useState } from 'react';
 import styles from './GetAdvice.module.css';
 import ClipLoader from 'react-spinners/ClipLoader';
 
+const BASE_URL = 'https://api.adviceslip.com';
+
 export default function App() {
   const [advice, setAdvice] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
   const [count, setCount] = useState(0);
 
   async function getAdvice() {
     try {
       setIsLoading(true);
-      const res = await fetch('https://api.adviceslip.com/advice', {
+      setError('');
+      const res = await fetch(`${BASE_URL}/advice`, {
         cache: 'no-store',
       });
+      if (!res.ok) {
+        throw new Error('...error...');
+      }
       const data = await res.json();
-      setIsLoading(false);
-      setAdvice(data.slip.advice);
       setCount(c => c + 1); // not setCount(count + 1): when the new state depends on a previous state it's best practice to pass in the previous state then update it.
+      setAdvice(data.slip.advice);
     } catch (error) {
-      console.log('Something went wrong: ', error.message);
+      // console.log('Something went wrong: ', error.message);
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   useEffect(() => {
+    // // basic promise handling:
+    // fetch(`https://api.adviceslip.com/advice)
+    //   .then(res => res.json())
+    //   .then(data => setAdvice(data.slip.advice));
     getAdvice();
   }, []);
 
   return (
     <div className={styles.app}>
       <div className={styles.container}>
-        <Message count={count} />
+        <CountMessage count={count} />
         <CardBg
           advice={advice}
           isLoading={isLoading}>
-          {isLoading ? <Loading /> : <h1 className={styles.advice}>{advice}</h1>}
+          {isLoading ? <Loading /> : error ? <ErrorMessage errorMessage={error} /> : <h1 className={styles.advice}>{advice}</h1>}
         </CardBg>
         <button
           className={styles.btn}
@@ -45,7 +58,7 @@ export default function App() {
   );
 }
 
-function Message({ count }) {
+function CountMessage({ count }) {
   return <p className={styles.count}> {count > 0 && `Advice number ${count}:`}</p>;
 }
 
@@ -63,6 +76,14 @@ function Loading() {
           aria-label={'Loading spinner'}
         />
       </section>
+    </CardBg>
+  );
+}
+
+function ErrorMessage({ errorMessage }) {
+  return (
+    <CardBg>
+      <p>Something went wrong: {errorMessage}</p>
     </CardBg>
   );
 }

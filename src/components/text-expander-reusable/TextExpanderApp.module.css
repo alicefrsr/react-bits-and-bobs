@@ -37,6 +37,11 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  /* gap: 1rem; */
+}
+
+.demo h3 {
+  padding: 1.2rem;
 }
 
 .code {

@@ -105,7 +105,7 @@ const EatAndSplitApp = () => {
 const FriendsList = ({ friends, onSelection, selectedFriend }) => {
   return (
     <>
-      <h2>Who&#39;s up for splitting?</h2>
+      <h2 className={styles.friendslistTitle}>Who&#39;s up for splitting?</h2>
       <ul>
         {friends.map(friend => (
           <FriendCard

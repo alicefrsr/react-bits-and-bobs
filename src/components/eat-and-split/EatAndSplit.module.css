@@ -157,8 +157,8 @@ form .button {
   margin-top: 0.6rem;
 }
 
-h2,
-form h2 {
+.friendslistTitle,
+.formSplitBill h2 {
   font-size: 2.2rem;
   text-transform: uppercase;
   letter-spacing: -0.5px;

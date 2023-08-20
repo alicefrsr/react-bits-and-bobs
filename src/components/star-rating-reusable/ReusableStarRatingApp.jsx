@@ -2,17 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ReusableStarRatingApp.module.css';
 
-const containerStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '16px',
-};
-
-const starContainerStyle = {
-  display: 'flex',
-};
-
-function OtherComponentWhichNeedsToUseStarRating() {
+const OtherComponentWhichNeedsToUseStarRating = () => {
   const [movieRating, setMovieRating] = useState(0);
 
   return (
@@ -31,7 +21,7 @@ function OtherComponentWhichNeedsToUseStarRating() {
       </p>
     </div>
   );
-}
+};
 
 const ReusableStarRatingApp = () => {
   return (
@@ -109,6 +99,16 @@ const ReusableStarRatingApp = () => {
       </ul>
     </div>
   );
+};
+
+const containerStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '16px',
+};
+
+const starContainerStyle = {
+  display: 'flex',
 };
 
 // REUSABLE COMPONENT

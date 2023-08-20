@@ -1,32 +1,126 @@
+import { ReusableStarRating } from '../star-rating-reusable/ReusableStarRatingApp';
 import styles from './MovieListApp.module.css';
 import { tempMovieData, tempWatchedData } from './data/tempData';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import PuffLoader from 'react-spinners/PuffLoader';
 
 const average = arr => arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 // const movies = tempMovieData;
 const watched = tempWatchedData;
 
+const API_KEY = '64ddb543';
+const BASE_URL = `http://www.omdbapi.com/?apikey=`;
+
 const MovieListApp = () => {
-  const [movies, setMovies] = useState(tempMovieData);
-  const [watched, setWatched] = useState(tempWatchedData);
+  const [query, setQuery] = useState('');
+  const [movies, setMovies] = useState([]);
+  const [watched, setWatched] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [selectedId, setSelectedId] = useState(null);
+
+  const handleSelectMovie = id => {
+    // setSelectedId(id);
+    // to close the movie details box when clicking on same movie again
+    setSelectedId(selectedId => (id === selectedId ? null : id));
+  };
+
+  const handleCloseMovieDetails = () => {
+    setSelectedId(null);
+  };
+
+  useEffect(
+    function () {
+      const fetchMovies = async () => {
+        try {
+          setIsLoading(true);
+          setError('');
+          const res = await fetch(`${BASE_URL}${API_KEY}&s=${query}`);
+          // const res = await fetch(`${BASE_URL}/?apikey=${API_KEY}&s=${query}`);
+
+          if (!res.ok) {
+            throw new Error('Something went wrong...');
+          } // if there was an error, ( ex failed to fetch) here the code below wouldn't get executed
+          // so isLoading would never get set back to false --> put it in finally block
+
+          const data = await res.json();
+          if (data.Response === 'False') {
+            throw new Error(`${data.Error}`); // returns the API data.Error value: "Movie not found" OR:
+            // throw new Error('Customised error message that says movie not in API...');
+          }
+          setMovies(data.Search);
+          // setIsLoading(false); // in finally block
+        } catch (error) {
+          setError(error.message);
+        } finally {
+          setIsLoading(false);
+        }
+      };
+
+      if (!query.length || query.length < 3) {
+        setMovies([]);
+        setError('Start searching... (At least 4 characters)');
+        return;
+      }
+      fetchMovies();
+    },
+    [query]
+  );
 
   return (
     <div className={styles.app}>
       <Navbar>
-        <Search />
+        <Search
+          query={query}
+          setQuery={setQuery}
+        />
         <NumResults movies={movies} />
       </Navbar>
       <Main>
         <Box>
-          <MoviesList movies={movies} />
+          {/* ugly code? */}
+          {/* {isLoading ? <Loading /> : error ? <ErrorMessage message={error} /> : <MoviesList movies={movies} />}</Box> */}
+          {/* better? 3 mutually exclusive conditions: */}
+          {isLoading && <Loading />}
+          {!isLoading && !error && (
+            <MoviesList
+              movies={movies}
+              onSelectMovie={handleSelectMovie}
+            />
+          )}
+          {error && <ErrorMessage message={error} />}
         </Box>
         <Box>
-          <WatchedSummary watched={watched} />
-          <WatchedMoviesList watched={watched} />
+          {selectedId ? (
+            <MovieDetails
+              selectedId={selectedId}
+              onCloseDetails={handleCloseMovieDetails}
+            />
+          ) : (
+            <>
+              <WatchedSummary watched={watched} />
+              <WatchedMoviesList watched={watched} />
+            </>
+          )}
         </Box>
       </Main>
     </div>
   );
+};
+
+const Loading = () => {
+  return (
+    <PuffLoader
+      className={styles.loader}
+      color={'#6741d9'}
+      // size={40}
+      aria-label={'Loading spinner'}
+    />
+  );
+};
+
+const ErrorMessage = ({ message }) => {
+  return <p className={styles.error}>{message}</p>;
 };
 
 const Navbar = ({ children }) => {
@@ -49,8 +143,7 @@ const Logo = () => {
   );
 };
 
-const Search = () => {
-  const [query, setQuery] = useState('');
+const Search = ({ query, setQuery }) => {
   return (
     <input
       className={styles.search}
@@ -114,12 +207,13 @@ const Box = ({ children }) => {
 //   );
 // };
 
-const MoviesList = ({ movies }) => {
+const MoviesList = ({ movies, onSelectMovie }) => {
   // const [movies, setMovies] = useState(tempMovieData);
   return (
-    <ul className={styles.list}>
+    <ul className={`${styles.list} ${styles.listMovies}`}>
       {movies?.map(movie => (
         <Movie
+          onSelectMovie={onSelectMovie}
           key={movie.imdbID}
           movie={movie}
         />
@@ -128,9 +222,9 @@ const MoviesList = ({ movies }) => {
   );
 };
 
-const Movie = ({ movie }) => {
+const Movie = ({ movie, onSelectMovie }) => {
   return (
-    <li>
+    <li onClick={() => onSelectMovie(movie.imdbID)}>
       <img
         src={movie.Poster}
         alt={`${movie.Title} poster`}
@@ -171,6 +265,83 @@ const WatchedSummary = ({ watched }) => {
           <span>{avgRuntime} min</span>
         </p>
       </div>
+    </div>
+  );
+};
+
+const MovieDetails = ({ selectedId, onCloseDetails }) => {
+  const [movie, setMovie] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  const {
+    Title: title,
+    Poster: poster,
+    Runtime: runtime,
+    imdbRating,
+    Plot: plot,
+    Released: released,
+    Actors: actors,
+    Director: director,
+    Genre: genre,
+  } = movie;
+
+  useEffect(() => {
+    const fetchMovieDetails = async () => {
+      setIsLoading(true);
+      const res = await fetch(`${BASE_URL}${API_KEY}&i=${selectedId}`);
+      const data = await res.json();
+      setMovie(data);
+      setIsLoading(false);
+    };
+    fetchMovieDetails();
+  }, [selectedId]);
+
+  return (
+    <div className={styles.details}>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <header>
+            <button
+              className={styles.btnBack}
+              onClick={onCloseDetails}>
+              &larr;
+            </button>
+            <img
+              src={poster}
+              alt={`${title} poster`}
+            />
+            <div className={styles.detailsOverview}>
+              <h2>{title}</h2>
+              <p>
+                {released} &bull; {runtime}
+              </p>
+              <p>{genre}</p>
+              <p>
+                <span>⭐️</span>
+                {imdbRating}
+              </p>
+            </div>
+          </header>
+
+          <section>
+            <div className={styles.rating}>
+              <ReusableStarRating
+                maxRating={10}
+                ratingColor={'#fcc419'}
+                size={24}
+                onSetRating
+              />
+            </div>
+            <p>
+              <em>{plot}</em>
+            </p>
+            <p>Starring {actors}</p>
+            <p>Directed by {director}</p>
+          </section>
+        </>
+      )}
     </div>
   );
 };
