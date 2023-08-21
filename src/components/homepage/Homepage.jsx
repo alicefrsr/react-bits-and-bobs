@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 // import { HiArrowNarrowRight } from 'react-icons/hi';
 
 import codingDuddel from '../../assets/coding_hairup.png';
@@ -6,6 +7,10 @@ import styles from './Homepage.module.css';
 // import { BsGithub } from 'react-icons/bs';
 
 function Homepage() {
+  useEffect(() => {
+    document.title = 'bits&bobs';
+  }, []);
+
   return (
     <div className={styles.app}>
       <header className={styles.header}>
