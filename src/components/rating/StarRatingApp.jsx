@@ -5,9 +5,9 @@ import styles from './StarRatingApp.module.css';
 
 function StarRatingApp() {
   useEffect(() => {
-    document.title = 'Rating component';
+    document.title = 'Rating component | Screen 1';
     // clean up
-    return () => (document.title = 'bits&bobs');
+    return () => (document.title = 'bits&bobs | Home');
   }, []);
 
   const [showThankYouCard, setShowThankYouCard] = useState(false);

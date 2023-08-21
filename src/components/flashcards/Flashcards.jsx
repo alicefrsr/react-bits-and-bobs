@@ -6,7 +6,7 @@ function FlashCards() {
   useEffect(() => {
     document.title = 'Flashcards';
     // clean up
-    return () => (document.title = 'bits&bobs');
+    return () => (document.title = 'bits&bobs | Home');
   }, []);
 
   const [selectedId, setSelectedId] = useState(null);

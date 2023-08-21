@@ -6,7 +6,7 @@ function AccordionApp() {
   useEffect(() => {
     document.title = 'Accordion';
     // clean up
-    return () => (document.title = 'bits&bobs');
+    return () => (document.title = 'bits&bobs | Home');
   }, []);
   return (
     <div className={styles.app}>

@@ -12,7 +12,7 @@ function PackitApp() {
   useEffect(() => {
     document.title = 'Packit App';
     // clean up
-    return () => (document.title = 'bits&bobs');
+    return () => (document.title = 'bits&bobs | Home');
   }, []);
 
   const [items, setItems] = useState(initialItems);

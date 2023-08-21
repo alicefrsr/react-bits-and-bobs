@@ -8,7 +8,7 @@ const PageNotFound = () => {
   useEffect(() => {
     document.title = 'Page not found';
     // clean up
-    return () => (document.title = 'bits&bobs');
+    return () => (document.title = 'bits&bobs | Home');
   }, []);
 
   return (

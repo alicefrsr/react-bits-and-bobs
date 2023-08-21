@@ -15,7 +15,7 @@ const MovieListApp = () => {
   useEffect(() => {
     document.title = 'Movie API';
     // clean up
-    return () => (document.title = 'bits&bobs');
+    return () => (document.title = 'bits&bobs | Home');
   }, []);
 
   const [query, setQuery] = useState('');

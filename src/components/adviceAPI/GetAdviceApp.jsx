@@ -8,7 +8,7 @@ export default function GetAdviceApp() {
   useEffect(() => {
     document.title = 'Advice API';
     // clean up
-    return () => (document.title = 'bits&bobs');
+    return () => (document.title = 'bits&bobs | Home');
   }, []);
 
   const [advice, setAdvice] = useState('');

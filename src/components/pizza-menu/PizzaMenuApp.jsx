@@ -6,7 +6,7 @@ const PizzaMenuApp = () => {
   useEffect(() => {
     document.title = 'Pizza Menu';
     // clean up
-    return () => (document.title = 'bits&bobs');
+    return () => (document.title = 'bits&bobs | Home');
   }, []);
 
   return (

@@ -5,7 +5,7 @@ const Stopwatch = () => {
   useEffect(() => {
     document.title = 'Stopwatch';
     // clean up
-    return () => (document.title = 'bits&bobs');
+    return () => (document.title = 'bits&bobs | Home');
   }, []);
 
   const [timer, setTimer] = useState(0);

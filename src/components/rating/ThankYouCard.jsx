@@ -1,7 +1,14 @@
+import { useEffect } from 'react';
 import CardBg from './CardBg';
 import styles from './ThankYouCard.module.css';
 
 const ThankYouCard = ({ rating }) => {
+  useEffect(() => {
+    document.title = 'Rating component | Thank you';
+    // clean up
+    return () => (document.title = 'bits&bobs | Home');
+  }, []);
+
   const emoji = () => {
     switch (rating) {
       case 1:

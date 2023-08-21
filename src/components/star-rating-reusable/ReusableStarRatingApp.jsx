@@ -27,7 +27,7 @@ const ReusableStarRatingApp = () => {
   useEffect(() => {
     document.title = 'Custom Star-rating component';
     // clean up
-    return () => (document.title = 'bits&bobs');
+    return () => (document.title = 'bits&bobs | Home');
   }, []);
 
   return (
