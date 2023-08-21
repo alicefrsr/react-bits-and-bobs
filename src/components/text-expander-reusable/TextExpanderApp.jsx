@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 const TextExpanderApp = () => {
   useEffect(() => {
     document.title = 'Custom Text-expander component';
+    // clean up
+    return () => (document.title = 'bits&bobs');
   }, []);
 
   return (

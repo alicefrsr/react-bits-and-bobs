@@ -35,6 +35,8 @@ const Button = ({ children, onClick }) => {
 const EatAndSplitApp = () => {
   useEffect(() => {
     document.title = 'Eat & Split App';
+    // clean up
+    return () => (document.title = 'bits&bobs');
   }, []);
   // state to display AddFriend Form based on 'Add friend' btn
   const [showFormAddFriend, setShowFormAddFriend] = useState(false);

@@ -7,6 +7,8 @@ const BASE_URL = 'https://api.adviceslip.com';
 export default function GetAdviceApp() {
   useEffect(() => {
     document.title = 'Advice API';
+    // clean up
+    return () => (document.title = 'bits&bobs');
   }, []);
 
   const [advice, setAdvice] = useState('');

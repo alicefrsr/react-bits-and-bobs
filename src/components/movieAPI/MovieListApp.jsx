@@ -14,6 +14,8 @@ const API_KEY = '/?apikey=64ddb543';
 const MovieListApp = () => {
   useEffect(() => {
     document.title = 'Movie API';
+    // clean up
+    return () => (document.title = 'bits&bobs');
   }, []);
 
   const [query, setQuery] = useState('');

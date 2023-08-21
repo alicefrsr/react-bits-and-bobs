@@ -11,6 +11,8 @@ const initialItems = [
 function PackitApp() {
   useEffect(() => {
     document.title = 'Packit App';
+    // clean up
+    return () => (document.title = 'bits&bobs');
   }, []);
 
   const [items, setItems] = useState(initialItems);

@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 function FlashCards() {
   useEffect(() => {
     document.title = 'Flashcards';
+    // clean up
+    return () => (document.title = 'bits&bobs');
   }, []);
 
   const [selectedId, setSelectedId] = useState(null);

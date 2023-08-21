@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 function AccordionApp() {
   useEffect(() => {
     document.title = 'Accordion';
+    // clean up
+    return () => (document.title = 'bits&bobs');
   }, []);
   return (
     <div className={styles.app}>
