@@ -6,7 +6,7 @@ import PuffLoader from 'react-spinners/PuffLoader';
 
 const average = arr => arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0).toFixed(1);
 
-const BASE_URL = `http://www.omdbapi.com`;
+const BASE_URL = `https://www.omdbapi.com`;
 const API_KEY = '/?apikey=64ddb543';
 //  console.log('tempMovieData ', tempMovieData);
 //  console.log('tempWatchedData ', tempWatchedData);
