@@ -5,6 +5,8 @@ import styles from './pizzaMenuApp.module.css';
 const PizzaMenuApp = () => {
   useEffect(() => {
     document.title = 'Pizza Menu';
+
+    return () => (document.title = 'bits&bobs');
   }, []);
 
   return (

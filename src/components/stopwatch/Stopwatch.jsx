@@ -4,6 +4,7 @@ import styles from './stopwatch.module.css';
 const Stopwatch = () => {
   useEffect(() => {
     document.title = 'Stopwatch';
+    return () => (document.title = 'bits&bobs');
   }, []);
 
   const [timer, setTimer] = useState(0);

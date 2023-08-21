@@ -7,9 +7,9 @@ import styles from './Homepage.module.css';
 // import { BsGithub } from 'react-icons/bs';
 
 function Homepage() {
-  useEffect(() => {
-    document.title = 'bits&bobs';
-  }, []);
+  // useEffect(() => {
+  //   document.title = 'bits&bobs';
+  // }, []);
 
   return (
     <div className={styles.app}>
