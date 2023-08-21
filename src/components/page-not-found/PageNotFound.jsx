@@ -2,7 +2,13 @@ import styles from './PageNotFound.module.css';
 import searchingDuddel from '../../assets/detective.png';
 import { NavLink } from 'react-router-dom';
 import { HiArrowNarrowRight } from 'react-icons/hi';
+import { useEffect } from 'react';
+
 const PageNotFound = () => {
+  useEffect(() => {
+    document.title = 'Page not found';
+  }, []);
+
   return (
     <div className={styles.app}>
       <div className={styles.container}>

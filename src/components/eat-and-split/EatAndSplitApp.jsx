@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './EatAndSplit.module.css';
 
 const initialFriends = [
@@ -33,6 +33,9 @@ const Button = ({ children, onClick }) => {
 };
 
 const EatAndSplitApp = () => {
+  useEffect(() => {
+    document.title = 'Eat & Split App';
+  }, []);
   // state to display AddFriend Form based on 'Add friend' btn
   const [showFormAddFriend, setShowFormAddFriend] = useState(false);
 

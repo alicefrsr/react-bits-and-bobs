@@ -1,7 +1,13 @@
 import styles from './PageNotFoundGif.module.css';
 import { NavLink } from 'react-router-dom';
 import { HiArrowNarrowRight } from 'react-icons/hi';
+import { useEffect } from 'react';
+
 const PageNotFound = () => {
+  useEffect(() => {
+    document.title = 'Page not found + GIF';
+  }, []);
+
   return (
     <div className={styles.app}>
       <div className={styles.container}>

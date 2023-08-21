@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './PackitApp.module.css';
 
 const initialItems = [
@@ -9,6 +9,10 @@ const initialItems = [
 ];
 
 function PackitApp() {
+  useEffect(() => {
+    document.title = 'Packit App';
+  }, []);
+
   const [items, setItems] = useState(initialItems);
 
   const handleDeleteItem = id => {

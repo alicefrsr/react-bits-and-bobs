@@ -7,7 +7,7 @@ import PizzaMenuApp from './components/pizza-menu/PizzaMenuApp';
 import StarRatingApp from './components/rating/StarRatingApp';
 import ReusableStarRatingApp from './components/star-rating-reusable/ReusableStarRatingApp';
 import TextExpanderApp from './components/text-expander-reusable/TextExpanderApp';
-import GetAdvice from './components/adviceAPI/GetAdvice';
+import GetAdviceApp from './components/adviceAPI/GetAdviceApp';
 import PackitApp from './components/packit/PackitApp';
 import EatAndSplitApp from './components/eat-and-split/EatAndSplitApp';
 import MovieListApp from './components/movieAPI/MovieListApp';
@@ -33,8 +33,8 @@ function App() {
             element={<Stopwatch />}
           />
           <Route
-            path='/get-advice'
-            element={<GetAdvice />}
+            path='/advice-API'
+            element={<GetAdviceApp />}
           />
           <Route
             path='/flashcards'
@@ -45,7 +45,7 @@ function App() {
             element={<AccordionApp />}
           />
           <Route
-            path='/packit'
+            path='/packit-app'
             element={<PackitApp />}
           />
           <Route
@@ -62,11 +62,11 @@ function App() {
           />
 
           <Route
-            path='/eat-and-split'
+            path='/eat-and-split-app'
             element={<EatAndSplitApp />}
           />
           <Route
-            path='/use-popcorn'
+            path='/movie-API'
             element={<MovieListApp />}
           />
           <Route

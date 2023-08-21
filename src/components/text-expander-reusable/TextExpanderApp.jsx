@@ -1,8 +1,12 @@
 import styles from './TextExpanderApp.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const TextExpanderApp = () => {
+  useEffect(() => {
+    document.title = 'Custom Text-expander component';
+  }, []);
+
   return (
     <div className={styles.app}>
       <h1>Customisable text-expander component</h1>

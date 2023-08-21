@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import styles from './stopwatch.module.css';
 
 const Stopwatch = () => {
+  useEffect(() => {
+    document.title = 'Stopwatch';
+  }, []);
+
   const [timer, setTimer] = useState(0);
   const [timerOn, setTimerOn] = useState(false);
 

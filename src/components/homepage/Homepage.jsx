@@ -43,7 +43,7 @@ function Homepage() {
             <NavLink to='/stopwatch'>Stopwatch</NavLink>
           </li>
           <li>
-            <NavLink to='/get-advice'>Advice API</NavLink>
+            <NavLink to='/advice-API'>Advice API</NavLink>
           </li>
           <li>
             <NavLink to='/flashcards'>Flashcards</NavLink>
@@ -52,7 +52,7 @@ function Homepage() {
             <NavLink to='/accordion'>Accordion</NavLink>
           </li>
           <li>
-            <NavLink to='/packit'>Packit App</NavLink>
+            <NavLink to='/packit-app'>Packit App</NavLink>
           </li>
           <li>
             <NavLink to='/rating'>Rating component</NavLink>
@@ -64,10 +64,10 @@ function Homepage() {
             <NavLink to='/text-expander-reusable'>Customisable text-expander</NavLink>
           </li>
           <li>
-            <NavLink to='/eat-and-split'>Eat&Split App</NavLink>
+            <NavLink to='/eat-and-split-app'>Eat & Split App</NavLink>
           </li>
           <li>
-            <NavLink to='/use-popcorn'>Movie API</NavLink>
+            <NavLink to='/movie-API'>Movie API</NavLink>
           </li>
           <li>
             <NavLink to='/page-not-found'>404 Page not found</NavLink>

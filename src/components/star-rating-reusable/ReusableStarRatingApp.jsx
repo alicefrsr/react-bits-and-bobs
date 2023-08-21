@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ReusableStarRatingApp.module.css';
 
@@ -24,6 +24,10 @@ const OtherComponentWhichNeedsToUseStarRating = () => {
 };
 
 const ReusableStarRatingApp = () => {
+  useEffect(() => {
+    document.title = 'Custom Star-rating component';
+  }, []);
+
   return (
     <div className={styles.app}>
       <h1>Customisable star-rating component</h1>

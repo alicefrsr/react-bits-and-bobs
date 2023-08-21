@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
-import styles from './GetAdvice.module.css';
+import styles from './GetAdviceApp.module.css';
 import ClipLoader from 'react-spinners/ClipLoader';
 
 const BASE_URL = 'https://api.adviceslip.com';
 
-export default function App() {
+export default function GetAdviceApp() {
+  useEffect(() => {
+    document.title = 'Advice API';
+  }, []);
+
   const [advice, setAdvice] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [count, setCount] = useState(0);
 
-  async function getAdvice() {
+  const getAdvice = async () => {
     try {
       setIsLoading(true);
       setError('');
@@ -18,18 +22,17 @@ export default function App() {
         cache: 'no-store',
       });
       if (!res.ok) {
-        throw new Error('...error...');
+        throw new Error('...something went wrong...');
       }
       const data = await res.json();
       setCount(c => c + 1); // not setCount(count + 1): when the new state depends on a previous state it's best practice to pass in the previous state then update it.
       setAdvice(data.slip.advice);
     } catch (error) {
-      // console.log('Something went wrong: ', error.message);
       setError(error.message);
     } finally {
       setIsLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     // // basic promise handling:

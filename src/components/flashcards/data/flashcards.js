@@ -73,6 +73,26 @@ const flashcards = [
       'Initial render (component mounts): fresh state and props are created. Re-render (component updates) happens when state changes, props change, parent re-renders, or context changes.',
     category: 'render',
   },
+  {
+    id: 112,
+    question: 'What is a cleanup function used for?',
+    answer: 'To run some code when the component unmounts',
+    category: 'useEffect',
+  },
+  {
+    id: 113,
+    question: 'When does a cleanup function run?',
+    answer:
+      "1. Before the effect is executed again, in order to cleanup the results of the previous side effect. 2. After a component has unmouted, to give us the opportunity to reset the side effect we created if that's necessary",
+    category: 'useEffect',
+  },
+  {
+    id: 114,
+    question: 'What do we need a cleanup function for? Give examples.',
+    answer:
+      'It is necessary when the side effect keeps happening after the component has been re-rendered or unmounted. For ex. cancel an http request, cancel an API subscription, stop a timer, removing an event listener etc ',
+    category: 'useEffect',
+  },
 ];
 
 export default flashcards;

@@ -12,6 +12,10 @@ const API_KEY = '/?apikey=64ddb543';
 //  console.log('tempWatchedData ', tempWatchedData);
 
 const MovieListApp = () => {
+  useEffect(() => {
+    document.title = 'Movie API';
+  }, []);
+
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState([]);
@@ -41,11 +45,15 @@ const MovieListApp = () => {
 
   useEffect(
     function () {
+      // to clean up to prevent too many unecessary requests
+      // create an abortController (browser API), set signal to controller.signal in {options},  return controller.abort at the end and ignore the error (also setError to '')
+      const controller = new AbortController();
+
       const fetchMovies = async () => {
         try {
           setIsLoading(true);
           setError('');
-          const res = await fetch(`${BASE_URL}${API_KEY}&s=${query}`);
+          const res = await fetch(`${BASE_URL}${API_KEY}&s=${query}`, { signal: controller.signal });
 
           if (!res.ok) {
             throw new Error('Something went wrong...');
@@ -59,8 +67,10 @@ const MovieListApp = () => {
           }
           setMovies(data.Search);
           // setIsLoading(false); // in finally block
+
+          setError('');
         } catch (error) {
-          setError(error.message);
+          if (error.name !== 'AbortError') setError(error.message);
         } finally {
           setIsLoading(false);
         }
@@ -68,10 +78,17 @@ const MovieListApp = () => {
 
       if (!query.length || query.length < 3) {
         setMovies([]);
-        setError('Start searching... (Min 3 characters)');
+        setError('Start searching... (min 3 characters)');
         return;
       }
+
+      handleCloseMovieDetails();
       fetchMovies();
+
+      // clean up
+      return function () {
+        controller.abort();
+      };
     },
     [query]
   );
@@ -295,8 +312,23 @@ const MovieDetails = ({ selectedId, onCloseDetails, onAddWatched, watched }) => 
     };
     onAddWatched(newWatchedMovie);
     onCloseDetails(); // OR setSelectedId(null) in handleAddWatched() at App level
-    console.log(newWatchedMovie.userRating);
+    // console.log(newWatchedMovie.userRating);
   };
+
+  // adding a keydown event to close the moviesDetails screen instead of clicking back btn
+  // --> an event listener will be added/attached to the document EACH TIME a movieDetails component is rendered. They will keep accumulating without a CLEAN UP
+  useEffect(() => {
+    const callback = e => {
+      if (e.code === 'Escape') {
+        onCloseDetails();
+      }
+    };
+    document.addEventListener('keydown', callback);
+    // clean up
+    return function () {
+      document.removeEventListener('keydown', callback);
+    };
+  }, [onCloseDetails]);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {

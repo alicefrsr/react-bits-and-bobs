@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import RatingCard from './RatingCard';
 import ThankYouCard from './ThankYouCard';
 import styles from './StarRatingApp.module.css';
 
 function StarRatingApp() {
+  useEffect(() => {
+    document.title = 'Rating component';
+  }, []);
+
   const [showThankYouCard, setShowThankYouCard] = useState(false);
   const [rating, setRating] = useState(null);
 

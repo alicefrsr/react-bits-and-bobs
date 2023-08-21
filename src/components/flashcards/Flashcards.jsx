@@ -1,8 +1,12 @@
 import flashcards from './data/flashcards';
 import styles from './Flashcards.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function FlashCards() {
+  useEffect(() => {
+    document.title = 'Flashcards';
+  }, []);
+
   const [selectedId, setSelectedId] = useState(null);
 
   const handleSelect = id => {

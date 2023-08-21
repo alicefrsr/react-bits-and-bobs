@@ -1,8 +1,11 @@
 import faqs from './data/faqs';
 import styles from './AccordionApp.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function AccordionApp() {
+  useEffect(() => {
+    document.title = 'Accordion';
+  }, []);
   return (
     <div className={styles.app}>
       <h1>

@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { pizzaData } from './data/data.js';
 import styles from './pizzaMenuApp.module.css';
 
 const PizzaMenuApp = () => {
+  useEffect(() => {
+    document.title = 'Pizza Menu';
+  }, []);
+
   return (
     <div className={styles.app}>
       <div className={styles.container}>
