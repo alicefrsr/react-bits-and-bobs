@@ -11,6 +11,8 @@
   --purple-dark: #6741d9;
   --red-light: #fa5252;
   --red-dark: #e03131;
+
+  --starColor: #fcc419;
   */
 
 /* *************** */
@@ -186,7 +188,7 @@
   gap: 0.8rem;
 }
 
-.btn-delete {
+.btnDelete {
   font-size: 0.9rem;
   font-weight: bold;
   background-color: #fa5252;
@@ -204,7 +206,7 @@
   transition: all 0.3s;
 }
 
-.btn-delete:hover {
+.btnDelete:hover {
   background-color: #e03131;
 }
 
@@ -293,14 +295,20 @@
   background-color: #343a40;
   font-weight: 600;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   border-radius: 0.9rem;
-  /* gap: 2.4rem; */
+  gap: 2.4rem;
   padding: 2rem 3rem;
   margin-bottom: 0.8rem;
 }
 
-.btn-add {
+.userRating {
+  color: #fcc419;
+  padding: 1rem;
+  margin-left: 1rem;
+}
+
+.btnAdd {
   font-size: 1.4rem;
   font-weight: bold;
   background-color: #6741d9;
@@ -308,11 +316,12 @@
   border: none;
   border-radius: 10rem;
   padding: 1rem;
+
   cursor: pointer;
   transition: all 0.3s;
 }
 
-.btn-add:hover {
+.btnAdd:hover {
   background-color: #7950f2;
 }
 

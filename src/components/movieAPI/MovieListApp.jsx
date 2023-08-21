@@ -4,12 +4,12 @@ import { tempMovieData, tempWatchedData } from './data/tempData';
 import { useState, useEffect } from 'react';
 import PuffLoader from 'react-spinners/PuffLoader';
 
-const average = arr => arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
-// const movies = tempMovieData;
-const watched = tempWatchedData;
+const average = arr => arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0).toFixed(1);
 
-const API_KEY = '64ddb543';
-const BASE_URL = `http://www.omdbapi.com/?apikey=`;
+const BASE_URL = `http://www.omdbapi.com`;
+const API_KEY = '/?apikey=64ddb543';
+//  console.log('tempMovieData ', tempMovieData);
+//  console.log('tempWatchedData ', tempWatchedData);
 
 const MovieListApp = () => {
   const [query, setQuery] = useState('');
@@ -29,6 +29,16 @@ const MovieListApp = () => {
     setSelectedId(null);
   };
 
+  const handleAddWatched = movie => {
+    setWatched(watched => [...watched, movie]);
+  };
+
+  const handleDeleteWatched = id => {
+    const updatedWatched = watched.filter(watchedMovie => watchedMovie.imdbID !== id);
+    setWatched(updatedWatched);
+    console.log(id);
+  };
+
   useEffect(
     function () {
       const fetchMovies = async () => {
@@ -36,7 +46,6 @@ const MovieListApp = () => {
           setIsLoading(true);
           setError('');
           const res = await fetch(`${BASE_URL}${API_KEY}&s=${query}`);
-          // const res = await fetch(`${BASE_URL}/?apikey=${API_KEY}&s=${query}`);
 
           if (!res.ok) {
             throw new Error('Something went wrong...');
@@ -59,7 +68,7 @@ const MovieListApp = () => {
 
       if (!query.length || query.length < 3) {
         setMovies([]);
-        setError('Start searching... (At least 4 characters)');
+        setError('Start searching... (Min 3 characters)');
         return;
       }
       fetchMovies();
@@ -76,7 +85,7 @@ const MovieListApp = () => {
         />
         <NumResults movies={movies} />
       </Navbar>
-      <Main>
+      <Main watched={watched}>
         <Box>
           {/* ugly code? */}
           {/* {isLoading ? <Loading /> : error ? <ErrorMessage message={error} /> : <MoviesList movies={movies} />}</Box> */}
@@ -95,11 +104,16 @@ const MovieListApp = () => {
             <MovieDetails
               selectedId={selectedId}
               onCloseDetails={handleCloseMovieDetails}
+              onAddWatched={handleAddWatched}
+              watched={watched}
             />
           ) : (
             <>
               <WatchedSummary watched={watched} />
-              <WatchedMoviesList watched={watched} />
+              <WatchedMoviesList
+                watched={watched}
+                onDeleteWatched={handleDeleteWatched}
+              />
             </>
           )}
         </Box>
@@ -163,7 +177,7 @@ const NumResults = ({ movies }) => {
   );
 };
 
-const Main = ({ children }) => {
+const Main = ({ children, watched }) => {
   const avgImdbRating = average(watched.map(movie => movie.imdbRating));
   const avgUserRating = average(watched.map(movie => movie.userRating));
   const avgRuntime = average(watched.map(movie => movie.runtime));
@@ -240,43 +254,26 @@ const Movie = ({ movie, onSelectMovie }) => {
   );
 };
 
-const WatchedSummary = ({ watched }) => {
-  const avgImdbRating = average(watched.map(movie => movie.imdbRating));
-  const avgUserRating = average(watched.map(movie => movie.userRating));
-  const avgRuntime = average(watched.map(movie => movie.runtime));
-  return (
-    <div className={styles.summary}>
-      <h2>Movies you watched</h2>
-      <div>
-        <p>
-          <span>#️⃣</span>
-          <span>{watched.length} movies</span>
-        </p>
-        <p>
-          <span>⭐️</span>
-          <span>{avgImdbRating}</span>
-        </p>
-        <p>
-          <span>🌟</span>
-          <span>{avgUserRating}</span>
-        </p>
-        <p>
-          <span>⏳</span>
-          <span>{avgRuntime} min</span>
-        </p>
-      </div>
-    </div>
-  );
-};
-
-const MovieDetails = ({ selectedId, onCloseDetails }) => {
+const MovieDetails = ({ selectedId, onCloseDetails, onAddWatched, watched }) => {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [userRating, setUserRating] = useState('');
+
+  // we only want to add a movie to the WatchedMoviesList once
+  // derived state to check if movie is already in WatchedMoviesList: transform watched array of objects into array of ids so we can check movie id against ids already there:
+  const isWatched = watched.map(watchedIds => watchedIds.imdbID).includes(movie.imdbID);
+  // const isWatched = watched.map(watchedIds => watchedIds.imdbID).includes(selectedId);
+  // console.log('isWatched ', isWatched); // true or false
+  // get the userRating value : find the movie in the array that matches selectedId, take the userRating prop only if this array is not empty (undefined) (with ?optional chaining)
+  const watchedUserRating = watched.find(movie => movie.imdbID === selectedId)?.userRating;
+  // console.log('watchedUserRating', watchedUserRating);
 
   const {
+    imdbID,
     Title: title,
     Poster: poster,
     Runtime: runtime,
+    Year: year,
     imdbRating,
     Plot: plot,
     Released: released,
@@ -284,6 +281,22 @@ const MovieDetails = ({ selectedId, onCloseDetails }) => {
     Director: director,
     Genre: genre,
   } = movie;
+
+  const handleAdd = () => {
+    // we are CREATING a brand new object, NOT selecting an existing one in the movie list using its ID
+    const newWatchedMovie = {
+      imdbID: selectedId,
+      title,
+      year,
+      poster,
+      imdbRating: Number(imdbRating),
+      runtime: Number(runtime.split(' ').at(0)),
+      userRating,
+    };
+    onAddWatched(newWatchedMovie);
+    onCloseDetails(); // OR setSelectedId(null) in handleAddWatched() at App level
+    console.log(newWatchedMovie.userRating);
+  };
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -327,13 +340,33 @@ const MovieDetails = ({ selectedId, onCloseDetails }) => {
 
           <section>
             <div className={styles.rating}>
-              <ReusableStarRating
-                maxRating={10}
-                ratingColor={'#fcc419'}
-                size={24}
-                onSetRating
-              />
+              {!isWatched ? (
+                <>
+                  <ReusableStarRating
+                    maxRating={10}
+                    ratingColor={'#fcc419'}
+                    size={24}
+                    onSetRating={setUserRating}
+                  />
+                  {userRating > 0 ? (
+                    <button
+                      className={styles.btnAdd}
+                      onClick={handleAdd}>
+                      Add to list
+                    </button>
+                  ) : (
+                    <p>Rate this movie to add it to your list!</p>
+                  )}
+                </>
+              ) : (
+                <>
+                  <p>
+                    You rated this movie: <span className={styles.userRating}>⭐️ {watchedUserRating} </span>/ 10
+                  </p>
+                </>
+              )}
             </div>
+
             <p>
               <em>{plot}</em>
             </p>
@@ -346,27 +379,57 @@ const MovieDetails = ({ selectedId, onCloseDetails }) => {
   );
 };
 
-const WatchedMoviesList = ({ watched }) => {
+const WatchedSummary = ({ watched }) => {
+  const avgImdbRating = average(watched.map(movie => movie.imdbRating));
+  const avgUserRating = average(watched.map(movie => movie.userRating));
+  const avgRuntime = average(watched.map(movie => movie.runtime));
+  return (
+    <div className={styles.summary}>
+      <h2>Movies you watched</h2>
+      <div>
+        <p>
+          <span>#️⃣</span>
+          <span>{watched.length} movies</span>
+        </p>
+        <p>
+          <span>⭐️</span>
+          <span>{avgImdbRating}</span>
+        </p>
+        <p>
+          <span>🌟</span>
+          <span>{avgUserRating}</span>
+        </p>
+        <p>
+          <span>⏳</span>
+          <span>{avgRuntime} min</span>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const WatchedMoviesList = ({ watched, onDeleteWatched }) => {
   return (
     <ul className={styles.list}>
       {watched.map(movie => (
         <WatchedMovie
           key={movie.imdbID}
           movie={movie}
+          onDeleteWatched={onDeleteWatched}
         />
       ))}
     </ul>
   );
 };
 
-const WatchedMovie = ({ movie }) => {
+const WatchedMovie = ({ movie, onDeleteWatched }) => {
   return (
     <li>
       <img
-        src={movie.Poster}
-        alt={`${movie.Title} poster`}
+        src={movie.poster}
+        alt={`${movie.title} poster`}
       />
-      <h3>{movie.Title}</h3>
+      <h3>{movie.title}</h3>
       <div>
         <p>
           <span>⭐️</span>
@@ -381,6 +444,11 @@ const WatchedMovie = ({ movie }) => {
           <span>{movie.runtime} min</span>
         </p>
       </div>
+      <button
+        className={styles.btnDelete}
+        onClick={() => onDeleteWatched(movie.imdbID)}>
+        X
+      </button>
     </li>
   );
 };

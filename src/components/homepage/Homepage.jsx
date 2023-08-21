@@ -67,7 +67,7 @@ function Homepage() {
             <NavLink to='/eat-and-split'>Eat&Split App</NavLink>
           </li>
           <li>
-            <NavLink to='/use-popcorn'>MovieList App (usePopcorn)</NavLink>
+            <NavLink to='/use-popcorn'>Movie API</NavLink>
           </li>
           <li>
             <NavLink to='/page-not-found'>404 Page not found</NavLink>
