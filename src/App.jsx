@@ -13,6 +13,7 @@ import EatAndSplitApp from './components/eat-and-split/EatAndSplitApp';
 import MovieListApp from './components/movieAPI/MovieListApp';
 import PageNotFound from './components/page-not-found/PageNotFound';
 import PageNotFoundGif from './components/page-not-found-gif/PageNotFoundGif';
+import CurrencyConverter from './components/currency-converter/CurrencyConverter';
 
 function App() {
   return (
@@ -76,6 +77,10 @@ function App() {
           <Route
             path='page-not-found-gif'
             element={<PageNotFoundGif />}
+          />
+          <Route
+            path='currency-converter'
+            element={<CurrencyConverter />}
           />
           <Route
             path='*'

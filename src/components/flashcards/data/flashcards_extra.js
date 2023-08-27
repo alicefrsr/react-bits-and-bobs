@@ -35,7 +35,12 @@ const flashcards = [
     question: 'What do we call an input element that is completely synchronised with state?',
     answer: 'Controlled element',
   },
-
+  {
+    id: 106,
+    question: 'What is the difference between props and state?',
+    answer: '',
+    category: 'basics',
+  },
   {
     id: 200,
     question: 'What is reconciliation?',
@@ -88,6 +93,78 @@ const flashcards = [
     answer:
       'It is necessary when the side effect keeps happening after the component has been re-rendered or unmounted. For ex. cancel an http request, cancel an API subscription, stop a timer, removing an event listener etc ',
     category: 'useEffect',
+  },
+  {
+    id: 115,
+    question: 'What is the use of refs?',
+    answer: '',
+    category: '',
+  },
+  {
+    id: 116,
+    question: 'What are the lifecycle methods in React?',
+    answer: '',
+    category: '',
+  },
+  {
+    id: 117,
+    question: 'What are fragments?',
+    answer: '',
+    category: '',
+  },
+  {
+    id: 118,
+    question: 'What are stateless vs stateful components?',
+    answer: '',
+    category: '',
+  },
+  {
+    id: 119,
+    question: 'What are error boundaries in Raect v16?',
+    answer: '',
+    category: '',
+  },
+  {
+    id: 120,
+    question: 'What is the use of react-dom package?',
+    answer: '',
+    category: '',
+  },
+  {
+    id: 121,
+    question: "What is a children's prop?",
+    answer: '',
+    category: '',
+  },
+  {
+    id: 122,
+    question: 'How to fetch data with React hooks?',
+    answer: '',
+    category: '',
+  },
+  {
+    id: 123,
+    question: 'Hooks in React and use cases?',
+    answer: '',
+    category: '',
+  },
+  {
+    id: 124,
+    question: 'What is the use of state hooks in React?',
+    answer: '',
+    category: '',
+  },
+  {
+    id: 125,
+    question: 'What is redux?',
+    answer: '',
+    category: '',
+  },
+  {
+    id: 120,
+    question: 'How to create a counter in React?',
+    answer: '',
+    category: '',
   },
 ];
 

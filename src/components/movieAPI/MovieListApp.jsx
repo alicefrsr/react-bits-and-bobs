@@ -7,7 +7,7 @@ import PuffLoader from 'react-spinners/PuffLoader';
 const average = arr => arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0).toFixed(1);
 
 const BASE_URL = `https://www.omdbapi.com`;
-const API_KEY = '/?apikey=64ddb543';
+const API_KEY = '64ddb543';
 //  console.log('tempMovieData ', tempMovieData);
 //  console.log('tempWatchedData ', tempWatchedData);
 
@@ -55,7 +55,7 @@ const MovieListApp = () => {
         try {
           setIsLoading(true);
           setError('');
-          const res = await fetch(`${BASE_URL}${API_KEY}&s=${query}`, { signal: controller.signal });
+          const res = await fetch(`${BASE_URL}/?apikey=${API_KEY}&s=${query}`, { signal: controller.signal });
 
           if (!res.ok) {
             throw new Error('Something went wrong...');
@@ -80,7 +80,7 @@ const MovieListApp = () => {
 
       if (!query.length || query.length < 3) {
         setMovies([]);
-        setError('Start searching... (min 3 characters)');
+        setError('Movie list empty. Start searching... (min 3 characters)');
         return;
       }
 
@@ -183,6 +183,7 @@ const Search = ({ query, setQuery }) => {
       type='text'
       placeholder='Search movies...'
       value={query}
+      autoFocus
       onChange={e => setQuery(e.target.value)}
     />
   );
@@ -335,7 +336,7 @@ const MovieDetails = ({ selectedId, onCloseDetails, onAddWatched, watched }) => 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       setIsLoading(true);
-      const res = await fetch(`${BASE_URL}${API_KEY}&i=${selectedId}`);
+      const res = await fetch(`${BASE_URL}/?apikey=${API_KEY}&i=${selectedId}`);
       const data = await res.json();
       setMovie(data);
       setIsLoading(false);
@@ -423,7 +424,7 @@ const WatchedSummary = ({ watched }) => {
       <div>
         <p>
           <span>#️⃣</span>
-          <span>{watched.length} movies</span>
+          <span>{watched.length === 1 ? `${watched.length} movie` : `${watched.length} movies`} </span>
         </p>
         <p>
           <span>⭐️</span>

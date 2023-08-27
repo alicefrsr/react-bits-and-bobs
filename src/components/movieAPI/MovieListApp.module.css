@@ -66,6 +66,7 @@
   font-size: 2rem;
   text-align: center;
   margin-top: 5rem;
+  padding: 1rem;
 }
 /* *************** */
 /* NAVBAR */
@@ -93,7 +94,7 @@
   width: 40rem;
   background-color: #7950f2;
   color: inherit;
-  justify-self: center;
+  /* justify-self: center; */
   border: none;
   padding: 1.1rem 1.6rem;
   font-size: 1.8rem;

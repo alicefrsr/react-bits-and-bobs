@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+
+/* COLOURS */
+
+/* 
+  --text-dark: #252525;
+  --bg-white: white;
+  --aliceblue: aliceblue;
+  --blue: blue;
+  --orange: #ff922b;
+*/
+
+.app {
+  font-family: 'Nunito Sans', sans-serif;
+  /* font-family: 'Courier New', monospace; */
+  background-color: white;
+  color: #252525;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.form {
+  /* width: 40rem; */
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  /* padding: 2rem; */
+}
+
+/* .title {
+  font-size: 8rem;
+  margin-bottom: 3rem;
+  text-align: center;
+} */
+
+.app input,
+.app select {
+  font-family: inherit;
+  font-size: 1.6rem;
+  background-color: aliceblue;
+  color: inherit;
+  text-align: center;
+  border: 1px solid #ff922b;
+  border: 1px solid blue;
+  border-radius: 4px;
+  padding: 0.7rem;
+  transition: 0.2s;
+}
+
+.amount {
+  color: blue;
+}
+
+.converted {
+  color: #ff922b;
+  font-weight: bold;
+}
+
+.output {
+  font-size: 2rem;
+  /* margin-bottom: 1rem; */
+}
+
+.btn {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 2rem;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 1.2rem;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+}

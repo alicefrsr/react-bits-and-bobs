@@ -162,6 +162,7 @@ const Item = ({ itemObj, onDeleteItem, onTogglePackedItem }) => {
     <li>
       <label htmlFor='item'></label>
       <input
+        className={styles.checkbox}
         type='checkbox'
         id='item'
         value={itemObj.packed}

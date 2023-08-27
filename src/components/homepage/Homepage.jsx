@@ -73,13 +73,16 @@ function Homepage() {
             <NavLink to='/eat-and-split-app'>Eat & Split App</NavLink>
           </li>
           <li>
-            <NavLink to='/movie-API'>Movie API</NavLink>
+            <NavLink to='/movie-API'>Movie WatchList (API)</NavLink>
           </li>
           <li>
             <NavLink to='/page-not-found'>404 Page not found</NavLink>
           </li>
           <li>
             <NavLink to='/page-not-found-gif'>404 GIF</NavLink>
+          </li>
+          <li>
+            <NavLink to='/currency-converter'>Currency Converter (API)</NavLink>
           </li>
         </ul>
       </nav>

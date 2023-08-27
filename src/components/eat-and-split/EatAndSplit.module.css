@@ -133,8 +133,8 @@ label {
   font-weight: 500;
 }
 
-input,
-select {
+.app input,
+.app select {
   font-family: inherit;
   font-size: 1.5rem;
   background-color: white;
@@ -146,13 +146,13 @@ select {
   /* transition: 0.2s; */
 }
 
-input:focus,
-select:focus {
+.app input:focus,
+.app select:focus {
   outline: none;
-  border: 1px solid #ff922b;
+  border: 2px solid #ff922b;
 }
 
-form .button {
+.app form .button {
   grid-column: 2;
   margin-top: 0.6rem;
 }

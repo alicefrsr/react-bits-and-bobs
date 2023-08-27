@@ -93,7 +93,7 @@ const ReusableStarRatingApp = () => {
                 <p> maxRating=&#123;10&#125; </p>
                 <p> size=&#123;24&#125; </p>
                 <p> starColor=&#39;blue&#39; </p>
-                <p> ratingColor=&#39;red&#39;</p>
+                <p> ratingColor=&#39;blue&#39;</p>
                 <p> onSetRating=&#123;setMovieRating&#125; </p>
               </div>
             </div>
