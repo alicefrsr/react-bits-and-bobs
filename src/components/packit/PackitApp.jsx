@@ -5,7 +5,7 @@ const initialItems = [
   { id: 1, description: 'Passport', quantity: 1, packed: false },
   { id: 3, description: 'Sun screen', quantity: 1, packed: false },
   { id: 5, description: 'T-shirts', quantity: 7, packed: false },
-  { id: 6, description: 'Flip flops', quantity: 1, packed: false },
+  { id: 6, description: 'books', quantity: 2, packed: false },
 ];
 
 function PackitApp() {
@@ -14,6 +14,10 @@ function PackitApp() {
     // clean up
     return () => (document.title = 'bits&bobs | Home');
   }, []);
+
+  // const itemsFromLocalStorage = () => {
+  //   return JSON.parse(localStorage.getItem('items'));
+  // };
 
   const [items, setItems] = useState(initialItems);
 
@@ -39,6 +43,10 @@ function PackitApp() {
       setItems([]);
     }
   };
+
+  // useEffect(() => {
+  //   localStorage.setItem('items', JSON.stringify(items));
+  // }, [items]);
 
   return (
     <div className={styles.app}>

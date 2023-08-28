@@ -14,6 +14,7 @@ import MovieListApp from './components/movieAPI/MovieListApp';
 import PageNotFound from './components/page-not-found/PageNotFound';
 import PageNotFoundGif from './components/page-not-found-gif/PageNotFoundGif';
 import CurrencyConverter from './components/currency-converter/CurrencyConverter';
+import CustomHook from './components/custom-hook/CustomHook';
 
 function App() {
   return (
@@ -81,6 +82,10 @@ function App() {
           <Route
             path='currency-converter'
             element={<CurrencyConverter />}
+          />
+          <Route
+            path='custom-hook'
+            element={<CustomHook />}
           />
           <Route
             path='*'

@@ -13,16 +13,16 @@
 }
 
 /**********/
-/* HEADER */
+/* INTRO SECTION */
 /**********/
 
-.header {
+.section {
   display: flex;
   flex-direction: column;
   width: 60%;
 }
 
-.header h1 {
+.section h1 {
   font-family: 'Londrina Sketch', cursive;
   font-size: 5.2rem;
   letter-spacing: 0.3rem;

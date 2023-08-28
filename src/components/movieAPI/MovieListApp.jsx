@@ -1,6 +1,6 @@
 import { ReusableStarRating } from '../star-rating-reusable/ReusableStarRatingApp';
 import styles from './MovieListApp.module.css';
-import { tempMovieData, tempWatchedData } from './data/tempData';
+// import { tempMovieData, tempWatchedData } from './data/tempData';
 import { useState, useEffect } from 'react';
 import PuffLoader from 'react-spinners/PuffLoader';
 
@@ -40,9 +40,9 @@ const MovieListApp = () => {
   };
 
   const handleDeleteWatched = id => {
-    const updatedWatched = watched.filter(watchedMovie => watchedMovie.imdbID !== id);
-    setWatched(updatedWatched);
-    console.log(id);
+    const updatedWatchedList = watched.filter(watchedMovie => watchedMovie.imdbID !== id);
+    setWatched(updatedWatchedList);
+    // console.log(id);
   };
 
   useEffect(
@@ -69,7 +69,6 @@ const MovieListApp = () => {
           }
           setMovies(data.Search);
           // setIsLoading(false); // in finally block
-
           setError('');
         } catch (error) {
           if (error.name !== 'AbortError') setError(error.message);
@@ -424,7 +423,10 @@ const WatchedSummary = ({ watched }) => {
       <div>
         <p>
           <span>#️⃣</span>
-          <span>{watched.length === 1 ? `${watched.length} movie` : `${watched.length} movies`} </span>
+          <span>
+            {' '}
+            {watched.length} {watched.length <= 1 ? ' movie' : ' movies'}{' '}
+          </span>
         </p>
         <p>
           <span>⭐️</span>
