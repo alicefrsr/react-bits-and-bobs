@@ -4,12 +4,9 @@ import { useGeolocation } from './useGeolocation';
 import BounceLoader from 'react-spinners/BounceLoader';
 
 const CustomHook = () => {
-  const {
-    isLoading,
-    position: { lat, lng },
-    error,
-    getPosition,
-  } = useGeolocation();
+  const { isLoading, position, error, getPosition } = useGeolocation();
+  // const [error, getPosition, position, isLoading] = useGeolocation();
+  const { lat, lng } = position;
 
   const [countClicks, setCountClicks] = useState(0);
   // const { lat, lng } = position;

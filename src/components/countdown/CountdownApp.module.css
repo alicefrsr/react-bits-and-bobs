@@ -4,7 +4,7 @@
 
 /* 
   --text-dark: #252525;
-  --bg-white: white;
+  --bg-light: #f5f5f5;
   --blue: blue;
   --red: red;
   --green: green;
@@ -17,6 +17,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  color: #252525;
 }
 
 .container {
@@ -29,9 +30,21 @@
   padding: 2rem;
 }
 
+.app header {
+  height: 15rem;
+}
+
 .title {
   font-size: 8rem;
   margin-bottom: 3rem;
+}
+
+/* TIMER COMPONENT */
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .counter {
@@ -43,6 +56,37 @@
   color: #252525;
 }
 
+/* SETTINGS COMPONENT */
+
+.settings {
+  background-color: #f5f5f5;
+  border: 2px solid #252525;
+  padding: 3rem 4rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+.settings h2 {
+  font-size: 2.2rem;
+}
+
+.settings input {
+  height: 3.6rem;
+  width: 7.2rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  border: 1px solid #252525;
+  text-align: right;
+  padding: 1rem;
+}
+
+/* BUTTONS */
+
 .btns {
   display: flex;
   flex-direction: column;
@@ -52,6 +96,7 @@
 .btn {
   width: 15rem;
   display: flex;
+  align-items: center;
   gap: 1rem;
   font-family: inherit;
   font-weight: 700;
@@ -68,15 +113,31 @@
   cursor: pointer;
 }
 
-.btnPause {
-  background-color: red;
+.btnIcons {
+  font-size: 3rem;
 }
 
-.btnResume,
 .btnStart {
   background-color: green;
 }
 
-.btnReset {
-  background-color: blue;
+.btnPause {
+  background-color: red;
+}
+
+.btnRerun {
+  background-color: green;
+  width: 25rem;
+}
+
+.btnSettings {
+  background-color: #252525;
+  width: 18rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+.btnSubmit {
+  background-color: #252525;
+  justify-content: center;
 }

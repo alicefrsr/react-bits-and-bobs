@@ -15,6 +15,8 @@ import PageNotFound from './components/page-not-found/PageNotFound';
 import PageNotFoundGif from './components/page-not-found-gif/PageNotFoundGif';
 import CurrencyConverter from './components/currency-converter/CurrencyConverter';
 import CustomHook from './components/custom-hook/CustomHook';
+import CountdownApp from './components/countdown/CountdownApp';
+// import PomodoroApp from './components/pomodoro/PomodoroApp';
 
 function App() {
   return (
@@ -72,21 +74,30 @@ function App() {
             element={<MovieListApp />}
           />
           <Route
-            path='page-not-found'
+            path='/page-not-found'
             element={<PageNotFound />}
           />
           <Route
-            path='page-not-found-gif'
+            path='/page-not-found-gif'
             element={<PageNotFoundGif />}
           />
           <Route
-            path='currency-converter'
+            path='/currency-converter'
             element={<CurrencyConverter />}
           />
           <Route
-            path='custom-hook'
+            path='/custom-hook'
             element={<CustomHook />}
           />
+          <Route
+            path='/countdown'
+            element={<CountdownApp />}
+          />
+          {/* <Route
+            path='/pomodoro'
+            element={<PomodoroApp />}
+          /> */}
+
           <Route
             path='*'
             element={<PageNotFoundGif />}

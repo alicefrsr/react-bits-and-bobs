@@ -1,4 +1,7 @@
 # Logs
+src/components/countdown/wip
+src/components/pomodoro
+
 logs
 *.log
 npm-debug.log*

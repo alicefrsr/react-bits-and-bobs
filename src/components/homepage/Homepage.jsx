@@ -98,6 +98,9 @@ function Nav() {
         <li>
           <NavLink to='/custom-hook'>useGeolocation</NavLink>
         </li>
+        <li>
+          <NavLink to='/countdown'>Countdown</NavLink>
+        </li>
       </ul>
     </nav>
   );
