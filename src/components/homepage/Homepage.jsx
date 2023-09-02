@@ -104,9 +104,9 @@ function Nav() {
         <li>
           <NavLink to='/countdown-v2'>Countdown 2.0</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to='/test'>Test</NavLink>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

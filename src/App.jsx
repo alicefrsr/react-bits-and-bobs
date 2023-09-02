@@ -17,7 +17,7 @@ import CurrencyConverter from './components/currency-converter/CurrencyConverter
 import CustomHook from './components/custom-hook/CustomHook';
 import CountdownAppV1 from './components/countdown/CountdownAppV1';
 import CountdownAppV2 from './components/countdown/CountdownAppV2';
-import Test from './components/test/Test';
+// import Test from './components/test/Test';
 // import PomodoroApp from './components/pomodoro/PomodoroApp';
 
 function App() {
@@ -99,10 +99,10 @@ function App() {
             path='/countdown-v2'
             element={<CountdownAppV2 />}
           />
-          <Route
+          {/* <Route
             path='/test'
             element={<Test />}
-          />
+          /> */}
           {/* <Route
             path='/pomodoro'
             element={<PomodoroApp />}
