@@ -22,7 +22,6 @@ function FlashCards() {
           <div
             // className={flashcardObj.id === selectedId ? 'selected' : ''}
             className={flashcardObj.id !== selectedId ? styles.flashcard : styles.selected}
-            // className={flashcardObj.id === selectedId ? 'selected' : ''}
             key={flashcardObj.id}
             onClick={() => handleSelect(flashcardObj.id)}>
             <p>{flashcardObj.id === selectedId ? flashcardObj.answer : flashcardObj.question}</p>

@@ -19,7 +19,6 @@
   font-family: 'Roboto Mono', sans-serif;
   background-color: #eeeeee;
   color: #3d3d3d;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   /* DO NOT JUSTIFY-CENTER HERE, for ACC ITEM to OPEN */
@@ -52,19 +51,19 @@
 /* *********************** */
 
 .itemClosed {
+  /* item */
   background-color: white;
-
   display: grid;
   grid-template-columns: auto 1fr auto;
   column-gap: 2.4rem;
   row-gap: 3.2rem;
   align-items: center;
-
-  box-shadow: 5px 5px 15px #d2ceb6a3;
-  border-top: 4px solid #8f8f8f;
+  cursor: pointer;
   padding: 2rem 2.4rem;
   padding-right: 4.8rem;
-  cursor: pointer;
+  /* closed */
+  box-shadow: 5px 5px 15px #d2ceb6a3;
+  border-top: 4px solid #8f8f8f;
 }
 
 .numberClosed {
@@ -88,23 +87,20 @@
 
 /* OPEN STATE */
 .itemOpen {
+  /* item */
   background-color: white;
   display: grid;
   grid-template-columns: auto 1fr auto;
   column-gap: 2.4rem;
   row-gap: 3.2rem;
   align-items: center;
-  box-shadow: 5px 5px 30px #d3b831a3;
-  border-top: 4px solid #e5c10ea3;
+  cursor: pointer;
   padding: 2rem 2.4rem;
   padding-right: 4.8rem;
-  cursor: pointer;
+  /* open */
+  box-shadow: 5px 5px 30px #d3b831a3;
+  border-top: 4px solid #e5c10ea3;
 }
-
-/* .other {
-  box-shadow: 5px 5px 30px #cc480fa3;
-  border-top: 4px solid #eb831b;
-} */
 
 .numberOpen {
   font-size: 2.4rem;

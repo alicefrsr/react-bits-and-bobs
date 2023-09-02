@@ -33,6 +33,7 @@ const ReusableStarRatingApp = () => {
   return (
     <div className={styles.app}>
       <h1>Customisable star-rating component</h1>
+      <h2>(Used in Movie Watchlist App)</h2>
 
       <div className={styles.intro}>
         <div className={styles.description}>

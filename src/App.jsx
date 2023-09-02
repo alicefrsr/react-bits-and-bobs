@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Homepage from './components/homepage/Homepage';
-import AccordionApp from './components/accordion/AccordionApp';
+import Homepage from './components/_homepage/Homepage';
+import AccordionAppV1 from './components/accordion/AccordionAppV1';
+import AccordionAppV2 from './components/accordion/AccordionAppV2';
 import Flashcards from './components/flashcards/Flashcards';
 import Stopwatch from './components/stopwatch/Stopwatch';
 import PizzaMenuApp from './components/pizza-menu/PizzaMenuApp';
@@ -47,8 +48,12 @@ function App() {
             element={<Flashcards />}
           />
           <Route
-            path='/accordion'
-            element={<AccordionApp />}
+            path='/accordion-v1'
+            element={<AccordionAppV1 />}
+          />
+          <Route
+            path='/accordion-v2'
+            element={<AccordionAppV2 />}
           />
           <Route
             path='/packit-app'

@@ -88,6 +88,15 @@
   gap: 2rem;
 }
 
+.navSection h2 {
+  margin-top: 8rem;
+}
+
+.navSection p {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
 .navSection li a {
   border: 2px solid var(--home-cartoon-blue);
   color: var(--home-cartoon-blue);
