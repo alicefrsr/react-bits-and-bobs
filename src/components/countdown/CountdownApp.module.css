@@ -71,6 +71,7 @@
   top: 2rem;
   left: 2rem;
 }
+
 .settings h2 {
   font-size: 2.2rem;
 }
@@ -130,6 +131,10 @@
   width: 25rem;
 }
 
+.btnReset {
+  background-color: blue;
+}
+
 .btnSettings {
   background-color: #252525;
   width: 18rem;
@@ -137,6 +142,7 @@
   top: 2rem;
   left: 2rem;
 }
+
 .btnSubmit {
   background-color: #252525;
   justify-content: center;

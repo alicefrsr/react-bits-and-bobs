@@ -15,7 +15,9 @@ import PageNotFound from './components/page-not-found/PageNotFound';
 import PageNotFoundGif from './components/page-not-found-gif/PageNotFoundGif';
 import CurrencyConverter from './components/currency-converter/CurrencyConverter';
 import CustomHook from './components/custom-hook/CustomHook';
-import CountdownApp from './components/countdown/CountdownApp';
+import CountdownAppV1 from './components/countdown/CountdownAppV1';
+import CountdownAppV2 from './components/countdown/CountdownAppV2';
+import Test from './components/test/Test';
 // import PomodoroApp from './components/pomodoro/PomodoroApp';
 
 function App() {
@@ -90,8 +92,16 @@ function App() {
             element={<CustomHook />}
           />
           <Route
-            path='/countdown'
-            element={<CountdownApp />}
+            path='/countdown-v1'
+            element={<CountdownAppV1 />}
+          />
+          <Route
+            path='/countdown-v2'
+            element={<CountdownAppV2 />}
+          />
+          <Route
+            path='/test'
+            element={<Test />}
           />
           {/* <Route
             path='/pomodoro'

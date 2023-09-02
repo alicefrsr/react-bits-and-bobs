@@ -115,6 +115,7 @@ const Order = () => {
     </div>
   );
 };
+
 const Modal = () => {
   return (
     <div className={styles.modal}>

@@ -1,6 +1,7 @@
 # Logs
 src/components/countdown/wip
 src/components/pomodoro
+src/components/test
 
 logs
 *.log
