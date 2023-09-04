@@ -4,7 +4,8 @@ import styles from './MovieListApp.module.css';
 import { useState, useEffect } from 'react';
 import PuffLoader from 'react-spinners/PuffLoader';
 
-const average = arr => arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0).toFixed(1);
+const average = (arr) =>
+  arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0).toFixed(1);
 
 const BASE_URL = `https://www.omdbapi.com`;
 const API_KEY = '64ddb543';
@@ -25,22 +26,24 @@ const MovieListApp = () => {
   const [error, setError] = useState('');
   const [selectedId, setSelectedId] = useState(null);
 
-  const handleSelectMovie = id => {
+  const handleSelectMovie = (id) => {
     // setSelectedId(id);
     // to close the movie details box when clicking on same movie again
-    setSelectedId(selectedId => (id === selectedId ? null : id));
+    setSelectedId((selectedId) => (id === selectedId ? null : id));
   };
 
   const handleCloseMovieDetails = () => {
     setSelectedId(null);
   };
 
-  const handleAddWatched = movie => {
-    setWatched(watched => [...watched, movie]);
+  const handleAddWatched = (movie) => {
+    setWatched((watched) => [...watched, movie]);
   };
 
-  const handleDeleteWatched = id => {
-    const updatedWatchedList = watched.filter(watchedMovie => watchedMovie.imdbID !== id);
+  const handleDeleteWatched = (id) => {
+    const updatedWatchedList = watched.filter(
+      (watchedMovie) => watchedMovie.imdbID !== id
+    );
     setWatched(updatedWatchedList);
     // console.log(id);
   };
@@ -55,7 +58,9 @@ const MovieListApp = () => {
         try {
           setIsLoading(true);
           setError('');
-          const res = await fetch(`${BASE_URL}/?apikey=${API_KEY}&s=${query}`, { signal: controller.signal });
+          const res = await fetch(`${BASE_URL}/?apikey=${API_KEY}&s=${query}`, {
+            signal: controller.signal,
+          });
 
           if (!res.ok) {
             throw new Error('Something went wrong...');
@@ -97,10 +102,7 @@ const MovieListApp = () => {
   return (
     <div className={styles.app}>
       <Navbar>
-        <Search
-          query={query}
-          setQuery={setQuery}
-        />
+        <Search query={query} setQuery={setQuery} />
         <NumResults movies={movies} />
       </Navbar>
       <Main watched={watched}>
@@ -110,10 +112,7 @@ const MovieListApp = () => {
           {/* better? 3 mutually exclusive conditions: */}
           {isLoading && <Loading />}
           {!isLoading && !error && (
-            <MoviesList
-              movies={movies}
-              onSelectMovie={handleSelectMovie}
-            />
+            <MoviesList movies={movies} onSelectMovie={handleSelectMovie} />
           )}
           {error && <ErrorMessage message={error} />}
         </Box>
@@ -183,7 +182,7 @@ const Search = ({ query, setQuery }) => {
       placeholder='Search movies...'
       value={query}
       autoFocus
-      onChange={e => setQuery(e.target.value)}
+      onChange={(e) => setQuery(e.target.value)}
     />
   );
 };
@@ -197,9 +196,9 @@ const NumResults = ({ movies }) => {
 };
 
 const Main = ({ children, watched }) => {
-  const avgImdbRating = average(watched.map(movie => movie.imdbRating));
-  const avgUserRating = average(watched.map(movie => movie.userRating));
-  const avgRuntime = average(watched.map(movie => movie.runtime));
+  const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
+  const avgUserRating = average(watched.map((movie) => movie.userRating));
+  const avgRuntime = average(watched.map((movie) => movie.runtime));
 
   return <main className={styles.main}>{children}</main>;
 };
@@ -211,7 +210,8 @@ const Box = ({ children }) => {
     <div className={styles.box}>
       <button
         className={styles.btnToggle}
-        onClick={() => setIsOpen(open => !open)}>
+        onClick={() => setIsOpen((open) => !open)}
+      >
         {isOpen ? '–' : '+'}
       </button>
       {isOpen && children}
@@ -244,12 +244,8 @@ const MoviesList = ({ movies, onSelectMovie }) => {
   // const [movies, setMovies] = useState(tempMovieData);
   return (
     <ul className={`${styles.list} ${styles.listMovies}`}>
-      {movies?.map(movie => (
-        <Movie
-          onSelectMovie={onSelectMovie}
-          key={movie.imdbID}
-          movie={movie}
-        />
+      {movies?.map((movie) => (
+        <Movie onSelectMovie={onSelectMovie} key={movie.imdbID} movie={movie} />
       ))}
     </ul>
   );
@@ -258,10 +254,7 @@ const MoviesList = ({ movies, onSelectMovie }) => {
 const Movie = ({ movie, onSelectMovie }) => {
   return (
     <li onClick={() => onSelectMovie(movie.imdbID)}>
-      <img
-        src={movie.Poster}
-        alt={`${movie.Title} poster`}
-      />
+      <img src={movie.Poster} alt={`${movie.Title} poster`} />
       <h3>{movie.Title}</h3>
       <div>
         <p>
@@ -273,18 +266,27 @@ const Movie = ({ movie, onSelectMovie }) => {
   );
 };
 
-const MovieDetails = ({ selectedId, onCloseDetails, onAddWatched, watched }) => {
+const MovieDetails = ({
+  selectedId,
+  onCloseDetails,
+  onAddWatched,
+  watched,
+}) => {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState('');
 
   // we only want to add a movie to the WatchedMoviesList once
   // derived state to check if movie is already in WatchedMoviesList: transform watched array of objects into array of ids so we can check movie id against ids already there:
-  const isWatched = watched.map(watchedIds => watchedIds.imdbID).includes(movie.imdbID);
+  const isWatched = watched
+    .map((watchedIds) => watchedIds.imdbID)
+    .includes(movie.imdbID);
   // const isWatched = watched.map(watchedIds => watchedIds.imdbID).includes(selectedId);
   // console.log('isWatched ', isWatched); // true or false
   // get the userRating value : find the movie in the array that matches selectedId, take the userRating prop only if this array is not empty (undefined) (with ?optional chaining)
-  const watchedUserRating = watched.find(movie => movie.imdbID === selectedId)?.userRating;
+  const watchedUserRating = watched.find(
+    (movie) => movie.imdbID === selectedId
+  )?.userRating;
   // console.log('watchedUserRating', watchedUserRating);
 
   const {
@@ -320,7 +322,7 @@ const MovieDetails = ({ selectedId, onCloseDetails, onAddWatched, watched }) => 
   // adding a keydown event to close the moviesDetails screen instead of clicking back btn
   // --> an event listener will be added/attached to the document EACH TIME a movieDetails component is rendered. They will keep accumulating without a CLEAN UP
   useEffect(() => {
-    const callback = e => {
+    const callback = (e) => {
       if (e.code === 'Escape') {
         onCloseDetails();
       }
@@ -350,15 +352,10 @@ const MovieDetails = ({ selectedId, onCloseDetails, onAddWatched, watched }) => 
       ) : (
         <>
           <header>
-            <button
-              className={styles.btnBack}
-              onClick={onCloseDetails}>
+            <button className={styles.btnBack} onClick={onCloseDetails}>
               &larr;
             </button>
-            <img
-              src={poster}
-              alt={`${title} poster`}
-            />
+            <img src={poster} alt={`${title} poster`} />
             <div className={styles.detailsOverview}>
               <h2>{title}</h2>
               <p>
@@ -383,9 +380,7 @@ const MovieDetails = ({ selectedId, onCloseDetails, onAddWatched, watched }) => 
                     onSetRating={setUserRating}
                   />
                   {userRating > 0 ? (
-                    <button
-                      className={styles.btnAdd}
-                      onClick={handleAdd}>
+                    <button className={styles.btnAdd} onClick={handleAdd}>
                       Add to list
                     </button>
                   ) : (
@@ -395,7 +390,11 @@ const MovieDetails = ({ selectedId, onCloseDetails, onAddWatched, watched }) => 
               ) : (
                 <>
                   <p>
-                    You rated this movie: <span className={styles.userRating}>⭐️ {watchedUserRating} </span>/ 10
+                    You rated this movie:{' '}
+                    <span className={styles.userRating}>
+                      ⭐️ {watchedUserRating}{' '}
+                    </span>
+                    / 10
                   </p>
                 </>
               )}
@@ -414,9 +413,9 @@ const MovieDetails = ({ selectedId, onCloseDetails, onAddWatched, watched }) => 
 };
 
 const WatchedSummary = ({ watched }) => {
-  const avgImdbRating = average(watched.map(movie => movie.imdbRating));
-  const avgUserRating = average(watched.map(movie => movie.userRating));
-  const avgRuntime = average(watched.map(movie => movie.runtime));
+  const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
+  const avgUserRating = average(watched.map((movie) => movie.userRating));
+  const avgRuntime = average(watched.map((movie) => movie.runtime));
   return (
     <div className={styles.summary}>
       <h2>Movies you watched</h2>
@@ -448,7 +447,7 @@ const WatchedSummary = ({ watched }) => {
 const WatchedMoviesList = ({ watched, onDeleteWatched }) => {
   return (
     <ul className={styles.list}>
-      {watched.map(movie => (
+      {watched.map((movie) => (
         <WatchedMovie
           key={movie.imdbID}
           movie={movie}
@@ -462,10 +461,7 @@ const WatchedMoviesList = ({ watched, onDeleteWatched }) => {
 const WatchedMovie = ({ movie, onDeleteWatched }) => {
   return (
     <li>
-      <img
-        src={movie.poster}
-        alt={`${movie.title} poster`}
-      />
+      <img src={movie.poster} alt={`${movie.title} poster`} />
       <h3>{movie.title}</h3>
       <div>
         <p>
@@ -483,7 +479,8 @@ const WatchedMovie = ({ movie, onDeleteWatched }) => {
       </div>
       <button
         className={styles.btnDelete}
-        onClick={() => onDeleteWatched(movie.imdbID)}>
+        onClick={() => onDeleteWatched(movie.imdbID)}
+      >
         X
       </button>
     </li>

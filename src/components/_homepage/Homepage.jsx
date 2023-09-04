@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 // import { useEffect } from 'react';
 
-import codingDuddel from '../../assets/coding_hairup.png';
+// import codingDuddel from '../../assets/coding_hairup.png';
 import styles from './Homepage.module.css';
 
 function Homepage() {
@@ -26,23 +26,28 @@ function Intro() {
       <div className={styles.introSection}>
         <div className={styles.introText}>
           <p>
-            A random collection of simple <span> React components</span> and <span>mini-apps</span> built in the process of learning how React works, to
-            practice, experiment and have all these bits and bobs in one place. I put this site together while learning about React Router and CSS modules, when
-            I had just 3 components. It just grew from there.
+            A random collection of simple <span> React components</span> and{' '}
+            <span>mini-apps</span> built in the process of learning how React
+            works, to practice, experiment and have all these bits and bobs in
+            one place. I put this site together while learning about React
+            Router and CSS modules, when I had just 3 components. It just grew
+            from there.
           </p>
           <p className={styles.githubLink}>
             GitHub repo
             <a
               target='blank'
               rel='noopener'
-              href='https://github.com/alicefrsr/React-bits-and-bobs'>
+              href='https://github.com/alicefrsr/React-bits-and-bobs'
+            >
               here
             </a>
-            : Feel free to check it out or mess around with it if you are learning too.
+            : Feel free to check it out or mess around with it if you are
+            learning too.
           </p>
         </div>
         <img
-          src={codingDuddel}
+          src={'../../../duddel/codingDuddel.png'}
           alt='happy dude coding away'
         />
       </div>
@@ -54,7 +59,10 @@ function Nav() {
   return (
     <nav className={styles.navSection}>
       <h2>Basic stuff:</h2>
-      <p>Passing down props, useState, lifting state &#39;up&#39;, conditional rendering, useEffect for timers and API calls:</p>
+      <p>
+        Passing down props, useState, lifting state &#39;up&#39;, conditional
+        rendering, useEffect for timers and API calls:
+      </p>
       <ul>
         <li>
           <NavLink to='/page-not-found'>404 Page not found</NavLink>
@@ -90,8 +98,11 @@ function Nav() {
       </ul>
       <h2>Putting it all together:</h2>
       <p>
-        Toy apps or components that do a bit more than one thing. Manipulating lists (adding, deleting, sorting, clearing etc). More component composition using
-        children props for layout or to remedy to prop drilling, more fetching from APIs, exploring reusable components and custom hooks:{' '}
+        Toy apps or components that do a bit more than one thing. Manipulating
+        lists (adding, deleting, sorting, clearing etc). More component
+        composition using children props for layout or to remedy to prop
+        drilling, more fetching from APIs, exploring reusable components and
+        custom hooks:{' '}
       </p>
       <ul>
         <li>
@@ -103,23 +114,28 @@ function Nav() {
         <li>
           <NavLink to='/eat-and-split-app'>Eat & Split App</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to='/countdown-v1'>Countdown 1.0</NavLink>
         </li>
         <li>
           <NavLink to='/countdown-v2'>Countdown 2.0</NavLink>
+        </li> */}
+        <li>
+          <NavLink to='/countdown-v3'>Countdown 3.0 (useCountdown)</NavLink>
         </li>
         <li>
           <NavLink to='/star-rating-reusable'>Customisable star-rating</NavLink>
         </li>
         <li>
-          <NavLink to='/text-expander-reusable'>Customisable text-expander</NavLink>
+          <NavLink to='/text-expander-reusable'>
+            Customisable text-expander
+          </NavLink>
         </li>
         <li>
           <NavLink to='/movie-API'>Movie WatchList App (API)</NavLink>
         </li>
         <li>
-          <NavLink to='/custom-hook'>useGeolocation hook</NavLink>
+          <NavLink to='/locate-me'>Where am I? (useGeolocation)</NavLink>
         </li>
       </ul>
     </nav>
@@ -134,7 +150,8 @@ function Footer() {
         <a
           className='rudi-link'
           target='blank'
-          href='https://giphy.com/rudigiphy'>
+          href='https://giphy.com/rudigiphy'
+        >
           https://giphy.com/rudigiphy
         </a>
       </p>

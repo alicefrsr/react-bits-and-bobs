@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { pizzaData } from './data/data.js';
+import { pizzaData } from './data/pizzaData.js';
 import styles from './pizzaMenuApp.module.css';
 
 const PizzaMenuApp = () => {

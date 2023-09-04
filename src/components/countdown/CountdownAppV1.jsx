@@ -28,27 +28,28 @@ const CountdownApp = () => {
   // show / hide settings form
   const [showSettings, setShowSettings] = useState(false);
 
-  const handleSetStartTime = userInputTime => {
-    setRemainingTimeInSecs(userInputTime); // startTimeInSecs used in interval as initial value for countdown
+  const handleSetStartTime = (userInputTime) => {
+    setRemainingTimeInSecs(userInputTime); // startTimeInSecs used in Timeout as initial value for countdown
     setStartTime(userInputTime); // startTimeInSecs stored in state to reset timer to last user input
   };
 
-  // EFFECTS
+  // EFFECT
   useEffect(() => {
-    console.log('timerOn', timerOn); // how do I set this to false when remainingTime === 0 ?
+    console.log('timerOn', timerOn);
     let id = null;
     if (timerOn) {
-      id = setInterval(() => {
+      id = setTimeout(() => {
         if (remainingTimeInSecs === 0)
           // setTimerOn(false); // this can't happen here -- useRef()?? another useEffect hook?
           return; // countdown stops when reaches zero
-        setRemainingTimeInSecs(currTime => currTime - 1); // startTimeInSec minus 1 second every second
+        console.count(`tick from countdown v1`);
+        setRemainingTimeInSecs((currTime) => currTime - 1); // startTimeInSec minus 1 second every second
       }, 1000);
     } else {
-      clearInterval(id);
+      clearTimeout(id);
     }
     // cleanup
-    return () => clearInterval(id);
+    return () => clearTimeout(id);
   }, [timerOn, remainingTimeInSecs]);
 
   // // effect to setTimerOn to false when timer stops (V2)
@@ -59,10 +60,7 @@ const CountdownApp = () => {
   return (
     <main className={styles.app}>
       <div className={styles.container}>
-        <Header
-          timerOn={timerOn}
-          remainingTimeInSecs={remainingTimeInSecs}
-        />
+        <Header timerOn={timerOn} remainingTimeInSecs={remainingTimeInSecs} />
         <Timer
           startTime={startTime}
           timerOn={timerOn}
@@ -79,7 +77,9 @@ const CountdownApp = () => {
             setTimerOn={setTimerOn} // not needed in V2
           />
         ) : (
-          !timerOn && <SettingsButton onClick={() => setShowSettings(!showSettings)} />
+          !timerOn && (
+            <SettingsButton onClick={() => setShowSettings(!showSettings)} />
+          )
         )}
       </div>
     </main>
@@ -90,9 +90,7 @@ const Header = ({ timerOn, remainingTimeInSecs }) => {
   return (
     <header>
       {timerOn && remainingTimeInSecs !== 0 && (
-        <h1
-          className={styles.title}
-          aria-label='hourglass'>
+        <h1 className={styles.title} aria-label='hourglass'>
           {' '}
           ⏳{' '}
         </h1>
@@ -102,7 +100,15 @@ const Header = ({ timerOn, remainingTimeInSecs }) => {
   );
 };
 
-const Timer = ({ startTime, timerOn, setTimerOn, remainingTimeInSecs, setRemainingTimeInSecs, showSettings, setShowSettings }) => {
+const Timer = ({
+  startTime,
+  timerOn,
+  setTimerOn,
+  remainingTimeInSecs,
+  setRemainingTimeInSecs,
+  showSettings,
+  setShowSettings,
+}) => {
   // convert remainingTimeInSecs in hours, mins and secs for UI {hours}:{mins}:{secs}
   const hours = Math.floor(remainingTimeInSecs / 3600);
   const mins = Math.floor((remainingTimeInSecs % 3600) / 60);
@@ -127,10 +133,19 @@ const Timer = ({ startTime, timerOn, setTimerOn, remainingTimeInSecs, setRemaini
         </span>
       </div>
       <div className={styles.btns}>
-        {remainingTimeInSecs !== null && remainingTimeInSecs === 0 && <SettingsButton onClick={() => setShowSettings(true)} />}
-        {!timerOn && remainingTimeInSecs !== null && remainingTimeInSecs !== 0 && !showSettings && <StartButton onClick={() => setTimerOn(true)} />}
-        {timerOn && remainingTimeInSecs !== 0 && <PauseButton onClick={() => setTimerOn(false)} />}
-        {timerOn && remainingTimeInSecs === 0 && !showSettings && <RerunButton onClick={() => setRemainingTimeInSecs(startTime)} />}
+        {remainingTimeInSecs !== null && remainingTimeInSecs === 0 && (
+          <SettingsButton onClick={() => setShowSettings(true)} />
+        )}
+        {!timerOn &&
+          remainingTimeInSecs !== null &&
+          remainingTimeInSecs !== 0 &&
+          !showSettings && <StartButton onClick={() => setTimerOn(true)} />}
+        {timerOn && remainingTimeInSecs !== 0 && (
+          <PauseButton onClick={() => setTimerOn(false)} />
+        )}
+        {timerOn && remainingTimeInSecs === 0 && !showSettings && (
+          <RerunButton onClick={() => setRemainingTimeInSecs(startTime)} />
+        )}
         {/* {!timerOn && remainingTimeInSecs === 0 && startTime !== 0 && !showSettings && <ResetButton onClick={() => setRemainingTimeInSecs(startTime)} />} */}
       </div>
     </section>
@@ -138,9 +153,13 @@ const Timer = ({ startTime, timerOn, setTimerOn, remainingTimeInSecs, setRemaini
 };
 
 const SettingsForm = ({ onSetStartTime, setShowSettings, setTimerOn }) => {
-  const [startTimeObject, setStartTimeObject] = useState({ hours: 0, minutes: 0, seconds: 0 });
+  const [startTimeObject, setStartTimeObject] = useState({
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setStartTimeObject({
       ...startTimeObject,
       [e.target.name]: Number(e.target.value), // best way to handle multiple inputs
@@ -153,11 +172,14 @@ const SettingsForm = ({ onSetStartTime, setShowSettings, setTimerOn }) => {
     });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // derived state:
-    // convert startTime object in total seconds to use in interval AND store it to use when click Reset button (Rerun btn in V2)
-    const startTimeInSecs = startTimeObject.hours * 60 ** 2 + startTimeObject.minutes * 60 + startTimeObject.seconds;
+    // convert startTime object in total seconds to use in Timeout AND store it to use when click Reset button (Rerun btn in V2)
+    const startTimeInSecs =
+      startTimeObject.hours * 60 ** 2 +
+      startTimeObject.minutes * 60 +
+      startTimeObject.seconds;
     console.log('startTimeInSecs ', startTimeInSecs);
     // 'lift up' this new state to parent using 'onDoSomething' function we passed down as prop
     onSetStartTime(startTimeInSecs);
@@ -206,31 +228,25 @@ const SettingsForm = ({ onSetStartTime, setShowSettings, setTimerOn }) => {
   );
 };
 
-const StartButton = props => {
+const StartButton = (props) => {
   return (
-    <button
-      {...props}
-      className={`${styles.btn} ${styles.btnStart}`}>
+    <button {...props} className={`${styles.btn} ${styles.btnStart}`}>
       <FiPlayCircle className={styles.btnIcons} /> Start
     </button>
   );
 };
 
-const PauseButton = props => {
+const PauseButton = (props) => {
   return (
-    <button
-      {...props}
-      className={`${styles.btn} ${styles.btnPause}`}>
+    <button {...props} className={`${styles.btn} ${styles.btnPause}`}>
       <FiPauseCircle className={styles.btnIcons} /> Pause
     </button>
   );
 };
 
-const RerunButton = props => {
+const RerunButton = (props) => {
   return (
-    <button
-      {...props}
-      className={`${styles.btn} ${styles.btnRerun}`}>
+    <button {...props} className={`${styles.btn} ${styles.btnRerun}`}>
       <LuTimerReset className={styles.btnIcons} />
       run again
       <FiPlayCircle className={styles.btnIcons} />
@@ -250,22 +266,18 @@ const RerunButton = props => {
 //   );
 // };
 
-const SettingsButton = props => {
+const SettingsButton = (props) => {
   return (
-    <button
-      {...props}
-      className={`${styles.btn} ${styles.btnSettings}`}>
+    <button {...props} className={`${styles.btn} ${styles.btnSettings}`}>
       <FiSettings />
       <div> Settings</div>
     </button>
   );
 };
 
-const SubmitButton = props => {
+const SubmitButton = (props) => {
   return (
-    <button
-      {...props}
-      className={`${styles.btn} ${styles.btnSubmit}`}>
+    <button {...props} className={`${styles.btn} ${styles.btnSubmit}`}>
       Enter
     </button>
   );

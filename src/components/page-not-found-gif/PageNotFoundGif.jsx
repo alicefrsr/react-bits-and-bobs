@@ -1,5 +1,5 @@
 import styles from './PageNotFoundGif.module.css';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import { useEffect } from 'react';
 
@@ -29,7 +29,7 @@ const PageNotFound = () => {
         <div className={styles.backHome}>
           <p>Let&#39;s get you back home safe</p>
           <HiArrowNarrowRight />
-          <NavLink to='/'>Home</NavLink>
+          <Link to='/'>Home</Link>
         </div>
       </div>
     </div>

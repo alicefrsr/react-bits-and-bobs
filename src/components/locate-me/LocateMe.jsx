@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import styles from './CustomHook.module.css';
-import { useGeolocation } from './useGeolocation';
+import styles from './LocateMe.module.css';
 import BounceLoader from 'react-spinners/BounceLoader';
 
-const CustomHook = () => {
+import { useGeolocation } from './useGeolocation';
+
+const LocateMe = () => {
   const { isLoading, position, error, getPosition } = useGeolocation();
   // const [error, getPosition, position, isLoading] = useGeolocation();
   const { lat, lng } = position;
@@ -12,11 +13,11 @@ const CustomHook = () => {
   // const { lat, lng } = position;
 
   const handleClick = () => {
-    setCountClicks(count => count + 1);
+    setCountClicks((count) => count + 1);
     getPosition();
   };
 
-  // extracted into useGeolocation hook
+  // // extracted into useGeolocation hook
   // const [isLoading, setIsLoading] = useState(false);
   // const [position, setPosition] = useState({});
   // const [error, setError] = useState(null);
@@ -42,10 +43,7 @@ const CustomHook = () => {
 
   return (
     <div className={styles.app}>
-      <button
-        className={styles.btn}
-        onClick={handleClick}
-        disabled={isLoading}>
+      <button className={styles.btn} onClick={handleClick} disabled={isLoading}>
         Get my position
       </button>
 
@@ -63,7 +61,8 @@ const CustomHook = () => {
           <a
             target='_blank'
             rel='noreferrer'
-            href={`https://www.openstreetmap.org/#map=16/${lat}/${lng}`}>
+            href={`https://www.openstreetmap.org/#map=16/${lat}/${lng}`}
+          >
             {lat}, {lng}
           </a>
         </p>
@@ -77,4 +76,4 @@ const CustomHook = () => {
   );
 };
 
-export default CustomHook;
+export default LocateMe;

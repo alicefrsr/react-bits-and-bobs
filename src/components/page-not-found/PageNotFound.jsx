@@ -1,6 +1,6 @@
 import styles from './PageNotFound.module.css';
-import searchingDuddel from '../../assets/detective.png';
-import { NavLink } from 'react-router-dom';
+// import searchingDuddel from '../../assets/detective.png';
+import { Link } from 'react-router-dom';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import { useEffect } from 'react';
 
@@ -16,8 +16,8 @@ const PageNotFound = () => {
       <div className={styles.container}>
         <img
           className='intro-img'
-          src={searchingDuddel}
-          alt='sherlock holmes dude looking for requested page'
+          src={'../../../duddel/searchingDuddel.png'}
+          alt='sherlock holmes duddel looking for requested page'
         />
 
         <h2>404 : page not found</h2>
@@ -26,7 +26,7 @@ const PageNotFound = () => {
         <div className={styles.backHome}>
           <p>Let&#39;s get you back home safe</p>
           <HiArrowNarrowRight />
-          <NavLink to='/'>Home</NavLink>
+          <Link to='/'>Home</Link>
         </div>
       </div>
     </div>
