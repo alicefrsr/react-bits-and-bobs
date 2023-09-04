@@ -30,8 +30,7 @@ function Intro() {
             <span>mini-apps</span> built in the process of learning how React
             works, to practice, experiment and have all these bits and bobs in
             one place. I put this site together while learning about React
-            Router and CSS modules, when I had just 3 components. It just grew
-            from there.
+            Router and CSS modules. Work in progress.
           </p>
           <p className={styles.githubLink}>
             GitHub repo
