@@ -1,4 +1,4 @@
-import { ReusableStarRating } from '../star-rating-reusable/ReusableStarRatingApp';
+import { ReusableStarRating } from '../star-rating-reusable/ReusableStarRating';
 import styles from './MovieListApp.module.css';
 // import { tempMovieData, tempWatchedData } from './data/tempData';
 import { useState, useEffect } from 'react';

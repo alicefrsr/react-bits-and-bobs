@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styles from './ReusableStarRatingApp.module.css';
+import styles from './ReusableStarRating.module.css';
 
 const OtherComponentWhichNeedsToUseStarRating = () => {
   const [movieRating, setMovieRating] = useState(0);
@@ -17,7 +17,8 @@ const OtherComponentWhichNeedsToUseStarRating = () => {
       <p style={{ paddingTop: '2rem' }}>(Outside of component:)</p>
 
       <p>
-        This movie was rated <span style={{ color: 'blue', fontWeight: 'bold' }}>{movieRating}</span>
+        This movie was rated{' '}
+        <span style={{ color: 'blue', fontWeight: 'bold' }}>{movieRating}</span>
       </p>
     </div>
   );
@@ -38,7 +39,10 @@ const ReusableStarRatingApp = () => {
       <div className={styles.intro}>
         <div className={styles.description}>
           <h2>Default props:</h2>
-          <p>The following props can be passed to the component to customise it. Defaults values apply when props omitted:</p>
+          <p>
+            The following props can be passed to the component to customise it.
+            Defaults values apply when props omitted:
+          </p>
           <div className={styles.code}>
             <p> maxRating=5</p>
             <p> defaultRating=0 </p>
@@ -64,11 +68,17 @@ const ReusableStarRatingApp = () => {
             <div className={styles.description}>
               <p></p>
               <div className={styles.code}>
-                <p style={{ fontWeight: 'bold', fontFamily: 'Helvetica Neue' }}>Props:</p>
+                <p style={{ fontWeight: 'bold', fontFamily: 'Helvetica Neue' }}>
+                  Props:
+                </p>
                 <p> maxRating=&#123;3&#125;</p>
                 <p> starColor=&#39;red&#39; </p>
                 <p> size=&#123;32&#125; </p>
-                <p> messages=&#123;[&#39;Terrible&#39;, &#39;Okay&#39;, &#39;Excellent&#39;]&#125; </p>
+                <p>
+                  {' '}
+                  messages=&#123;[&#39;Terrible&#39;, &#39;Okay&#39;,
+                  &#39;Excellent&#39;]&#125;{' '}
+                </p>
               </div>
             </div>
           </div>
@@ -88,9 +98,14 @@ const ReusableStarRatingApp = () => {
           <div>
             <h3>Example 2</h3>
             <div className={styles.description}>
-              <p>setState can be passed to onSetRating to be used anywhere outside the component:</p>
+              <p>
+                setState can be passed to onSetRating to be used anywhere
+                outside the component:
+              </p>
               <div className={styles.code}>
-                <p style={{ fontWeight: 'bold', fontFamily: 'Helvetica Neue' }}>Props:</p>
+                <p style={{ fontWeight: 'bold', fontFamily: 'Helvetica Neue' }}>
+                  Props:
+                </p>
                 <p> maxRating=&#123;10&#125; </p>
                 <p> size=&#123;24&#125; </p>
                 <p> starColor=&#39;blue&#39; </p>
@@ -132,7 +147,7 @@ export const ReusableStarRating = ({
   const [rating, setRating] = useState(defaultRating);
   const [tempRating, setTempRating] = useState(0);
 
-  const handleRating = rating => {
+  const handleRating = (rating) => {
     setRating(rating);
     onSetRating(rating);
   };
@@ -144,9 +159,7 @@ export const ReusableStarRating = ({
   };
 
   return (
-    <div
-      style={containerStyle}
-      className={className}>
+    <div style={containerStyle} className={className}>
       <div style={starContainerStyle}>
         {Array.from({ length: maxRating }, (_, i) => (
           <Star
@@ -160,12 +173,23 @@ export const ReusableStarRating = ({
           />
         ))}
       </div>
-      <p style={textStyle}>{messages.length === maxRating ? messages[tempRating ? tempRating - 1 : rating - 1] : tempRating || rating || ''}</p>
+      <p style={textStyle}>
+        {messages.length === maxRating
+          ? messages[tempRating ? tempRating - 1 : rating - 1]
+          : tempRating || rating || ''}
+      </p>
     </div>
   );
 };
 
-const Star = ({ onRate, starIsFull, onHoverIn, onHoverOut, starColor, size }) => {
+const Star = ({
+  onRate,
+  starIsFull,
+  onHoverIn,
+  onHoverOut,
+  starColor,
+  size,
+}) => {
   const starStyle = {
     width: `${size}px`,
     height: `${size}px`,
@@ -178,13 +202,15 @@ const Star = ({ onRate, starIsFull, onHoverIn, onHoverOut, starColor, size }) =>
       style={starStyle}
       onClick={onRate}
       onMouseEnter={onHoverIn}
-      onMouseLeave={onHoverOut}>
+      onMouseLeave={onHoverOut}
+    >
       {starIsFull ? (
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 20 20'
           fill={starColor}
-          stroke={starColor}>
+          stroke={starColor}
+        >
           <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
         </svg>
       ) : (
@@ -192,7 +218,8 @@ const Star = ({ onRate, starIsFull, onHoverIn, onHoverOut, starColor, size }) =>
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
           viewBox='0 0 24 24'
-          stroke={starColor}>
+          stroke={starColor}
+        >
           <path
             strokeLinecap='round'
             strokeLinejoin='round'

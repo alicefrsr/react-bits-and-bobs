@@ -9,44 +9,70 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 11rem;
+  gap: 4rem;
 }
 
 /**********/
 /* INTRO SECTION */
 /**********/
 
-.section {
+.header {
   display: flex;
   flex-direction: column;
   width: 60%;
+  border-bottom: 2px solid var(--cartoon-blue);
 }
 
-.section h1 {
+.header h1 {
   font-family: 'Londrina Sketch', cursive;
   font-size: 5.2rem;
   letter-spacing: 0.3rem;
   margin: 3rem 0 3rem 0;
-  color: var(--home-cartoon-blue);
+  color: var(--cartoon-blue);
+}
+
+.introBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 8rem;
+  border: none;
+  border-top: 2px solid var(--dark-grey);
+  border-bottom: 2px solid var(--dark-grey);
+  color: var(--dark-grey);
+  background-color: var(--light-grey);
+  background-color: white;
+  /* border-radius: 5px; */
+
+  padding: 1.2rem;
+  /* flex-shrink: 0; */
+  /* box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2); */
+  transition-duration: 300ms;
+}
+
+.btn:hover {
+  background-color: var(--light-grey);
 }
 
 .introSection {
-  background-color: var(--home-light-grey);
+  background-color: var(--light-grey);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 4.8rem 5.6rem 0 5.6rem;
-  border-top: 2px solid var(--home-cartoon-blue);
-  border-bottom: 2px solid var(--home-cartoon-blue);
+  border-top: 2px solid var(--cartoon-blue);
+  /* border-bottom: 2px solid var(--cartoon-blue); */
 }
 
 .introText {
   line-height: 1.6;
-  padding-bottom: 4.8rem;
 }
 
 .introText span {
-  color: var(--home-cartoon-blue);
+  color: var(--cartoon-blue);
 }
 
 .introSection img {
@@ -67,7 +93,7 @@
 
 .introSection a:hover,
 .introSection a:active {
-  background-color: var(--home-cartoon-blue);
+  background-color: var(--cartoon-blue);
   color: white;
 }
 
@@ -79,6 +105,9 @@
   width: 60%;
   align-self: center;
   line-height: 2.6;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .navSection ul {
@@ -89,7 +118,7 @@
 }
 
 .navSection h2 {
-  margin-top: 8rem;
+  /* margin-top: 2rem; */
 }
 
 .navSection p {
@@ -98,9 +127,9 @@
 }
 
 .navSection li a {
-  border: 2px solid var(--home-cartoon-blue);
-  color: var(--home-cartoon-blue);
-  background-color: var(--home-light-grey);
+  border: 2px solid var(--cartoon-blue);
+  color: var(--cartoon-blue);
+  background-color: var(--light-grey);
   border-radius: 5px;
   padding: 1.2rem;
   flex-shrink: 0;
@@ -111,12 +140,12 @@
 .navSection li a:link,
 .navSection li a:visited {
   text-decoration: none;
-  color: var(--home-cartoon-blue);
+  color: var(--cartoon-blue);
 }
 
 .navSection li a:hover,
 .navSection li a:active {
-  background-color: var(--home-cartoon-blue);
+  background-color: var(--cartoon-blue);
   color: white;
 }
 
@@ -125,11 +154,12 @@
 /**************************/
 
 .footer {
-  background-color: var(--home-light-grey);
+  background-color: var(--light-grey);
   font-size: 1.4rem;
   padding: 3rem;
   text-align: center;
   width: 100%;
+  margin-top: auto;
 }
 
 .footer a[href^='http'] {

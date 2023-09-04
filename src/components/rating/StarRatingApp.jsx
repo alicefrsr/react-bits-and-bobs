@@ -5,7 +5,7 @@ import styles from './StarRatingApp.module.css';
 
 function StarRatingApp() {
   useEffect(() => {
-    document.title = 'Rating component | Screen 1';
+    document.title = 'Rating component | How did we do?';
     // clean up
     return () => (document.title = 'bits&bobs | Home');
   }, []);
@@ -13,11 +13,11 @@ function StarRatingApp() {
   const [showThankYouCard, setShowThankYouCard] = useState(false);
   const [rating, setRating] = useState(null);
 
-  const handleRating = rating => {
+  const handleRating = (rating) => {
     setRating(rating);
   };
 
-  const handleShowCard = bool => {
+  const handleShowCard = (bool) => {
     setShowThankYouCard(bool);
   };
 
