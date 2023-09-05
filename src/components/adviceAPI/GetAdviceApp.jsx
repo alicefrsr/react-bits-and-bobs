@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './GetAdviceApp.module.css';
 import ClipLoader from 'react-spinners/ClipLoader';
+import BackLink from '../BackLink';
 
 const BASE_URL = 'https://api.adviceslip.com';
 
@@ -27,7 +28,7 @@ export default function GetAdviceApp() {
         throw new Error('...something went wrong...');
       }
       const data = await res.json();
-      setCount(c => c + 1); // not setCount(count + 1): when the new state depends on a previous state it's best practice to pass in the previous state then update it.
+      setCount((c) => c + 1); // not setCount(count + 1): when the new state depends on a previous state it's best practice to pass in the previous state then update it.
       setAdvice(data.slip.advice);
     } catch (error) {
       setError(error.message);
@@ -47,15 +48,18 @@ export default function GetAdviceApp() {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
+        <BackLink />
         <CountMessage count={count} />
-        <CardBg
-          advice={advice}
-          isLoading={isLoading}>
-          {isLoading ? <Loading /> : error ? <ErrorMessage errorMessage={error} /> : <h1 className={styles.advice}>{advice}</h1>}
+        <CardBg advice={advice} isLoading={isLoading}>
+          {isLoading ? (
+            <Loading />
+          ) : error ? (
+            <ErrorMessage errorMessage={error} />
+          ) : (
+            <h1 className={styles.advice}>{advice}</h1>
+          )}
         </CardBg>
-        <button
-          className={styles.btn}
-          onClick={getAdvice}>
+        <button className={styles.btn} onClick={getAdvice}>
           Get Advice
         </button>
       </div>
@@ -64,7 +68,9 @@ export default function GetAdviceApp() {
 }
 
 function CountMessage({ count }) {
-  return <p className={styles.count}> {count > 0 && `Advice number ${count}:`}</p>;
+  return (
+    <p className={styles.count}> {count > 0 && `Advice number ${count}:`}</p>
+  );
 }
 
 function CardBg({ children }) {

@@ -22,7 +22,7 @@ function Header() {
   const [showAbout, setShowAbout] = useState(true);
   return (
     <header className={styles.header}>
-      <div className={styles.introBtn}>
+      <div className={styles.aboutBtn}>
         <h1>&lt;bits&bobs/&gt;</h1>
         <button
           className={styles.btn}
@@ -97,10 +97,10 @@ function Nav() {
             <Link to='/flashcards'>Flashcards</Link>
           </li>
           <li>
-            <Link to='/accordion-v1'>Accordion 1.0</Link>
+            <Link to='accordion-v1'>Accordion 1.0</Link>
           </li>
           <li>
-            <Link to='/accordion-v2'>Accordion 2.0</Link>
+            <Link to='accordion-v2'>Accordion 2.0</Link>
           </li>
           <li>
             <Link to='/currency-converter'>Currency Converter (API)</Link>

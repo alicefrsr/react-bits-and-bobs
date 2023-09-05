@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './PackitApp.module.css';
+import BackLink from '../BackLink';
 
 const initialItems = [
   { id: 1, description: 'Passport', quantity: 1, packed: false },
@@ -21,24 +22,29 @@ function PackitApp() {
 
   const [items, setItems] = useState(initialItems);
 
-  const handleDeleteItem = id => {
-    const updatedItems = items.filter(item => item.id !== id);
+  const handleDeleteItem = (id) => {
+    const updatedItems = items.filter((item) => item.id !== id);
     setItems(updatedItems);
   };
 
-  const handleTogglePackedItem = id => {
-    const updatedItems = items => items.map(item => (item.id === id ? { ...item, packed: !item.packed } : item));
+  const handleTogglePackedItem = (id) => {
+    const updatedItems = (items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      );
     setItems(updatedItems);
   };
 
-  const handleAddItem = item => {
+  const handleAddItem = (item) => {
     // here we create a brand new items array because we cannot mutate the original one
-    setItems(items => [...items, item]);
+    setItems((items) => [...items, item]);
   };
 
   const handleClearList = () => {
     if (items.length === 0) return;
-    const confirm = window.confirm('Are you sure you want to delete all items?');
+    const confirm = window.confirm(
+      'Are you sure you want to delete all items?'
+    );
     if (confirm) {
       setItems([]);
     }
@@ -50,6 +56,7 @@ function PackitApp() {
 
   return (
     <div className={styles.app}>
+      <BackLink />
       <Header />
       <Form onAddItem={handleAddItem} />
       <PackingList
@@ -77,7 +84,7 @@ const Form = ({ onAddItem }) => {
   const [description, setDescription] = useState('');
   const [quantity, setQuantity] = useState(1); // set to number, but e.target.value is always a string
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!description) return;
     const newItem = { id: Date.now(), quantity, description, packed: false };
@@ -85,23 +92,19 @@ const Form = ({ onAddItem }) => {
     setDescription('');
   };
   return (
-    <form
-      className={styles.addForm}
-      onSubmit={handleSubmit}>
+    <form className={styles.addForm} onSubmit={handleSubmit}>
       <h3>What do you need to pack?</h3>
       <div className={styles.formInputs}>
         <label htmlFor='number-select'></label>
         <select
           id='number-select'
           value={quantity}
-          onChange={e => setQuantity(Number(e.target.value))} // e.target.value always a string
+          onChange={(e) => setQuantity(Number(e.target.value))} // e.target.value always a string
           // onChange={e => setQuantity(+e.target.value)}
         >
           {Array.from({ length: 20 }, (_, i) => i + 1) // [1,2,3...20]
-            .map(num => (
-              <option
-                key={num}
-                value={num}>
+            .map((num) => (
+              <option key={num} value={num}>
                 {num}
               </option>
             ))}
@@ -114,7 +117,7 @@ const Form = ({ onAddItem }) => {
           placeholder='Enter item...'
           autoFocus
           value={description}
-          onChange={e => setDescription(e.target.value)}
+          onChange={(e) => setDescription(e.target.value)}
         />
         <button type='submit'>Add</button>
       </div>
@@ -122,7 +125,12 @@ const Form = ({ onAddItem }) => {
   );
 };
 
-const PackingList = ({ items, onDeleteItem, onTogglePackedItem, onClearList }) => {
+const PackingList = ({
+  items,
+  onDeleteItem,
+  onTogglePackedItem,
+  onClearList,
+}) => {
   const [sortBy, setSortBy] = useState('input');
 
   let sortedItems;
@@ -131,15 +139,18 @@ const PackingList = ({ items, onDeleteItem, onTogglePackedItem, onClearList }) =
   if (sortBy === 'description')
     // first make copy to not mutate original (slice)
     // with strings:
-    sortedItems = items.slice().sort((a, b) => a.description.localeCompare(b.description));
+    sortedItems = items
+      .slice()
+      .sort((a, b) => a.description.localeCompare(b.description));
 
-  if (sortBy === 'packed') sortedItems = items.slice().sort((a, b) => Number(b.packed - a.packed));
+  if (sortBy === 'packed')
+    sortedItems = items.slice().sort((a, b) => Number(b.packed - a.packed));
 
   return (
     <>
       <div className={styles.listSection}>
         <ul>
-          {sortedItems.map(itemObj => (
+          {sortedItems.map((itemObj) => (
             <Item
               key={itemObj.id}
               itemObj={itemObj}
@@ -153,7 +164,8 @@ const PackingList = ({ items, onDeleteItem, onTogglePackedItem, onClearList }) =
             name='sort-items'
             id='sort-items'
             value={sortBy}
-            onChange={e => setSortBy(e.target.value)}>
+            onChange={(e) => setSortBy(e.target.value)}
+          >
             <option value='input'>Sort by input order</option>
             <option value='description'>Sort by description</option>
             <option value='packed'>Sort by packed status</option>
@@ -197,7 +209,7 @@ const Stats = ({ items }) => {
   const numTotalItems = items.length;
 
   // 2 options for numPackedItems, .filter or reduce
-  const numPackedItems = items.filter(item => item.packed).length;
+  const numPackedItems = items.filter((item) => item.packed).length;
   // function countPacked(count, item) {
   //   if (item.packed) return ++count;
   //   // console.log('inside count fn ', count);
@@ -205,7 +217,9 @@ const Stats = ({ items }) => {
   // }
   // const numPackedItems = items.reduce(countPacked, 0);
 
-  const numRemainingItems = items.filter(item => item.packed === false).length;
+  const numRemainingItems = items.filter(
+    (item) => item.packed === false
+  ).length;
   const percentPacked = Math.round((numPackedItems / numTotalItems) * 100);
 
   return (
@@ -216,14 +230,16 @@ const Stats = ({ items }) => {
         ) : (
           <div>
             <p>
-              You have {numTotalItems} {numTotalItems <= 1 ? ' item ' : ' items '} on your list.
+              You have {numTotalItems}{' '}
+              {numTotalItems <= 1 ? ' item ' : ' items '} on your list.
             </p>
             <p>
               Packed: {numPackedItems}
               {numPackedItems <= 1 ? ' item' : ' items'} ({percentPacked} %)
             </p>
             <p>
-              Remaining: {numRemainingItems} {numRemainingItems <= 1 ? ' item' : ' items'}
+              Remaining: {numRemainingItems}{' '}
+              {numRemainingItems <= 1 ? ' item' : ' items'}
             </p>
           </div>
         )}

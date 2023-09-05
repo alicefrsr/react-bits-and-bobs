@@ -3,6 +3,7 @@ import styles from './LocateMe.module.css';
 import BounceLoader from 'react-spinners/BounceLoader';
 
 import { useGeolocation } from './useGeolocation';
+import BackLink from '../BackLink';
 
 const LocateMe = () => {
   const { isLoading, position, error, getPosition } = useGeolocation();
@@ -42,7 +43,8 @@ const LocateMe = () => {
   // }
 
   return (
-    <div className={styles.app}>
+    <main className={styles.app}>
+      <BackLink />
       <button className={styles.btn} onClick={handleClick} disabled={isLoading}>
         Get my position
       </button>
@@ -72,7 +74,7 @@ const LocateMe = () => {
         You requested position {countClicks}
         {countClicks <= 1 ? ' time' : ' times'}
       </p>
-    </div>
+    </main>
   );
 };
 

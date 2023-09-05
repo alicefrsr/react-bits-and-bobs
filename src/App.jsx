@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Homepage from './pages/homepage/Homepage';
+import Homepage from './pages/Homepage';
 import PageNotFound from './pages/pages-not-found/PageNotFound';
 import PageNotFoundGif from './pages/pages-not-found/PageNotFoundGif';
 
@@ -22,6 +22,7 @@ import ReusableStarRating from './components/star-rating-reusable/ReusableStarRa
 import TextExpander from './components/text-expander-reusable/TextExpander';
 import MovieListApp from './components/movieAPI/MovieListApp';
 import Geolocation from './components/locate-me/LocateMe';
+import ScrollToTop from './components/ScrollToTop';
 // import Test from './components/test/Test';
 // import PomodoroApp from './components/pomodoro/PomodoroApp';
 
@@ -30,6 +31,7 @@ function App() {
     <>
       {' '}
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='page-not-found' element={<PageNotFound />} />

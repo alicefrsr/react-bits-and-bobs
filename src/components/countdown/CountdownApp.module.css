@@ -69,7 +69,7 @@
   font-size: 1.8rem;
   position: absolute;
   top: 2rem;
-  left: 2rem;
+  right: 2rem;
 }
 
 .settings h2 {
@@ -140,7 +140,7 @@
   width: 18rem;
   position: absolute;
   top: 2rem;
-  left: 2rem;
+  right: 6rem;
 }
 
 .btnSubmit {

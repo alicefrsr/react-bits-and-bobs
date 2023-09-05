@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import faqs from './data/faqs';
 import styles from './AccordionApp.module.css';
-import { useEffect, useState } from 'react';
+import BackLink from '../BackLink';
 
 // Version 2:
 // --- only one piece of state: currOpen, in parent.
@@ -16,6 +17,7 @@ function AccordionApp() {
 
   return (
     <div className={styles.app}>
+      <BackLink type='white' />
       <h1>
         <span>💡 </span>Lightbulbs FAQs (v2.0){' '}
       </h1>
@@ -38,17 +40,21 @@ const Accordion = ({ data }) => {
           question={el.question}
           // answer={el.answer} // replace with children to be reusable
           currOpen={currOpen}
-          onOpen={setCurrOpen}>
+          onOpen={setCurrOpen}
+        >
           {el.answer}
         </AccordionItem>
       ))}
       <AccordionItem
         // key={index} // not mapping this one
         num={42}
-        question={"What's the difference between this Accordion Item and the ones above?"}
+        question={
+          "What's the difference between this Accordion Item and the ones above?"
+        }
         // answer={el.answer} // replace with children to be reusable
         currOpen={currOpen}
-        onOpen={setCurrOpen}>
+        onOpen={setCurrOpen}
+      >
         {
           'It uses the children props to be customisable and reusable. The ones above come from mapping through an array of silly jokes. This one has a custom number, question (props) and answer (children props).'
         }
@@ -78,8 +84,11 @@ const AccordionItem = ({ num, question, children, currOpen, onOpen }) => {
   return (
     <li
       className={isOpen ? styles.itemOpen : styles.itemClosed}
-      onClick={handleToggle}>
-      <p className={isOpen ? styles.numberOpen : styles.numberClosed}>{num < 9 ? `0${num}` : num}</p>
+      onClick={handleToggle}
+    >
+      <p className={isOpen ? styles.numberOpen : styles.numberClosed}>
+        {num < 9 ? `0${num}` : num}
+      </p>
       <p className={styles.question}>{question}</p>
       <p className={styles.icon}>{isOpen ? '-' : '+'}</p>
       {isOpen && <div className={styles.answer}>{children}</div>}

@@ -31,7 +31,7 @@
   color: var(--cartoon-blue);
 }
 
-.introBtn {
+.aboutBtn {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,17 +44,15 @@
   border-bottom: 2px solid var(--dark-grey);
   color: var(--dark-grey);
   background-color: var(--light-grey);
-  background-color: white;
   /* border-radius: 5px; */
-
   padding: 1.2rem;
-  /* flex-shrink: 0; */
-  /* box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2); */
   transition-duration: 300ms;
+  cursor: pointer;
 }
 
 .btn:hover {
   background-color: var(--light-grey);
+  background-color: white;
 }
 
 .introSection {
@@ -117,9 +115,9 @@
   gap: 2rem;
 }
 
-.navSection h2 {
-  /* margin-top: 2rem; */
-}
+/* .navSection h2 {
+  margin-top: 2rem;
+} */
 
 .navSection p {
   line-height: 1.6;

@@ -4,6 +4,7 @@ import { FiSettings, FiPlayCircle, FiPauseCircle } from 'react-icons/fi';
 import { LuTimerReset } from 'react-icons/lu';
 
 import { useCountdown } from './useCountdown';
+import BackLink from '../BackLink';
 
 // VERSION 3:
 // --- useCountdown hook
@@ -59,6 +60,7 @@ const CountdownApp = () => {
 
   return (
     <main className={styles.app}>
+      <BackLink />
       <div className={styles.container}>
         <Header timerOn={timerOn} remainingTimeInSecs={remainingTimeInSecs} />
         <Timer

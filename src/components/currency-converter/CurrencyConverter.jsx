@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './CurrencyConverter.module.css';
 import ClipLoader from 'react-spinners/ClipLoader';
+import BackLink from '../BackLink';
 
 const CurrencyConverter = () => {
   // URL: 'https://api.frankfurter.app/latest?amount=100&from=EUR&to=USD';
@@ -20,7 +21,9 @@ const CurrencyConverter = () => {
     const fetchConversion = async () => {
       try {
         setIsLoading(true);
-        const res = await fetch(`${BASE_URL}amount=${amount}&from=${convertFrom}&to=${convertTo}`);
+        const res = await fetch(
+          `${BASE_URL}amount=${amount}&from=${convertFrom}&to=${convertTo}`
+        );
         const data = await res.json();
 
         setConverted(data.rates[convertTo]);
@@ -44,22 +47,24 @@ const CurrencyConverter = () => {
   }, [amount, convertFrom, convertTo, date]);
 
   return (
-    <div className={styles.app}>
+    <main className={styles.app}>
+      <BackLink />
       <h1>Currency converter</h1>
       <form className={styles.form}>
         Enter amount:
         <input
           type='text'
           value={amount}
-          onChange={e => setAmount(Number(e.target.value))}
+          onChange={(e) => setAmount(Number(e.target.value))}
           autoFocus
           //   disabled={isLoading}
         />
         from
         <select
           value={convertFrom}
-          onChange={e => setConvertFrom(e.target.value)}
-          disabled={isLoading}>
+          onChange={(e) => setConvertFrom(e.target.value)}
+          disabled={isLoading}
+        >
           <option value='USD'>USD (US Dollar)</option>
           <option value='NZD'>NZD (New Zealand Dollar)</option>
           <option value='AUD'>AUD (Australian Dollar)</option>
@@ -72,8 +77,9 @@ const CurrencyConverter = () => {
         to
         <select
           value={convertTo}
-          onChange={e => setConvertTo(e.target.value)}
-          disabled={isLoading}>
+          onChange={(e) => setConvertTo(e.target.value)}
+          disabled={isLoading}
+        >
           <option value='USD'>USD (US Dollar)</option>
           <option value='NZD'>NZD (New Zealand Dollar)</option>
           <option value='AUD'>AUD (Australian Dollar)</option>
@@ -101,17 +107,13 @@ const CurrencyConverter = () => {
       ) : (
         ''
       )}
-    </div>
+    </main>
   );
 };
 
 function Loading() {
   return (
-    <ClipLoader
-      color={'#3d3d3d'}
-      size={40}
-      aria-label={'Loading spinner'}
-    />
+    <ClipLoader color={'#3d3d3d'} size={40} aria-label={'Loading spinner'} />
   );
 }
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { pizzaData } from './data/pizzaData.js';
 import styles from './pizzaMenuApp.module.css';
+import BackLink from '../BackLink.jsx';
 
 const PizzaMenuApp = () => {
   useEffect(() => {
@@ -12,6 +13,7 @@ const PizzaMenuApp = () => {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
+        <BackLink type='white' />
         <Header />
         <Menu />
         <Order />
@@ -40,13 +42,14 @@ const Menu = () => {
       <h2>Today&#39;s menu</h2>
       {pizzas.length > 0 ? (
         <>
-          <p>Authentic italian cuisine. 6 delicious pizzas to choose from. Straight out from our stone oven, all made with organic and local ingredients.</p>
+          <p>
+            Authentic italian cuisine. 6 delicious pizzas to choose from.
+            Straight out from our stone oven, all made with organic and local
+            ingredients.
+          </p>
           <ul className={styles.pizzas}>
-            {pizzas.map(pizza => (
-              <PizzaCard
-                key={pizza.name}
-                pizzaObj={pizza}
-              />
+            {pizzas.map((pizza) => (
+              <PizzaCard key={pizza.name} pizzaObj={pizza} />
             ))}
           </ul>
         </>
@@ -63,11 +66,14 @@ const PizzaCard = ({ pizzaObj }) => {
   // if (pizzaObj.soldOut) return null;
   return (
     // <li className={` pizza ${pizzaObj.soldOut && 'sold-out'} `}>
-    <li className={pizzaObj.soldOut ? `${styles.pizza} ${styles.soldOut}` : `${styles.pizza}`}>
-      <img
-        src={pizzaObj.photoName}
-        alt={pizzaObj.name}
-      />
+    <li
+      className={
+        pizzaObj.soldOut
+          ? `${styles.pizza} ${styles.soldOut}`
+          : `${styles.pizza}`
+      }
+    >
+      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
@@ -93,7 +99,7 @@ const Order = () => {
   let isOpen = currentHour >= openHour && currentHour < closeHour;
 
   const handleModal = () => {
-    setIsModalOpen(isModalOpen => !isModalOpen);
+    setIsModalOpen((isModalOpen) => !isModalOpen);
   };
   return (
     <div className={styles.order}>
@@ -105,9 +111,7 @@ const Order = () => {
       </p>
 
       <div className={styles.message}>
-        <button
-          className={styles.btn}
-          onClick={handleModal}>
+        <button className={styles.btn} onClick={handleModal}>
           Order
         </button>
         {isModalOpen && <Modal />}

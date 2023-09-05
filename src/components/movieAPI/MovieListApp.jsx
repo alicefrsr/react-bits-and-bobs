@@ -1,3 +1,4 @@
+import BackLink from '../BackLink';
 import { ReusableStarRating } from '../star-rating-reusable/ReusableStarRating';
 import styles from './MovieListApp.module.css';
 // import { tempMovieData, tempWatchedData } from './data/tempData';
@@ -101,6 +102,7 @@ const MovieListApp = () => {
 
   return (
     <div className={styles.app}>
+      <BackLink />
       <Navbar>
         <Search query={query} setQuery={setQuery} />
         <NumResults movies={movies} />

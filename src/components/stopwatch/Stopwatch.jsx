@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './stopwatch.module.css';
 import { FiPlayCircle, FiPauseCircle } from 'react-icons/fi';
 import { LuTimerReset } from 'react-icons/lu';
+import BackLink from '../BackLink';
 
 const Stopwatch = () => {
   useEffect(() => {
@@ -18,7 +19,7 @@ const Stopwatch = () => {
     let interval = null;
     if (timerOn) {
       interval = setInterval(() => {
-        setTimer(currTime => currTime + 10);
+        setTimer((currTime) => currTime + 10);
       }, 10);
     } else {
       clearInterval(interval);
@@ -30,9 +31,8 @@ const Stopwatch = () => {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
-        <h1
-          className={styles.title}
-          aria-label='stopwatch'>
+        <BackLink />
+        <h1 className={styles.title} aria-label='stopwatch'>
           {' '}
           ⏱{' '}
         </h1>
@@ -73,41 +73,33 @@ const Stopwatch = () => {
   );
 };
 
-const StartButton = props => {
+const StartButton = (props) => {
   return (
-    <button
-      {...props}
-      className={`${styles.btn} ${styles.btnStart}`}>
+    <button {...props} className={`${styles.btn} ${styles.btnStart}`}>
       <FiPlayCircle /> Start
     </button>
   );
 };
 
-const PauseButton = props => {
+const PauseButton = (props) => {
   return (
-    <button
-      {...props}
-      className={`${styles.btn} ${styles.btnPause}`}>
+    <button {...props} className={`${styles.btn} ${styles.btnPause}`}>
       <FiPauseCircle /> Pause
     </button>
   );
 };
 
-const ResumeButton = props => {
+const ResumeButton = (props) => {
   return (
-    <button
-      {...props}
-      className={`${styles.btn} ${styles.btnResume}`}>
+    <button {...props} className={`${styles.btn} ${styles.btnResume}`}>
       <FiPlayCircle /> Resume
     </button>
   );
 };
 
-const ResetButton = props => {
+const ResetButton = (props) => {
   return (
-    <button
-      {...props}
-      className={`${styles.btn} ${styles.btnReset}`}>
+    <button {...props} className={`${styles.btn} ${styles.btnReset}`}>
       <LuTimerReset /> Reset
     </button>
   );

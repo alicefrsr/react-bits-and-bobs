@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ReusableStarRating.module.css';
+import BackLink from '../BackLink';
 
 const OtherComponentWhichNeedsToUseStarRating = () => {
   const [movieRating, setMovieRating] = useState(0);
@@ -32,7 +33,8 @@ const ReusableStarRatingApp = () => {
   }, []);
 
   return (
-    <div className={styles.app}>
+    <main className={styles.app}>
+      <BackLink />
       <h1>Customisable star-rating component</h1>
       <h2>(Used in Movie Watchlist App)</h2>
 
@@ -119,7 +121,7 @@ const ReusableStarRatingApp = () => {
           </div>
         </li>
       </ul>
-    </div>
+    </main>
   );
 };
 

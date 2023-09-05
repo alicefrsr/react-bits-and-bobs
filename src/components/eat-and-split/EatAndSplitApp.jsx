@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './EatAndSplit.module.css';
+import BackLink from '../BackLink';
 
 const initialFriends = [
   {
@@ -24,9 +25,7 @@ const initialFriends = [
 
 const Button = ({ children, onClick }) => {
   return (
-    <button
-      className={styles.button}
-      onClick={onClick}>
+    <button className={styles.button} onClick={onClick}>
       {children}
     </button>
   );
@@ -49,8 +48,8 @@ const EatAndSplitApp = () => {
   // this is also the state we are updating with splitBill event
 
   // function that will update friends with newFriend created in AddForm. Passed down to AddForm as props, renamed onAddFriend as a convention
-  const handleAddFriend = friend => {
-    setFriends(friends => [...friends, friend]);
+  const handleAddFriend = (friend) => {
+    setFriends((friends) => [...friends, friend]);
     // toggleFormAddFriend();
     // OR:
     setShowFormAddFriend(false);
@@ -58,18 +57,25 @@ const EatAndSplitApp = () => {
 
   // toggling forms on / off
   const toggleFormAddFriend = () => {
-    setShowFormAddFriend(show => !show);
+    setShowFormAddFriend((show) => !show);
   };
 
-  const handleSelection = friend => {
+  const handleSelection = (friend) => {
     // setSelectedFriend(friend);
-    setSelectedFriend(currSelected => (currSelected?.id === friend.id ? null : friend));
+    setSelectedFriend((currSelected) =>
+      currSelected?.id === friend.id ? null : friend
+    );
     setShowFormAddFriend(false);
   };
 
-  const handleSplitBill = value => {
+  const handleSplitBill = (value) => {
     console.log(value);
-    const updatedFriend = friends => friends.map(friend => (friend.id === selectedFriend.id ? { ...friend, balance: friend.balance + value } : friend));
+    const updatedFriend = (friends) =>
+      friends.map((friend) =>
+        friend.id === selectedFriend.id
+          ? { ...friend, balance: friend.balance + value }
+          : friend
+      );
     setFriends(updatedFriend);
 
     // to close FormSplitBill systematically so that form state resets when select a different friend. Alternatively, set a key prop to FormSplitBill
@@ -78,10 +84,17 @@ const EatAndSplitApp = () => {
 
   return (
     <div className={styles.app}>
+      <BackLink />
       <div className={styles.intro}>
         <h1>Split bills with your friends</h1>
-        <p>Choose a friend you want split a bill with, or add a new friend to your list.</p>
-        <p>Enter the bill amount, who paid, how much, and the app keeps track of who owes who so you don&#39;t have to.</p>
+        <p>
+          Choose a friend you want split a bill with, or add a new friend to
+          your list.
+        </p>
+        <p>
+          Enter the bill amount, who paid, how much, and the app keeps track of
+          who owes who so you don&#39;t have to.
+        </p>
       </div>
       <div className={styles.container}>
         <div className={styles.sidebar}>
@@ -92,7 +105,9 @@ const EatAndSplitApp = () => {
           />
           {showFormAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
 
-          <Button onClick={toggleFormAddFriend}>{showFormAddFriend ? 'Close' : 'Add Friend'}</Button>
+          <Button onClick={toggleFormAddFriend}>
+            {showFormAddFriend ? 'Close' : 'Add Friend'}
+          </Button>
         </div>
         {selectedFriend && (
           <FormSplitBill
@@ -112,7 +127,7 @@ const FriendsList = ({ friends, onSelection, selectedFriend }) => {
     <>
       <h2 className={styles.friendslistTitle}>Who&#39;s up for splitting?</h2>
       <ul>
-        {friends.map(friend => (
+        {friends.map((friend) => (
           <FriendCard
             friend={friend}
             key={friend.id}
@@ -130,10 +145,7 @@ const FriendCard = ({ friend, onSelection, selectedFriend }) => {
   const isSelected = selectedFriend?.id === friend.id;
   return (
     <li className={isSelected ? `${styles.selected}` : ''}>
-      <img
-        src={friend.image}
-        alt={friend.name}
-      />
+      <img src={friend.image} alt={friend.name} />
 
       <h3>{friend.name}</h3>
 
@@ -151,7 +163,9 @@ const FriendCard = ({ friend, onSelection, selectedFriend }) => {
 
       {friend.balance === 0 && <p>You and {friend.name} are even</p>}
 
-      <Button onClick={() => onSelection(friend)}>{isSelected ? 'Close' : 'Select'}</Button>
+      <Button onClick={() => onSelection(friend)}>
+        {isSelected ? 'Close' : 'Select'}
+      </Button>
     </li>
   );
 };
@@ -160,7 +174,7 @@ const FormAddFriend = ({ onAddFriend }) => {
   const [name, setName] = useState('');
   const [image, setImage] = useState('https://i.pravatar.cc/48');
 
-  const handleAddFriend = e => {
+  const handleAddFriend = (e) => {
     e.preventDefault();
     if (!name || !image) return;
 
@@ -184,22 +198,20 @@ const FormAddFriend = ({ onAddFriend }) => {
   };
 
   return (
-    <form
-      className={styles.formAddFriend}
-      onSubmit={handleAddFriend}>
+    <form className={styles.formAddFriend} onSubmit={handleAddFriend}>
       <label htmlFor='friendName'>Friend name</label>
       <input
         id='friendName'
         type='text'
         value={name}
-        onChange={e => setName(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
       />
       <label htmlFor='friendImageURL'>Image URL</label>
       <input
         id='friendImageURL'
         type='text'
         value={image}
-        onChange={e => setImage(e.target.value)}
+        onChange={(e) => setImage(e.target.value)}
       />
       <Button>Add</Button>
     </form>
@@ -213,7 +225,7 @@ const FormSplitBill = ({ selectedFriend, onSplitBill }) => {
   const friendsExpense = bill ? bill - userExpense : '';
   const [whoIsPaying, setWhoIsPaying] = useState('user');
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!bill || !userExpense) return;
     // value we are lift up to App component to pass down to FriensList then Friend Card to update state is either friendsExpense or userExpense.
@@ -225,9 +237,7 @@ const FormSplitBill = ({ selectedFriend, onSplitBill }) => {
   };
 
   return (
-    <form
-      className={styles.formSplitBill}
-      onSubmit={handleSubmit}>
+    <form className={styles.formSplitBill} onSubmit={handleSubmit}>
       <h2>Split a bill with {selectedFriend.name}</h2>
 
       <label htmlFor='billValue'>Bill value</label>
@@ -235,7 +245,7 @@ const FormSplitBill = ({ selectedFriend, onSplitBill }) => {
         id='billValue'
         type='number'
         value={bill}
-        onChange={e => setBill(Number(e.target.value))}
+        onChange={(e) => setBill(Number(e.target.value))}
       />
 
       <label htmlFor='yourExpense'>Your expense</label>
@@ -243,22 +253,22 @@ const FormSplitBill = ({ selectedFriend, onSplitBill }) => {
         id='yourExpense'
         type='number'
         value={userExpense}
-        onChange={e => setUserExpense(Number(e.target.value) > bill ? userExpense : Number(e.target.value))}
+        onChange={(e) =>
+          setUserExpense(
+            Number(e.target.value) > bill ? userExpense : Number(e.target.value)
+          )
+        }
       />
 
       <label htmlFor='friendsExpense'>{selectedFriend.name}'s expense</label>
-      <input
-        id='friendsExpense'
-        type='text'
-        value={friendsExpense}
-        disabled
-      />
+      <input id='friendsExpense' type='text' value={friendsExpense} disabled />
 
       <label htmlFor='payee'>Who is paying the bill</label>
       <select
         id='whoIsPaying'
         value={whoIsPaying}
-        onChange={e => setWhoIsPaying(e.target.value)}>
+        onChange={(e) => setWhoIsPaying(e.target.value)}
+      >
         <option value='user'>You</option>
         <option value='friend'>{selectedFriend.name}</option>
       </select>
