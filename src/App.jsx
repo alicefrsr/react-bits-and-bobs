@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import ScrollToTop from './components/ScrollToTop';
 import Homepage from './pages/Homepage';
 import PageNotFound from './pages/pages-not-found/PageNotFound';
 import PageNotFoundGif from './pages/pages-not-found/PageNotFoundGif';
@@ -22,8 +23,14 @@ import ReusableStarRating from './components/star-rating-reusable/ReusableStarRa
 import TextExpander from './components/text-expander-reusable/TextExpander';
 import MovieListApp from './components/movieAPI/MovieListApp';
 import Geolocation from './components/locate-me/LocateMe';
-import ScrollToTop from './components/ScrollToTop';
-// import Test from './components/test/Test';
+
+// import DateCounterTest from './components/tests/DateCounterTest';
+// import DateCounter from './components/tests/DateCounter';
+// import Steps from './components/tests/Steps';
+
+import DateCounterReduced from './components/use-reducer/DateCounterReduced';
+import BankAccountReduced from './components/use-reducer/BankAccountReduced';
+// import DateCounterV2 from './components/tests/date-counter-v2/DateCounterV2';
 // import PomodoroApp from './components/pomodoro/PomodoroApp';
 
 function App() {
@@ -54,10 +61,19 @@ function App() {
           <Route path='text-expander-reusable' element={<TextExpander />} />
           <Route path='movie-API' element={<MovieListApp />} />
           <Route path='locate-me' element={<Geolocation />} />
-          {/* <Route
-            path='test'
-            element={<Test />}
-          /> */}
+
+          {/* <Route path='tests/date-counter' element={<DateCounter />} />
+          <Route path='tests/date-counter-test' element={<DateCounterTest />} />
+          <Route path='tests/steps' element={<Steps />} /> */}
+
+          <Route
+            path='use-reducer/date-counter'
+            element={<DateCounterReduced />}
+          />
+          <Route
+            path='use-reducer/bank-account'
+            element={<BankAccountReduced />}
+          />
           {/* <Route
             path='pomodoro'
             element={<PomodoroApp />}

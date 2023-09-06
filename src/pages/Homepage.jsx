@@ -85,16 +85,16 @@ function Nav() {
             <Link to='/page-not-found-gif'>404 GIF</Link>
           </li> */}
           <li>
-            <Link to='/pizza-menu'>Pizza Menu</Link>
+            <Link to='pizza-menu'>Pizza Menu</Link>
           </li>
           <li>
-            <Link to='/stopwatch'>Stopwatch</Link>
+            <Link to='stopwatch'>Stopwatch</Link>
           </li>
           <li>
-            <Link to='/advice-API'>Advice API</Link>
+            <Link to='advice-API'>Advice API</Link>
           </li>
           <li>
-            <Link to='/flashcards'>Flashcards</Link>
+            <Link to='flashcards'>Flashcards</Link>
           </li>
           <li>
             <Link to='accordion-v1'>Accordion 1.0</Link>
@@ -103,7 +103,7 @@ function Nav() {
             <Link to='accordion-v2'>Accordion 2.0</Link>
           </li>
           <li>
-            <Link to='/currency-converter'>Currency Converter (API)</Link>
+            <Link to='currency-converter'>Currency Converter (API)</Link>
           </li>
 
           {/* <li>
@@ -122,13 +122,13 @@ function Nav() {
         </p>
         <ul>
           <li>
-            <Link to='/rating'>Rating component</Link>
+            <Link to='rating'>Rating component</Link>
           </li>
           <li>
-            <Link to='/packit-app'>Packit App</Link>
+            <Link to='packit-app'>Packit App</Link>
           </li>
           <li>
-            <Link to='/eat-and-split-app'>Eat & Split App</Link>
+            <Link to='eat-and-split-app'>Eat & Split App</Link>
           </li>
           {/* <li>
           <Link to='/countdown-v1'>Countdown 1.0</Link>
@@ -137,19 +137,31 @@ function Nav() {
           <Link to='/countdown-v2'>Countdown 2.0</Link>
         </li> */}
           <li>
-            <Link to='/countdown-v3'>Countdown 3.0 (useCountdown)</Link>
+            <Link to='countdown-v3'>Countdown 3.0 (useCountdown)</Link>
           </li>
           <li>
-            <Link to='/star-rating-reusable'>Customisable star-rating</Link>
+            <Link to='star-rating-reusable'>Customisable star-rating</Link>
           </li>
           <li>
-            <Link to='/text-expander-reusable'>Customisable text-expander</Link>
+            <Link to='text-expander-reusable'>Customisable text-expander</Link>
           </li>
           <li>
-            <Link to='/movie-API'>Movie WatchList App (API)</Link>
+            <Link to='movie-API'>Movie WatchList App (API)</Link>
           </li>
           <li>
-            <Link to='/locate-me'>Where am I? (useGeolocation)</Link>
+            <Link to='locate-me'>Where am I? (useGeolocation)</Link>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>useReducer hook:</h2>
+        <p>Different examples, starting with super simple.</p>
+        <ul>
+          <li>
+            <Link to='use-reducer/date-counter'>Date Counter</Link>
+          </li>
+          <li>
+            <Link to='use-reducer/bank-account'>Bank Account</Link>
           </li>
         </ul>
       </div>
