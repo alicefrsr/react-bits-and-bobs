@@ -9,7 +9,8 @@ const flashcards = [
   {
     id: 101,
     question: 'How does rendering a component affect other components ?',
-    answer: 'Rendering a component will cause all of its child / nested components to be rendered as well, regardless if props chaged or not.',
+    answer:
+      'Rendering a component will cause all of its child / nested components to be rendered as well, regardless if props chaged or not.',
     category: 'render',
   },
   {
@@ -32,7 +33,8 @@ const flashcards = [
   },
   {
     id: 105,
-    question: 'What do we call an input element that is completely synchronised with state?',
+    question:
+      'What do we call an input element that is completely synchronised with state?',
     answer: 'Controlled element',
   },
   {
@@ -44,20 +46,23 @@ const flashcards = [
   {
     id: 200,
     question: 'What is reconciliation?',
-    answer: 'Deciding which DOM elements actually need to be inserted, deleted, or updated in order to reflect the latest state changes',
+    answer:
+      'Deciding which DOM elements actually need to be inserted, deleted, or updated in order to reflect the latest state changes',
     category: 'render',
   },
 
   {
     id: 108,
-    question: 'What is the reconciler and what other name is it referred to as?',
+    question:
+      'What is the reconciler and what other name is it referred to as?',
     answer: 'It is the engine of React, also known as Fiber',
     category: 'render',
   },
   {
     id: 109,
     question: 'What is the key prop?',
-    answer: 'A special prop we use to tell the diffing algo that an element is unique',
+    answer:
+      'A special prop we use to tell the diffing algo that an element is unique',
     category: 'render',
   },
   {
@@ -102,15 +107,23 @@ const flashcards = [
   },
   {
     id: 116,
-    question: 'What are the lifecycle methods in React?',
-    answer: '',
-    category: '',
+    question: 'What is the context API?',
+    answer:
+      'A system to pass data throughout the app without manually passing props down the tree',
+    category: 'context',
   },
   {
     id: 117,
-    question: 'What are fragments?',
-    answer: '',
-    category: '',
+    question: 'What does the context API allow us to do?',
+    answer: 'Allows us to "broadcast" global state to the entire app',
+    category: 'context',
+  },
+  {
+    id: 23000,
+    question: 'When does a component renders?',
+    answer:
+      '3 instances: state update, context change(state or state setter), its parent render',
+    category: 'rendering',
   },
   {
     id: 118,

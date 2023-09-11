@@ -1,8 +1,25 @@
-# React + Vite
+# Bits & Bobs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A single-page app gathering a random collection of simple React components and
+> mini-apps built in the process of learning how React works.
 
-Currently, two official plugins are available:
+To learn and practice: React basics + custom hooks, useReducer, the Context API,
+React routing, CSS modules. Work-in-progress.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Visit the site:
+
+bits-and-bobs.netlify.app/
+
+### Available Scripts
+
+In the project directory, you can run:
+
+#### `npm install`
+
+Downloads dependencies defined in the package.json file and generates the
+node_modules folder with the installed modules.
+
+#### `npm run dev`
+
+Runs the app in the development mode.\
+Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
