@@ -8,7 +8,7 @@ React routing, CSS modules. Work-in-progress.
 
 ### Visit the site:
 
-bits-and-bobs.netlify.app/
+https://bits-and-bobs.netlify.app/
 
 ### Available Scripts
 
