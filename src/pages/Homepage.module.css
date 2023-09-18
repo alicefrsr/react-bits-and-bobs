@@ -147,9 +147,26 @@
   color: white;
 }
 
-/**************************/
+.external li a {
+  border: 2px solid #48b0d6;
+  color: var(--cartoon-blue);
+}
+
+.external li a:link,
+.external li a:visited {
+  text-decoration: none;
+  color: #48b0d6;
+}
+
+.external li a:hover,
+.external li a:active {
+  background-color: #48b0d6;
+  color: white;
+}
+
+/**********/
 /* FOOTER */
-/**************************/
+/**********/
 
 .footer {
   background-color: var(--light-grey);
@@ -162,4 +179,44 @@
 
 .footer a[href^='http'] {
   color: black;
+}
+
+/********************/
+/* ANIMATION EFFECT */
+/********************/
+.button {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--cartoon-blue);
+  border: 2px solid var(--cartoon-blue);
+  border-radius: 5px;
+  padding: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+  /* -- */
+  position: relative;
+  isolation: isolate;
+}
+
+.button:hover {
+  color: white;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: var(--cartoon-blue);
+  inset: 0;
+
+  scale: 0 1;
+  transform-origin: right;
+  transition: scale 500ms;
+}
+
+button:hover::after,
+button:focus-visible::after {
+  scale: 1 1;
+  transform-origin: left;
 }

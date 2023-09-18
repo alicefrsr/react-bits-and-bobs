@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './CountdownApp.module.css';
 import { FiSettings, FiPlayCircle, FiPauseCircle } from 'react-icons/fi';
 import { LuTimerReset } from 'react-icons/lu';
+import styles from './CountdownApp.module.css';
 
 // VERSION 1:
 // --- using a Rerun button (instead of Reset)

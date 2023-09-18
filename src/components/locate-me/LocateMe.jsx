@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import styles from './LocateMe.module.css';
 import BounceLoader from 'react-spinners/BounceLoader';
+import styles from './LocateMe.module.css';
 
-import { useGeolocation } from './useGeolocation';
 import BackLink from '../BackLink';
+import { useGeolocation } from './useGeolocation';
 
 const LocateMe = () => {
   const { isLoading, position, error, getPosition } = useGeolocation();

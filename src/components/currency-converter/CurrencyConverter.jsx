@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import styles from './CurrencyConverter.module.css';
 import ClipLoader from 'react-spinners/ClipLoader';
+import styles from './CurrencyConverter.module.css';
 import BackLink from '../BackLink';
 
 const CurrencyConverter = () => {

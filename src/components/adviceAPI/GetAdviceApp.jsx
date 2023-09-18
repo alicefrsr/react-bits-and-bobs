@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import styles from './GetAdviceApp.module.css';
 import ClipLoader from 'react-spinners/ClipLoader';
+import styles from './GetAdviceApp.module.css';
 import BackLink from '../BackLink';
 
 const BASE_URL = 'https://api.adviceslip.com';
@@ -49,6 +49,7 @@ export default function GetAdviceApp() {
     <div className={styles.app}>
       <div className={styles.container}>
         <BackLink />
+        <Notes />
         <CountMessage count={count} />
         <CardBg advice={advice} isLoading={isLoading}>
           {isLoading ? (
@@ -98,3 +99,28 @@ function ErrorMessage({ errorMessage }) {
     </CardBg>
   );
 }
+
+const Notes = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleToggle = () => {
+    setIsOpen((isOpen) => !isOpen);
+  };
+
+  return (
+    <div onClick={handleToggle} className={styles.notes}>
+      <p className={styles.title}>
+        Notes <span className={styles.icon}>{isOpen ? '-' : '+'}</span>
+      </p>
+
+      {isOpen && (
+        <div className={styles.content}>
+          <p>Fetching data on component mount:</p>
+          <p>
+            useEffect is fine on a small apps, but in real-world apps, a library
+            like React Query should be used.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};

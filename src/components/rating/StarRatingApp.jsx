@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
+import styles from './StarRatingApp.module.css';
 import RatingCard from './RatingCard';
 import ThankYouCard from './ThankYouCard';
-import styles from './StarRatingApp.module.css';
 import BackLink from '../BackLink';
 
 function StarRatingApp() {

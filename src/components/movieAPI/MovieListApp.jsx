@@ -1,9 +1,9 @@
-import BackLink from '../BackLink';
-import { ReusableStarRating } from '../star-rating-reusable/ReusableStarRating';
-import styles from './MovieListApp.module.css';
-// import { tempMovieData, tempWatchedData } from './data/tempData';
 import { useState, useEffect } from 'react';
 import PuffLoader from 'react-spinners/PuffLoader';
+import styles from './MovieListApp.module.css';
+import BackLink from '../BackLink';
+import { ReusableStarRating } from '../star-rating-reusable/ReusableStarRating';
+// import { tempMovieData, tempWatchedData } from './data/tempData';
 
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0).toFixed(1);
@@ -21,6 +21,7 @@ const MovieListApp = () => {
   }, []);
 
   const [query, setQuery] = useState('');
+  // const debounceQuery = useDebounce(query, 500));
   const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -105,6 +106,7 @@ const MovieListApp = () => {
       <BackLink />
       <Navbar>
         <Search query={query} setQuery={setQuery} />
+        {/* <Search query={debounceQuery} setQuery={setQuery} /> */}
         <NumResults movies={movies} />
       </Navbar>
       <Main watched={watched}>

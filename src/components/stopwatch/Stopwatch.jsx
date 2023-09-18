@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './stopwatch.module.css';
 import { FiPlayCircle, FiPauseCircle } from 'react-icons/fi';
 import { LuTimerReset } from 'react-icons/lu';
+import styles from './stopwatch.module.css';
 import BackLink from '../BackLink';
 
 const Stopwatch = () => {

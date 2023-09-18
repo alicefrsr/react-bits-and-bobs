@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import styles from './CountdownApp.module.css';
 import { FiSettings, FiPlayCircle, FiPauseCircle } from 'react-icons/fi';
 import { LuTimerReset } from 'react-icons/lu';
+import styles from './CountdownApp.module.css';
 
-import { useCountdown } from './useCountdown';
 import BackLink from '../BackLink';
+import { useCountdown } from './useCountdown';
 
 // VERSION 3:
 // --- useCountdown hook

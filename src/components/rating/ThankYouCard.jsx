@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import CardBg from './CardBg';
 import styles from './ThankYouCard.module.css';
+import CardBg from './CardBg';
 
 const ThankYouCard = ({ rating }) => {
   useEffect(() => {

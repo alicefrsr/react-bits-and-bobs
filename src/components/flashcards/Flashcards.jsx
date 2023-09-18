@@ -1,7 +1,7 @@
-import BackLink from '../BackLink';
+import { useState, useEffect } from 'react';
 import flashcards from './data/flashcards';
 import styles from './Flashcards.module.css';
-import { useState, useEffect } from 'react';
+import BackLink from '../BackLink';
 
 function FlashCards() {
   useEffect(() => {

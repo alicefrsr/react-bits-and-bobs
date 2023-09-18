@@ -6,13 +6,14 @@
 To learn and practice: React basics + custom hooks, useReducer, the Context API,
 React routing, CSS modules. Work-in-progress.
 
-### Visit the site:
+### Live site:
 
 https://bits-and-bobs.netlify.app/
 
 ### Available Scripts
 
-In the project directory, you can run:
+This project was bootstrapped with [Vite](https://vitejs.dev/). In the project
+directory, you can run:
 
 #### `npm install`
 
