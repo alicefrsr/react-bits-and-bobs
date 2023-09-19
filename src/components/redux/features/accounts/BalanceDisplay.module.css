@@ -1,0 +1,15 @@
+.balance {
+  background-color: aliceblue;
+  padding: 24px 32px;
+  font-weight: bold;
+  font-size: 32px;
+  min-width: 180px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.text {
+  background-color: aliceblue;
+  padding: 24px 32px;
+  font-size: 20px;
+}
