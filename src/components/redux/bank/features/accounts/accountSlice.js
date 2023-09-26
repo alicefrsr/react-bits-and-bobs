@@ -62,7 +62,7 @@ const accountSlice = createSlice({
 export const { withdraw, requestLoan, payLoan } = accountSlice.actions;
 
 // implementing Thunk for deposit, this will work as it is:
-// (not the RTK way with createAsyncThunk (--> used in Pizza project))
+// (not the RTK way with createAsyncThunk (--> used in Pizza project + Redux Blog component))
 export function deposit(amount, currency) {
   if (currency === 'USD') return { type: 'account/deposit', payload: amount };
   // api call for conversion, which means we are dispatching a function intead of the object

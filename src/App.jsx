@@ -35,6 +35,7 @@ import DateCounterReduced from './components/use-reducer/DateCounterReduced';
 import BankAccountReduced from './components/use-reducer/BankAccountReduced';
 import ReduxBankApp from './components/redux/bank/ReduxBankApp';
 import BlogApp from './components/redux/blog/BlogApp';
+// import BlogAppThunk from './components/redux/blog-thunk/BlogApp-thunk';
 // import DateCounterV2 from './components/tests/date-counter-v2/DateCounterV2';
 // import PomodoroApp from './components/pomodoro/PomodoroApp';
 
@@ -42,7 +43,6 @@ function App() {
   return (
     <>
       <Provider store={store}>
-        {' '}
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
@@ -90,6 +90,8 @@ function App() {
 
             <Route path='redux/redux-bank-account' element={<ReduxBankApp />} />
             <Route path='redux/redux-blog' element={<BlogApp />} />
+            {/* <Route path='redux/redux-blog-thunk' element={<BlogAppThunk />} /> */}
+
             <Route path='*' element={<PageNotFoundGif />} />
           </Routes>
         </BrowserRouter>

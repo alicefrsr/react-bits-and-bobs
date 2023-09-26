@@ -194,7 +194,8 @@ function Nav() {
       <div>
         <h2>Redux:</h2>
         <p>
-          &#39;Classic&#39; Redux, Thunk middleware, Redux ToolKit, RTK Query.
+          &#39;Classic&#39; Redux, async logic with thunk middleware, Redux
+          ToolKit, RTK Query.
         </p>
         <ul>
           <li>
@@ -203,6 +204,9 @@ function Nav() {
           <li>
             <Link to='redux/redux-blog'>Redux Blog</Link>
           </li>
+          {/* <li>
+            <Link to='redux/redux-blog-thunk'>Redux Blog with thunk</Link>
+          </li> */}
         </ul>
       </div>
     </nav>

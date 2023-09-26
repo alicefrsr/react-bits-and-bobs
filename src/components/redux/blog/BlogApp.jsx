@@ -1,6 +1,6 @@
 import { parseISO, formatDistanceToNow } from 'date-fns';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // import { nanoid } from '@reduxjs/toolkit'; // moved to slice in prepare
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAllPosts } from './features/posts/postsSlice';
@@ -10,6 +10,11 @@ import BackLink from '../../BackLink.jsx';
 import styles from './BlogApp.module.css';
 
 function BlogApp() {
+  useEffect(() => {
+    document.title = 'Redux Blog';
+    // clean up
+    return () => (document.title = 'bits&bobs | Home');
+  }, []);
   return (
     <main className={styles.app}>
       <BackLink />

@@ -1,6 +1,7 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit';
 import { sub } from 'date-fns';
 
+// static data
 const initialState = [
   {
     id: '1',
