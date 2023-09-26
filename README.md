@@ -1,7 +1,7 @@
 # Bits & Bobs
 
-> A single-page app gathering a random collection of simple React components and
-> mini-apps built in the process of learning how React works.
+> A random collection of simple React components and mini-apps built in the
+> process of learning how React works.
 
 To learn and practice: React basics + custom hooks, useReducer, the Context API,
 React routing, CSS modules. Work-in-progress.

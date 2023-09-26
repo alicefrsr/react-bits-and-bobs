@@ -192,11 +192,16 @@ function Nav() {
         </ul>
       </div>
       <div>
-        <h2>'Classic' Redux, Thunk middleware, Redux ToolKit:</h2>
-        <p></p>
+        <h2>Redux:</h2>
+        <p>
+          &#39;Classic&#39; Redux, Thunk middleware, Redux ToolKit, RTK Query.
+        </p>
         <ul>
           <li>
             <Link to='redux/redux-bank-account'>Redux Bank Account</Link>
+          </li>
+          <li>
+            <Link to='redux/redux-blog'>Redux Blog</Link>
           </li>
         </ul>
       </div>

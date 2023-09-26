@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Provider } from 'react-redux';
 import store from './components/redux/store-rtk-2';
+import { Provider } from 'react-redux';
 
 import ScrollToTop from './components/ScrollToTop';
 import Homepage from './pages/Homepage';
@@ -33,7 +33,8 @@ import Geolocation from './components/locate-me/LocateMe';
 
 import DateCounterReduced from './components/use-reducer/DateCounterReduced';
 import BankAccountReduced from './components/use-reducer/BankAccountReduced';
-import ReduxBankApp from './components/redux/ReduxBankApp';
+import ReduxBankApp from './components/redux/bank/ReduxBankApp';
+import BlogApp from './components/redux/blog/BlogApp';
 // import DateCounterV2 from './components/tests/date-counter-v2/DateCounterV2';
 // import PomodoroApp from './components/pomodoro/PomodoroApp';
 
@@ -88,6 +89,7 @@ function App() {
           /> */}
 
             <Route path='redux/redux-bank-account' element={<ReduxBankApp />} />
+            <Route path='redux/redux-blog' element={<BlogApp />} />
             <Route path='*' element={<PageNotFoundGif />} />
           </Routes>
         </BrowserRouter>

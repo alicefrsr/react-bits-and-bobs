@@ -10,35 +10,33 @@
 .customer input,
 .customer select {
   height: 3rem;
-  margin: 0 8px;
-  padding: 4px 8px;
   font: inherit;
-  border: 1px solid #51c3f9;
+  border: 1px solid #8f22b4;
   border-radius: 5px;
+  margin: 0 8px;
+  padding-left: 0.6rem;
 }
 
 .customer button {
-  text-transform: uppercase;
-  font-weight: bold;
-  /* font-size: inherit; */
-  padding: 0.6rem 0.8rem;
-
+  background-color: #8f22b4;
+  color: white;
+  padding: 1rem 1.2rem;
+  border-radius: 5px;
   border: none;
-  border-radius: 5rem;
   cursor: pointer;
   margin-left: auto;
 }
 
 .customer button:hover {
-  background-color: #51c3f9;
-  color: white;
+  background-color: #a156ba;
 }
 
 .customer {
   display: flex;
   flex-direction: column;
   /* flex-grow: 1; */
-  background-color: aliceblue;
+
+  background-color: #f5e0fd;
   padding: 32px;
 }
 .section {

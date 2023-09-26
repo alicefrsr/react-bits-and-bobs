@@ -12,8 +12,10 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 
-import accountReducer from './features/accounts/accountSlice';
-import customerReducer from './features/customers/customerSlice';
+import accountReducer from './bank/features/accounts/accountSlice';
+import customerReducer from './bank/features/customers/customerSlice';
+import postsReducer from './blog/features/posts/postsSlice';
+import usersReducer from './blog/features/users/usersSlice';
 
 // const rootReducer = combineReducers({
 //   account: accountReducer,
@@ -29,6 +31,8 @@ const store = configureStore({
   reducer: {
     account: accountReducer,
     customer: customerReducer,
+    posts: postsReducer,
+    users: usersReducer,
   },
 });
 

@@ -1,5 +1,5 @@
 .balance {
-  background-color: aliceblue;
+  background-color: #f5e0fd;
   padding: 24px 32px;
   font-weight: bold;
   font-size: 32px;
@@ -9,7 +9,6 @@
 }
 
 .text {
-  background-color: aliceblue;
   padding: 24px 32px;
   font-size: 20px;
 }
