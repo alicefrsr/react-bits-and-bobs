@@ -50,10 +50,10 @@ const postsSlice = createSlice({
             reactions: {
               // need a new reducer to update this: reactionAdded
               thumbsUp: 0,
+              thumbsDown: 0,
               wow: 0,
+              funny: 0,
               heart: 0,
-              rocket: 0,
-              coffee: 0,
             },
           },
         };
