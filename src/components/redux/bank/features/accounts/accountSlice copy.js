@@ -1,3 +1,5 @@
+// 'CLASSIC' REDUX
+
 const initialStateAccount = {
   balance: 0,
   loan: 0,

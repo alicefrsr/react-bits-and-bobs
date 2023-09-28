@@ -1,3 +1,5 @@
+// REDUX TOOLKIT
+
 import { createSlice } from '@reduxjs/toolkit';
 // createSlice:
 // 1. automatically creates ACTION CREATORS from our reducers
@@ -61,14 +63,16 @@ const accountSlice = createSlice({
 
 export const { withdraw, requestLoan, payLoan } = accountSlice.actions;
 
-// implementing Thunk for deposit, this will work as it is:
-// (not the RTK way with createAsyncThunk (--> used in Pizza project + Redux Blog component))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// implementing Thunk for deposit conversion, ie redifining action creator 'deposit' ourselves, this will work as it is bc thunks are provided in RTK
+// (however this is not the RTK way with createAsyncThunk (this is more simple!) (createAsyncThunk --> used in Pizza project + Redux Blog component))
 export function deposit(amount, currency) {
   if (currency === 'USD') return { type: 'account/deposit', payload: amount };
-  // api call for conversion, which means we are dispatching a function intead of the object
 
+  // api call for conversion, which means we are dispatching this async function instead of the event object  { type: 'account/deposit', payload: amount }
   return async function (dispatch, getState) {
-    dispatch({ type: 'account/convertingCurrency' });
+    // dispatch new action creator for conversion
+    dispatch({ type: 'account/convertingCurrency' }); // --> add 'convertingCurrency' to reducers
     // api call
     const res = await fetch(
       `https://api.frankfurter.app/latest?amount=${amount}&from=${currency}&to=USD`
@@ -77,10 +81,13 @@ export function deposit(amount, currency) {
     console.log(data);
     const convertedDeposit = data.rates.USD; //  ==> value we want to dispatch to the store
     console.log(convertedDeposit);
-    // return action
+
+    // now we can return the delayed action / event object with the converted data
     dispatch({ type: 'account/deposit', payload: convertedDeposit });
   };
 }
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 export default accountSlice.reducer;
 
 // // state domain: ACCOUNT

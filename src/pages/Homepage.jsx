@@ -177,7 +177,7 @@ function Nav() {
               target='_blank'
               rel='noopener noreferrer'
             >
-              devfinder App (external link)
+              Devfinder App (external link)
             </a>
           </li>
           <li>
@@ -186,27 +186,55 @@ function Nav() {
               target='_blank'
               rel='noopener noreferrer'
             >
-              todo App (external link)
+              ToDo App (external link)
             </a>
           </li>
         </ul>
       </div>
       <div>
         <h2>Redux:</h2>
-        <p>
-          &#39;Classic&#39; Redux, async logic with thunk middleware, Redux
-          ToolKit, RTK Query.
-        </p>
+        <p>&#39;Classic&#39; Redux, thunk middleware:</p>
         <ul>
           <li>
             <Link to='redux/redux-bank-account'>Redux Bank Account</Link>
           </li>
+        </ul>
+      </div>
+      <div>
+        <p>Redux ToolKit, RTK Query:</p>
+        <ul>
           <li>
-            <Link to='redux/redux-blog'>Redux Blog</Link>
+            <Link to='redux/redux-blog'>RTK Blog (static data)</Link>
           </li>
-          {/* <li>
-            <Link to='redux/redux-blog-thunk'>Redux Blog with thunk</Link>
-          </li> */}
+          <ul className={styles.external}>
+            <li>
+              <a
+                href='https://coming_soon/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                RTK Blog (server data)
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://coming_soon/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Pizza App
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://coming_soon/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                ToDo App (RTK Query)
+              </a>
+            </li>
+          </ul>
         </ul>
       </div>
     </nav>
