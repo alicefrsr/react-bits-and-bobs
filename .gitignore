@@ -4,7 +4,6 @@ src/components/pomodoro
 src/components/tests
 src/components/redux/blog-thunk
 src/components/form
-src/patterns
 
 logs
 *.log
