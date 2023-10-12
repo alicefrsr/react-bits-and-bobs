@@ -20,7 +20,7 @@ const PageNotFound = () => {
           alt='sherlock holmes duddel looking for requested page'
         />
 
-        <h2>404 : page not found</h2>
+        <h1>404 : page not found</h1>
         <p className={styles.message}>
           Sorry! Bob can&#39;t find the page you are looking for.
         </p>

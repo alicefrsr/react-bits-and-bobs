@@ -1,9 +1,12 @@
 .app {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.container {
+  display: flex;
+  gap: 3rem;
 }
 
 .app input,
@@ -36,6 +39,7 @@
 }
 .app h1 {
   font-size: 3.5rem;
+  margin: 3rem 0;
 }
 .app h2 {
   margin-bottom: 2rem;
@@ -72,11 +76,16 @@
 
 .btn {
   background-color: #8f22b4;
+  /* background-color: red; */
   color: white;
   padding: 1rem 1.2rem;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+}
+.btn:disabled {
+  background-color: #a156ba;
+  cursor: not-allowed;
 }
 
 .btn:hover {

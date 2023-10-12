@@ -105,16 +105,17 @@
   line-height: 2.6;
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 4rem;
 }
 
 .navSection ul {
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }
-
+.navSection li {
+  list-style: none;
+}
 /* .navSection h2 {
   margin-top: 2rem;
 } */
@@ -125,13 +126,14 @@
 }
 
 .navSection li a {
-  border: 2px solid var(--cartoon-blue);
-  color: var(--cartoon-blue);
   background-color: var(--light-grey);
+  color: var(--cartoon-blue);
+  border: 2px solid var(--cartoon-blue);
   border-radius: 5px;
-  padding: 1.2rem;
-  flex-shrink: 0;
+  padding: 1rem 2.5rem;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+  position: relative;
+  flex-shrink: 0;
   transition-duration: 300ms;
 }
 
@@ -141,8 +143,7 @@
   color: var(--cartoon-blue);
 }
 
-.navSection li a:hover,
-.navSection li a:active {
+.navSection li a:hover {
   background-color: var(--cartoon-blue);
   color: white;
 }
@@ -219,4 +220,57 @@ button:hover::after,
 button:focus-visible::after {
   scale: 1 1;
   transform-origin: left;
+}
+
+/********************/
+/* ANIMATION EFFECTS 2 */
+/********************/
+.custom-btn {
+  padding: 10px 25px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  outline: none !important;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+/**** BTN No. 1 ****/
+.btn-1 {
+  border: 2px solid #000;
+}
+.btn-1:hover {
+  background: #000;
+  color: #fff;
+}
+.btn-1:active {
+  top: 2px;
+}
+/**** BTN No. 14 ****/
+.btn-14 {
+  border: 2px solid #000;
+  z-index: 1;
+}
+.btn-14:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+.btn-14:hover {
+  color: #fff;
+}
+.btn-14:hover:after {
+  left: 0;
+  width: 100%;
+}
+.btn-14:active {
+  top: 2px;
 }

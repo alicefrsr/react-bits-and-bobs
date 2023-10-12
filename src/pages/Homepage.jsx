@@ -42,11 +42,11 @@ function Intro() {
       <div className={styles.introText}>
         <p>
           A random collection of simple <span> React components</span> and{' '}
-          <span>mini-apps</span> built in the process of learning React concepts
-          in isolation, to practice, experiment and have all these bits and bobs
-          in one place. I put this site together while learning about React
-          Router and CSS modules. It&#39;s still a building site, I add to it as
-          I go along while trying to build larger apps.
+          <span>mini-apps</span> built in the process of learning how react
+          works, to practice, experiment and have all these bits and bobs in one
+          place. I put this site together while learning about React Router and
+          CSS modules. I add to it as I go along while trying to build larger
+          apps.
         </p>
         <p className={styles.githubLink}>
           GitHub repo
@@ -75,8 +75,8 @@ function Nav() {
       <div>
         <h2>Basic stuff:</h2>
         <p>
-          useState, passing down props, lifting state &#39;up&#39;, useEffect
-          for API calls and timers, conditional rendering:
+          useState, passing props down, lifting state up, useEffect for API
+          calls and timers, conditional rendering:
         </p>
         <ul>
           {/* <li>
@@ -146,7 +146,6 @@ function Nav() {
           <li>
             <Link to='text-expander-reusable'>Customisable text-expander</Link>
           </li>
-
           <li>
             <Link to='countdown-v3'>Countdown 3.0 (useCountdown)</Link>
           </li>
@@ -176,8 +175,9 @@ function Nav() {
               href='https://devfinder-demo.netlify.app/'
               target='_blank'
               rel='noopener noreferrer'
+              title='External link'
             >
-              Devfinder App (external link)
+              Devfinder App
             </a>
           </li>
           <li>
@@ -185,15 +185,16 @@ function Nav() {
               href='https://another-todoapp.netlify.app/'
               target='_blank'
               rel='noopener noreferrer'
+              title='External link'
             >
-              ToDo App (external link)
+              ToDo App
             </a>
           </li>
         </ul>
       </div>
       <div>
         <h2>Redux:</h2>
-        <p>&#39;Classic&#39; Redux, thunk middleware:</p>
+        <p>&#39;Classic&#39; Redux + thunk middleware</p>
         <ul>
           <li>
             <Link to='redux/redux-bank-account'>Redux Bank Account</Link>
@@ -201,40 +202,52 @@ function Nav() {
         </ul>
       </div>
       <div>
-        <p>Redux ToolKit, RTK Query:</p>
+        <p>Redux ToolKit:</p>
         <ul>
           <li>
-            <Link to='redux/redux-blog'>RTK Blog (static data)</Link>
+            <Link to='redux/redux-blog'>RTK Blog (local data)</Link>
           </li>
-          <ul className={styles.external}>
-            <li>
-              <a
-                href='https://coming_soon/'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                RTK Blog (server data)
-              </a>
-            </li>
-            <li>
-              <a
-                href='https://coming_soon/'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Pizza App
-              </a>
-            </li>
-            <li>
-              <a
-                href='https://coming_soon/'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                ToDo App (RTK Query)
-              </a>
-            </li>
-          </ul>
+        </ul>
+      </div>
+      <div>
+        <p>Redux ToolKit + createAsyncThunk:</p>
+        <ul className={styles.external}>
+          <li>
+            <a
+              href='https://rtk-blog.netlify.app/'
+              target='_blank'
+              rel='noopener noreferrer'
+              title='External link'
+            >
+              RTK Blog (remote data)
+            </a>
+          </li>
+          <li className={styles.external}>
+            <a
+              href='https://chiaras-pizza.netlify.app/'
+              target='_blank'
+              rel='noopener noreferrer'
+              title='External link'
+            >
+              Pizza App
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>RTK Query vs React Query (aka TanStack Query) </p>
+        <ul>
+          {' '}
+          <li>
+            {/* <a
+              href='https://coming_soon/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              ToDo App (json-server)
+            </a> */}
+            <Link to='coming-soon'> ToDo App (json-server)</Link>
+          </li>
         </ul>
       </div>
     </nav>

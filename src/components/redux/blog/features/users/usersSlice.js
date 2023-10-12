@@ -3,15 +3,15 @@ import { createSlice, nanoid } from '@reduxjs/toolkit';
 const initialState = [
   {
     id: '1',
-    name: 'John Lennon',
+    name: 'Brendan Eich',
   },
   {
     id: '2',
-    name: 'Neil Young',
+    name: 'Chris Lattner',
   },
   {
     id: '3',
-    name: 'Bob Dylan',
+    name: 'Guido van Rossum',
   },
 ];
 

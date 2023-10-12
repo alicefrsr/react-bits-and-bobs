@@ -1,7 +1,7 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit';
 import { sub } from 'date-fns';
 
-// static data
+// static data (array of objects)
 const initialState = [
   {
     id: '1',
@@ -37,11 +37,11 @@ const postsSlice = createSlice({
   reducers: {
     postAdded: {
       reducer(state, action) {
-        state.push(action.payload); // it's okay to mutate ! thanks to Immmer js under the hood
+        state.push(action.payload); // Immmer js under the hood
       },
       prepare(title, content, userId) {
         return {
-          // returning the object aformatted as we want it
+          // returning the object formatted as we want it
           payload: {
             id: nanoid(),
             title,

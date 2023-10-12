@@ -19,8 +19,10 @@ function BlogApp() {
     <main className={styles.app}>
       <BackLink />
       <h1>⚛️ The React-Redux Blog 📝</h1>
-      <AddPostForm />
-      <PostsList />
+      <div className={styles.container}>
+        <AddPostForm />
+        <PostsList />
+      </div>
     </main>
   );
 }
@@ -30,25 +32,23 @@ const PostsList = () => {
   const posts = useSelector(selectAllPosts); // so if the state shape change, we can just change it in the slice and not everywhere we select it
 
   const orderedPosts = posts
-    .slice()
+    .slice() // shallow copy of array, to not mutate original
     .sort((a, b) => b.date.localeCompare(a.date));
-
-  const renderedPosts = orderedPosts.map((post) => (
-    <article key={post.id}>
-      <h3>{post.title}</h3>
-      <p className={styles.postCredit}>
-        <PostAuthor userId={post.userId} />
-        <TimeAgo timestamp={post.date} />
-      </p>
-      <p className={styles.content}>{post.content.substring(0, 100)}</p>
-      <ReactionButtons post={post} />
-    </article>
-  ));
 
   return (
     <section>
       <h2>Posts</h2>
-      {renderedPosts}
+      {orderedPosts.map((post) => (
+        <article key={post.id}>
+          <h3>{post.title}</h3>
+          <p className={styles.postCredit}>
+            <PostAuthor userId={post.userId} />
+            <TimeAgo timestamp={post.date} />
+          </p>
+          <p className={styles.content}>{post.content.substring(0, 100)}</p>
+          <ReactionButtons post={post} />
+        </article>
+      ))}
     </section>
   );
 };
@@ -111,7 +111,7 @@ const ReactionButtons = ({ post }) => {
 //////////////////////////////
 const AddPostForm = () => {
   const dispatch = useDispatch();
-
+  // local state to this component
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [userId, setUserId] = useState('');

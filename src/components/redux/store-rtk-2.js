@@ -27,6 +27,7 @@ import usersReducer from './blog/features/users/usersSlice';
 //   composeWithDevTools(applyMiddleware(thunk))
 // );
 
+// this is the store for 2 separate components, Bank and Blog
 const store = configureStore({
   reducer: {
     account: accountReducer,

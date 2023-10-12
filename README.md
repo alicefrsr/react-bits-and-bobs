@@ -3,8 +3,10 @@
 > A random collection of simple React components and mini-apps built in the
 > process of learning how React works.
 
-To learn and practice: React basics + custom hooks, useReducer, the Context API,
-React routing, CSS modules. Work-in-progress.
+Playground to practice and experiment with: React basics, custom hooks,
+useReducer, the Context API, React Router, CSS modules, Redux...
+Work-in-progress. Keeping things simple to focus on how and why things work. Or
+don't. Not everything is responsive. No back-end, no data persistence.
 
 ### Live site:
 

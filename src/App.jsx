@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Homepage from './pages/Homepage';
 import PageNotFound from './pages/pages-not-found/PageNotFound';
 import PageNotFoundGif from './pages/pages-not-found/PageNotFoundGif';
+import StillWorkingOnItPage from './pages/pages-not-found/StillWorkingOnItPage';
 
 import PizzaMenuApp from './components/pizza-menu/PizzaMenuApp';
 import Stopwatch from './components/stopwatch/Stopwatch';
@@ -35,6 +36,7 @@ import DateCounterReduced from './components/use-reducer/DateCounterReduced';
 import BankAccountReduced from './components/use-reducer/BankAccountReduced';
 import ReduxBankApp from './components/redux/bank/ReduxBankApp';
 import BlogApp from './components/redux/blog/BlogApp';
+import Facade from './patterns/Facade';
 // import BlogAppThunk from './components/redux/blog-thunk/BlogApp-thunk';
 // import DateCounterV2 from './components/tests/date-counter-v2/DateCounterV2';
 // import PomodoroApp from './components/pomodoro/PomodoroApp';
@@ -49,6 +51,7 @@ function App() {
             <Route path='/' element={<Homepage />} />
             <Route path='page-not-found' element={<PageNotFound />} />
             <Route path='page-not-found-gif' element={<PageNotFoundGif />} />
+            <Route path='coming-soon' element={<StillWorkingOnItPage />} />
             <Route path='pizza-menu' element={<PizzaMenuApp />} />
             <Route path='stopwatch' element={<Stopwatch />} />
             <Route path='advice-API' element={<GetAdviceApp />} />
@@ -91,6 +94,7 @@ function App() {
             <Route path='redux/redux-bank-account' element={<ReduxBankApp />} />
             <Route path='redux/redux-blog' element={<BlogApp />} />
             {/* <Route path='redux/redux-blog-thunk' element={<BlogAppThunk />} /> */}
+            <Route path='facade' element={<Facade />} />
 
             <Route path='*' element={<PageNotFoundGif />} />
           </Routes>
