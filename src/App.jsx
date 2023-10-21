@@ -93,7 +93,6 @@ function App() {
             <Route path='redux/redux-bank-account' element={<ReduxBankApp />} />
             <Route path='redux/redux-blog' element={<BlogApp />} />
             {/* <Route path='redux/redux-blog-thunk' element={<BlogAppThunk />} /> */}
-            <Route path='facade' element={<Facade />} />
 
             <Route path='*' element={<PageNotFoundGif />} />
           </Routes>
