@@ -36,7 +36,6 @@ import DateCounterReduced from './components/use-reducer/DateCounterReduced';
 import BankAccountReduced from './components/use-reducer/BankAccountReduced';
 import ReduxBankApp from './components/redux/bank/ReduxBankApp';
 import BlogApp from './components/redux/blog/BlogApp';
-import Facade from './patterns/Facade';
 // import BlogAppThunk from './components/redux/blog-thunk/BlogApp-thunk';
 // import DateCounterV2 from './components/tests/date-counter-v2/DateCounterV2';
 // import PomodoroApp from './components/pomodoro/PomodoroApp';
