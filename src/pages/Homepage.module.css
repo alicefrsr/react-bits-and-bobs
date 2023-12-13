@@ -19,7 +19,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
   border-bottom: 2px solid var(--cartoon-blue);
 }
 

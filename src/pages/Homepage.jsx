@@ -19,19 +19,20 @@ function Homepage() {
 }
 
 function Header() {
-  const [showAbout, setShowAbout] = useState(true);
+  // const [showAbout, setShowAbout] = useState(true);
   return (
     <header className={styles.header}>
       <div className={styles.aboutBtn}>
         <h1>&lt;bits&bobs/&gt;</h1>
-        <button
+        {/* <button
           className={styles.btn}
           onClick={() => setShowAbout((showAbout) => !showAbout)}
         >
           <span> {showAbout ? 'Hide' : 'About'}</span>
-        </button>
+        </button> */}
       </div>
-      {showAbout && <Intro />}
+      {/* {showAbout && <Intro />} */}
+      <Intro />
     </header>
   );
 }
@@ -42,11 +43,9 @@ function Intro() {
       <div className={styles.introText}>
         <p>
           A random collection of simple <span> React components</span> and{' '}
-          <span>mini-apps</span> built in the process of learning how react
-          works, to practice, experiment and have all these bits and bobs in one
-          place. I put this site together while learning about React Router and
-          CSS modules. I add to it as I go along while trying to build larger
-          apps.
+          <span>mini-apps</span> built in the process of learning how React
+          works, to practice and experiment, and have them all in one place as a
+          reference. I add as I go along while building larger apps.
         </p>
         <p className={styles.githubLink}>
           GitHub repo
@@ -57,8 +56,8 @@ function Intro() {
           >
             here
           </a>
-          . Feel free to check it out or mess around with it if you are learning
-          too.
+          . Feel free to check it out if you are learning too. Please note that
+          none of these are responsive as the focus was elsewhere.
         </p>
       </div>
       <img
@@ -79,12 +78,6 @@ function Nav() {
           calls and timers, conditional rendering:
         </p>
         <ul>
-          {/* <li>
-            <Link to='/page-not-found'>404 Page not found</Link>
-          </li>
-          <li>
-            <Link to='/page-not-found-gif'>404 GIF</Link>
-          </li> */}
           <li>
             <Link to='pizza-menu'>Pizza Menu</Link>
           </li>
@@ -105,6 +98,9 @@ function Nav() {
           </li>
           <li>
             <Link to='stopwatch'>Stopwatch</Link>
+          </li>
+          <li>
+            <Link to='/page-not-found-gif'>404</Link>
           </li>
 
           {/* <li>
@@ -246,7 +242,7 @@ function Nav() {
             >
               ToDo App (json-server)
             </a> */}
-            <Link to='coming-soon'> ToDo App (json-server)</Link>
+            <Link to='coming-soon'> ToDo App</Link>
           </li>
         </ul>
       </div>
@@ -258,7 +254,8 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <p>
-        Duddel illustrations by Rudi Mertens:{' '}
+        Built by Anne M., nom de plume alicefrsr 🪶. Duddel illustrations by
+        Rudi Mertens:{' '}
         <a
           className='rudi-link'
           target='blank'
