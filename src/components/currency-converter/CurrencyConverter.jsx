@@ -4,6 +4,11 @@ import styles from './CurrencyConverter.module.css';
 import BackLink from '../BackLink';
 
 const CurrencyConverter = () => {
+  useEffect(() => {
+    document.title = 'Currency Converter';
+    // clean up
+    return () => (document.title = 'bits&bobs | Home');
+  }, []);
   // URL: 'https://api.frankfurter.app/latest?amount=100&from=EUR&to=USD';
   const BASE_URL = 'https://api.frankfurter.app/latest?';
 

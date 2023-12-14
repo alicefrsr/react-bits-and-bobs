@@ -1,4 +1,4 @@
-import { useReducer, useState } from 'react';
+import { useReducer, useState, useEffect } from 'react';
 import styles from './DateCounterReduced.module.css';
 import BackLink from '../BackLink';
 
@@ -38,6 +38,12 @@ const dateCounterReducer = (state, action) => {
 };
 
 function DateCounter() {
+  useEffect(() => {
+    document.title = 'Date Counter';
+    // clean up
+    return () => (document.title = 'bits&bobs | Home');
+  }, []);
+
   // const [count, setCount] = useState(0);
   // const [step, setStep] = useState(1);
 

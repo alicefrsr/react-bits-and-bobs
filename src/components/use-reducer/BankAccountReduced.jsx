@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 import styles from './BankAccountReduced.module.css';
 import BackLink from '../BackLink';
 
@@ -42,6 +42,11 @@ const reducer = (state, action) => {
 };
 
 function BankAccountReduced() {
+  useEffect(() => {
+    document.title = 'Bank Account';
+    // clean up
+    return () => (document.title = 'bits&bobs | Home');
+  }, []);
   const [{ balance, loan, isActive }, dispatch] = useReducer(
     reducer,
     initialState

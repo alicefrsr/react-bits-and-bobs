@@ -10,7 +10,7 @@ import BackLink from '../BackLink';
 
 function AccordionApp() {
   useEffect(() => {
-    document.title = 'Accordion';
+    document.title = 'Accordion v1';
     // clean up
     return () => (document.title = 'bits&bobs | Home');
   }, []);

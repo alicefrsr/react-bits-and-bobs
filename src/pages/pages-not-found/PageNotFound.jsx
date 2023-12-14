@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 const PageNotFound = () => {
   useEffect(() => {
-    document.title = 'Page not found';
+    document.title = '404 Page not found';
     // clean up
     return () => (document.title = 'bits&bobs | Home');
   }, []);

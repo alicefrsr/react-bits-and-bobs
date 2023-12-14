@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BounceLoader from 'react-spinners/BounceLoader';
 import styles from './LocateMe.module.css';
 
@@ -6,6 +6,11 @@ import BackLink from '../BackLink';
 import { useGeolocation } from './useGeolocation';
 
 const LocateMe = () => {
+  useEffect(() => {
+    document.title = 'Geolocation';
+    // clean up
+    return () => (document.title = 'bits&bobs | Home');
+  }, []);
   const { isLoading, position, error, getPosition } = useGeolocation();
   // const [error, getPosition, position, isLoading] = useGeolocation();
   const { lat, lng } = position;
