@@ -15,6 +15,7 @@ import GetAdviceApp from './components/adviceAPI/GetAdviceApp';
 import Flashcards from './components/flashcards/Flashcards';
 import AccordionAppV1 from './components/accordion/AccordionAppV1';
 import AccordionAppV2 from './components/accordion/AccordionAppV2';
+import AccordionTesting from './components/accordion/AccordionTesting';
 import CurrencyConverter from './components/currency-converter/CurrencyConverter';
 
 import StarRatingApp from './components/rating/StarRatingApp';
@@ -36,6 +37,7 @@ import DateCounterReduced from './components/use-reducer/DateCounterReduced';
 import BankAccountReduced from './components/use-reducer/BankAccountReduced';
 import ReduxBankApp from './components/redux/bank/ReduxBankApp';
 import BlogApp from './components/redux/blog/BlogApp';
+import Kata1 from './components/kata/Kata1';
 // import BlogAppThunk from './components/redux/blog-thunk/BlogApp-thunk';
 // import DateCounterV2 from './components/tests/date-counter-v2/DateCounterV2';
 // import PomodoroApp from './components/pomodoro/PomodoroApp';
@@ -57,6 +59,7 @@ function App() {
             <Route path='flashcards' element={<Flashcards />} />
             <Route path='accordion-v1' element={<AccordionAppV1 />} />
             <Route path='accordion-v2' element={<AccordionAppV2 />} />
+            <Route path='testing-principles' element={<AccordionTesting />} />
             <Route path='currency-converter' element={<CurrencyConverter />} />
 
             <Route path='rating' element={<StarRatingApp />} />
@@ -92,6 +95,7 @@ function App() {
 
             <Route path='redux/redux-bank-account' element={<ReduxBankApp />} />
             <Route path='redux/redux-blog' element={<BlogApp />} />
+            <Route path='experiments/kata1' element={<Kata1 />} />
             {/* <Route path='redux/redux-blog-thunk' element={<BlogAppThunk />} /> */}
 
             <Route path='*' element={<PageNotFoundGif />} />

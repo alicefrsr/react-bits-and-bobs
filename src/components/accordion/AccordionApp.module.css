@@ -29,6 +29,11 @@
   text-align: center;
   margin-top: 5rem;
 }
+.app h2,
+h3 {
+  text-align: center;
+  margin-top: 1rem;
+}
 
 .app span {
   font-size: 5rem;

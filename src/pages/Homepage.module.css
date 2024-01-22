@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Londrina+Sketch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Londrina+Sketch&family=Rubik+Doodle+Shadow&display=swap');
 
 .app {
   font-family: 'IBM Plex Mono', monospace;
@@ -24,9 +24,10 @@
 }
 
 .header h1 {
-  font-family: 'Londrina Sketch', cursive;
+  /* font-family: 'Londrina Sketch', cursive; */
+  font-family: 'Rubik Doodle Shadow', cursive;
   font-size: 5.2rem;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.5rem;
   margin: 3rem 0 3rem 0;
   color: var(--cartoon-blue);
 }

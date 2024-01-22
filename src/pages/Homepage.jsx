@@ -4,11 +4,6 @@ import { Link } from 'react-router-dom';
 import styles from './Homepage.module.css';
 
 function Homepage() {
-  // no need
-  // useEffect(() => {
-  //   document.title = 'bits&bobs | Home';
-  // }, []);
-
   return (
     <main className={styles.app}>
       <Header />
@@ -89,6 +84,9 @@ function Nav() {
           </li>
           <li>
             <Link to='accordion-v2'>Accordion 2.0</Link>
+          </li>
+          <li>
+            <Link to='testing-principles'>7 Testing Principles</Link>
           </li>
           <li>
             <Link to='advice-API'>Advice API</Link>
@@ -244,6 +242,18 @@ function Nav() {
             </a> */}
             <Link to='coming-soon'> ToDo App</Link>
           </li>
+        </ul>
+      </div>
+      <div>
+        <h2>Experiments</h2>
+        <p></p>
+        <ul>
+          <li>
+            <Link to='experiments/kata1'>Kata 1</Link>
+          </li>
+          {/* <li>
+            <Link to=''>Kata 2</Link>
+          </li> */}
         </ul>
       </div>
     </nav>
