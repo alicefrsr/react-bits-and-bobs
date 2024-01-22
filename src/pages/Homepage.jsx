@@ -240,7 +240,7 @@ function Nav() {
             >
               ToDo App (json-server)
             </a> */}
-            <Link to='coming-soon'> ToDo App</Link>
+            <Link to='coming-soon'>ToDo App</Link>
           </li>
         </ul>
       </div>

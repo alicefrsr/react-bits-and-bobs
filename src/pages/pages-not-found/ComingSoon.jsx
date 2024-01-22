@@ -1,4 +1,4 @@
-import styles from './StillWorkingOnItPage.module.css';
+import styles from './ComingSoon.module.css';
 // import styles from './PageNotFoundGif.module.css';
 import { Link } from 'react-router-dom';
 import { HiArrowNarrowRight } from 'react-icons/hi';
@@ -6,14 +6,14 @@ import { useEffect } from 'react';
 
 const PageNotFound = () => {
   useEffect(() => {
-    document.title = 'Comming soon!';
+    document.title = 'Coming soon!';
     // clean up
     return () => (document.title = 'bits&bobs | Home');
   }, []);
 
   return (
-    <div className={styles.stillWorkingOnItPage}>
-      <div className={styles.stillWorkingContainer}>
+    <div className={styles.comingSoon}>
+      <div className={styles.comingSoonContainer}>
         <div aria-hidden='true'>
           <div>
             <iframe

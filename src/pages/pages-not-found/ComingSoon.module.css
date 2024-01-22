@@ -1,12 +1,12 @@
 /* PAGE NOT FOUND */
 
-.stillWorkingOnItPage {
+.comingSoon {
   font-family: 'IBM Plex Mono', monospace;
   height: 100vh;
   display: flex;
 }
 
-.stillWorkingContainer {
+.comingSoonContainer {
   background-color: var(--light-grey);
   display: flex;
   flex-direction: column;

@@ -7,7 +7,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Homepage from './pages/Homepage';
 import PageNotFound from './pages/pages-not-found/PageNotFound';
 import PageNotFoundGif from './pages/pages-not-found/PageNotFoundGif';
-import StillWorkingOnItPage from './pages/pages-not-found/StillWorkingOnItPage';
+import ComingSoon from './pages/pages-not-found/ComingSoon';
 
 import PizzaMenuApp from './components/pizza-menu/PizzaMenuApp';
 import Stopwatch from './components/stopwatch/Stopwatch';
@@ -52,7 +52,7 @@ function App() {
             <Route path='/' element={<Homepage />} />
             <Route path='page-not-found' element={<PageNotFound />} />
             <Route path='page-not-found-gif' element={<PageNotFoundGif />} />
-            <Route path='coming-soon' element={<StillWorkingOnItPage />} />
+            <Route path='coming-soon' element={<ComingSoon />} />
             <Route path='pizza-menu' element={<PizzaMenuApp />} />
             <Route path='stopwatch' element={<Stopwatch />} />
             <Route path='advice-API' element={<GetAdviceApp />} />
