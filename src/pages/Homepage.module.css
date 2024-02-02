@@ -172,11 +172,14 @@
 
 .footer {
   background-color: var(--light-grey);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   padding: 3rem;
   text-align: center;
   width: 100%;
   margin-top: auto;
+}
+.footer p {
+  padding-bottom: 1rem;
 }
 
 .footer a[href^='http'] {

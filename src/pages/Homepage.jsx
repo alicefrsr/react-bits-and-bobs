@@ -263,9 +263,9 @@ function Nav() {
 function Footer() {
   return (
     <footer className={styles.footer}>
+      <p>Built by Anne M., nom de plume alice 🪶</p>
       <p>
-        Built by Anne M., nom de plume alicefrsr 🪶. Duddel illustrations by
-        Rudi Mertens:{' '}
+        Duddel illustrations by Rudi Mertens:{' '}
         <a
           className='rudi-link'
           target='blank'

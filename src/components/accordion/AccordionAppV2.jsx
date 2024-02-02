@@ -95,7 +95,7 @@ const AccordionItem = ({ num, question, children, currOpen, onOpen }) => {
       <p className={isOpen ? styles.numberOpen : styles.numberClosed}>
         {num < 9 ? `0${num}` : num}
       </p>
-      <p className={styles.question}>{question}</p>
+      <h4 className={styles.question}>{question}</h4>
       <p className={styles.icon}>{isOpen ? '-' : '+'}</p>
       {isOpen && <div className={styles.answer}>{children}</div>}
     </li>
