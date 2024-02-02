@@ -65,7 +65,8 @@
   color: #fff;
 }
 
-.notes {
+/* REFACTORED */
+/* .notes {
   width: 24rem;
   background-color: aliceblue;
   padding: 1.4rem 3.2rem;
@@ -85,4 +86,4 @@
 
 .content {
   margin-top: 0.8rem;
-}
+} */

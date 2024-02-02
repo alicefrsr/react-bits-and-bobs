@@ -1,0 +1,27 @@
+.note {
+  width: 24rem;
+  background-color: aliceblue;
+  padding: 1.4rem 3.2rem;
+  border-radius: 5px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  align-items: start;
+}
+
+.content {
+  margin-top: 0.8rem;
+}

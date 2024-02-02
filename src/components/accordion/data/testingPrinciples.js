@@ -20,7 +20,7 @@ const testingPrinciples = [
       'A small number of system components usually contain most of the defects discovered or are responsible for most of the operational failures (Enders 1975). This phenomenon is an illustration of the Pareto principle. Predicted defect clusters, and actual defect clusters observed during testing or in operation, are an important input for risk-based testing.',
   },
   {
-    heading: 'Tests wear out.',
+    heading: 'Tests wear out. (Pesticide Paradox)',
     content:
       'If the same tests are repeated many times, they become increasingly ineffective in detecting new defects (Beizer 1990). To overcome this effect, existing tests and test data may need to be modified, and new tests may need to be written. However, in some cases, repeating the same tests can have a beneficial outcome, e.g., in automated regression testing.',
   },
