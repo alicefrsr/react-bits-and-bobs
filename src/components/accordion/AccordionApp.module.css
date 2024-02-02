@@ -29,13 +29,8 @@
   text-align: center;
   margin-top: 5rem;
 }
-.app h2,
-h3 {
-  text-align: center;
-  margin-top: 1rem;
-}
 
-.app span {
+.emojiTitle {
   font-size: 5rem;
 }
 

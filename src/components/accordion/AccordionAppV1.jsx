@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import faqs from './data/faqs';
 import styles from './AccordionApp.module.css';
 import BackLink from '../BackLink';
+import Note from '../note/Note';
 
 // Version 1:
 // --- only one piece of state: isOpen, in Item.
-// : Each accordion Item controls its own state: stays open until user click it again
+// : Each accordion Item controls its own state: stays open until user clicks it again
 // --> multiple items can be open simultaneously
 
 function AccordionApp() {
@@ -14,13 +15,17 @@ function AccordionApp() {
     // clean up
     return () => (document.title = 'bits&bobs | Home');
   }, []);
+  const noteTitle = 'Version 1:';
+  const noteContent =
+    'only one piece of state: isOpen, in Item: each accordion Item controls its own state: stays open until user clicks it again -> multiple items can be open simultaneously';
 
   return (
     <div className={styles.app}>
       <BackLink type='white' />
       <h1>
-        <span>💡 </span>Lightbulbs FAQs (v1.0){' '}
+        <span className={styles.emojiTitle}>💡 </span>Lightbulbs FAQs (v1.0){' '}
       </h1>
+      <Note subtitle={noteTitle} content={noteContent} />
       <Accordion data={faqs} />
     </div>
   );
@@ -73,7 +78,7 @@ const AccordionItem = ({ num, question, children }) => {
       <p className={isOpen ? styles.numberOpen : styles.numberClosed}>
         {num < 9 ? `0${num}` : num}
       </p>
-      <p className={styles.question}>{question}</p>
+      <h2 className={styles.question}>{question}</h2>
       <p className={styles.icon}>{isOpen ? '-' : '+'}</p>
       {isOpen && <div className={styles.answer}>{children}</div>}
     </li>

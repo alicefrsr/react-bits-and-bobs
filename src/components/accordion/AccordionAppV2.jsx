@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import faqs from './data/faqs';
 import styles from './AccordionApp.module.css';
 import BackLink from '../BackLink';
+import Note from '../note/Note';
 
 // Version 2:
 // --- only one piece of state: currOpen, in parent.
@@ -15,12 +16,17 @@ function AccordionApp() {
     return () => (document.title = 'bits&bobs | Home');
   }, []);
 
+  const noteTitle = 'Version 2:';
+  const noteContent =
+    'only one piece of state: currOpen, in parent: accordion Item controlled by parent. In Item, isOpen is derived state using currOpen -> item closes as user clicks on a different one';
+
   return (
     <div className={styles.app}>
       <BackLink type='white' />
       <h1>
         <span>💡 </span>Lightbulbs FAQs (v2.0){' '}
       </h1>
+      <Note subtitle={noteTitle} content={noteContent} />
       <Accordion data={faqs} />
     </div>
   );

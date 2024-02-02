@@ -10,7 +10,7 @@ const Note = ({ subtitle, content }) => {
   return (
     <div onClick={handleToggle} className={styles.note}>
       <h2 className={styles.heading}>
-        Note <span>{isOpen ? '-' : '+'}</span>
+        Note <span className={styles.icon}>{isOpen ? '-' : '+'}</span>
       </h2>
 
       {isOpen && (
