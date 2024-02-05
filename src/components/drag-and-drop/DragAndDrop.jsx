@@ -60,7 +60,7 @@ const DragAndDropApp = () => {
 
 export default DragAndDropApp;
 
-const CreateTask = ({ tasks, setTasks }) => {
+const CreateTask = ({ setTasks }) => {
   const [task, setTask] = useState({
     id: '2',
     content: '',

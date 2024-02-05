@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import codingDuddel from '../../assets/coding_hairup.png';
 import styles from './Homepage.module.css';
