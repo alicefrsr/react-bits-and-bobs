@@ -9,6 +9,7 @@ import PageNotFound from './pages/pages-not-found/PageNotFound';
 import PageNotFoundGif from './pages/pages-not-found/PageNotFoundGif';
 import ComingSoon from './pages/pages-not-found/ComingSoon';
 
+// Basic section
 import PizzaMenuApp from './components/pizza-menu/PizzaMenuApp';
 import Stopwatch from './components/stopwatch/Stopwatch';
 import GetAdviceApp from './components/adviceAPI/GetAdviceApp';
@@ -17,6 +18,7 @@ import AccordionAppV1 from './components/accordion/AccordionAppV1';
 import AccordionAppV2 from './components/accordion/AccordionAppV2';
 import AccordionTesting from './components/accordion/AccordionTesting';
 import CurrencyConverter from './components/currency-converter/CurrencyConverter';
+import DragAndDrop from './components/drag-and-drop/DragAndDrop';
 
 import StarRatingApp from './components/rating/StarRatingApp';
 import PackitApp from './components/packit/PackitApp';
@@ -61,6 +63,7 @@ function App() {
             <Route path='accordion-v2' element={<AccordionAppV2 />} />
             <Route path='testing-principles' element={<AccordionTesting />} />
             <Route path='currency-converter' element={<CurrencyConverter />} />
+            <Route path='drag-and-drop' element={<DragAndDrop />} />
 
             <Route path='rating' element={<StarRatingApp />} />
             <Route path='packit-app' element={<PackitApp />} />

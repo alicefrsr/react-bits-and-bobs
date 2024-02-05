@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+/* ************* */
+/* APP COMPONENT */
+/* ************* */
+
+.app {
+  font-family: 'Roboto Mono', sans-serif;
+  min-height: 100dvh;
+  background-color: #eeeeee;
+  color: #3d3d3d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* DO NOT JUSTIFY-CENTER HERE, for ACC ITEM to OPEN */
+  /* justify-content: center; */
+}
+
+.app h1 {
+  /* text-align: center; */
+  margin-top: 5rem;
+}
+
+.app h2 {
+  /* text-align: center; */
+  margin-bottom: 5rem;
+}
+.app ul {
+  list-style: none;
+}
+
+/* .letters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  gap: 3rem;
+}
+
+.letter {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  border: 2px solid #3d3d3d;
+  border-radius: 5px;
+}
+.draggingLetter {
+  background-color: greenyellow;
+}
+
+.word {
+  margin: 0 auto;
+  width: 50rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.formInput {
+  border: none;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 3.8rem;
+  width: 30rem;
+  padding: 0 0.5rem;
+  font-family: inherit;
+}
+.addBtn {
+  height: 3.8rem;
+  border: none;
+  background-color: #5e5e5e;
+  padding: 0 1.2rem;
+  margin-left: 2rem;
+  border-radius: 5px;
+  font-family: inherit;
+  color: #fff;
+}
+.kanbanBoard {
+  display: grid;
+  width: 90rem;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.column {
+  background-color: aliceblue;
+  color: #5e5e5e;
+  border-radius: 5px;
+  padding: 1rem;
+
+  /* width: 30rem;
+  height: 47.5rem;
+  overflow-y: scroll;
+  scrollbar-width: none; */
+}
+.isOverColumn {
+  background-color: #3d3d3d;
+}
+
+.columnHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: aquamarine;
+  margin-bottom: 1rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  padding: 0 1.2rem;
+  text-transform: uppercase;
+}
+
+.columnCount {
+  background-color: aliceblue;
+  border-radius: 50%;
+  padding: 0.5rem 1rem;
+}
+
+.taskStyles {
+  min-height: 8rem;
+  background-color: #fff;
+  color: #3d3d3d;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.taskStyles:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+.isDraggingTaskStyles {
+  background-color: aliceblue;
+  opacity: 0.5;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  align-self: end;
+}
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

@@ -28,7 +28,7 @@ const PizzaMenuApp = () => {
 const Header = () => {
   return (
     <header className={styles.header}>
-      <h1>Fast React Pizza Co.</h1>
+      <h1>React Pizza Co.</h1>
     </header>
   );
 };

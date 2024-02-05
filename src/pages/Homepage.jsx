@@ -14,19 +14,11 @@ function Homepage() {
 }
 
 function Header() {
-  // const [showAbout, setShowAbout] = useState(true);
   return (
     <header className={styles.header}>
       <div className={styles.aboutBtn}>
         <h1>&lt;bits&bobs/&gt;</h1>
-        {/* <button
-          className={styles.btn}
-          onClick={() => setShowAbout((showAbout) => !showAbout)}
-        >
-          <span> {showAbout ? 'Hide' : 'About'}</span>
-        </button> */}
       </div>
-      {/* {showAbout && <Intro />} */}
       <Intro />
     </header>
   );
@@ -98,7 +90,7 @@ function Nav() {
             <Link to='stopwatch'>Stopwatch</Link>
           </li>
           <li>
-            <Link to='/page-not-found-gif'>404</Link>
+            <Link to='page-not-found-gif'>404</Link>
           </li>
 
           {/* <li>
@@ -145,6 +137,9 @@ function Nav() {
           </li>
           <li>
             <Link to='locate-me'>Where am I? (useGeolocation)</Link>
+          </li>
+          <li>
+            <Link to='drag-and-drop'>Kanban Board (Drag&Drop)</Link>
           </li>
         </ul>
       </div>

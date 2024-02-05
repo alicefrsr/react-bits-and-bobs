@@ -10,17 +10,12 @@ const Note = ({ subtitle, content }) => {
   return (
     <div onClick={handleToggle} className={styles.note}>
       <h2 className={styles.heading}>
-        Note <span className={styles.icon}>{isOpen ? '-' : '+'}</span>
+        Notes <span className={styles.icon}>{isOpen ? '-' : '+'}</span>
       </h2>
 
       {isOpen && (
         <div className={styles.content}>
-          {/* <h3>Fetching data on component mount:</h3> */}
-          <h3>&rarr; {subtitle}</h3>
-          {/* <p>
-            useEffect is fine on a small apps, but in real-world apps, a library
-            like React Query should be used.
-          </p> */}
+          <h3>{subtitle}</h3>
           <p>{content}</p>
         </div>
       )}
