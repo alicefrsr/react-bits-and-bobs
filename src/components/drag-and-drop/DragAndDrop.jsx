@@ -225,6 +225,7 @@ const Task = ({ task, tasks, setTasks }) => {
     setTasks(updatedTasks);
     toast.success('Task deleted successfully!');
   };
+
   return (
     <li
       ref={drag}
