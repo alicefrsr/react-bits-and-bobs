@@ -42,7 +42,11 @@ const DragAndDropApp = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <Note content={'Uses react-dnd library. Tasks saved to local storage'} />
+      <Note
+        content={
+          'Uses react-dnd library. Tasks saved to local storage. Edit and change priority func not implemented yet.'
+        }
+      />
       <Toaster />
       <div className={styles.app}>
         <BackLink type='white' />
@@ -65,8 +69,10 @@ const CreateTask = ({ setTasks }) => {
     id: '2',
     content: '',
     status: 'todo', // 'inProgress' | 'completed'
+    priority: 'high', // 'high' | 'low'
   });
-  console.log(task);
+
+  // console.log(task);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -86,6 +92,7 @@ const CreateTask = ({ setTasks }) => {
       id: '',
       content: '',
       status: 'todo', // 'inProgress' | 'completed'
+      priority: 'high', // 'high' | 'low'
     });
   };
   return (
@@ -169,15 +176,16 @@ const Column = ({
   // console.log('completedTasks', completedTasks);
   // console.log('tasksToMap', tasksToMap);
   const addItemToColumn = (id) => {
+    console.log('id ', id);
     setTasks((prev) => {
       const updatedTasks = prev.map((task) => {
-        // task.id === id ? { ...task, status: status } : task;
         if (task.id === id) {
           return { ...task, status: status };
         }
         return task;
       });
       localStorage.setItem('dnd-tasks', JSON.stringify(updatedTasks));
+      console.log('new status ', status);
       toast.success(`Status updated to: ${title}`);
       return updatedTasks;
     });
@@ -225,6 +233,9 @@ const Task = ({ task, tasks, setTasks }) => {
     setTasks(updatedTasks);
     toast.success('Task deleted successfully!');
   };
+  // const handlePriority = (id) => {
+  //   console.log(id);
+  // };
 
   return (
     <li
@@ -238,10 +249,23 @@ const Task = ({ task, tasks, setTasks }) => {
       <p>{task.content}</p>
 
       <div className={styles.btns}>
-        {' '}
+        <div
+          className={styles.priority}
+          onClick={() =>
+            toast.error('Functionality not implemented yet. Coming soon!')
+          }
+        >
+          {task.priority}
+        </div>{' '}
         <button className={styles.btn}>
           {' '}
-          <FaRegEdit size={18} color={'blue'} />
+          <FaRegEdit
+            size={18}
+            color={'blue'}
+            onClick={() =>
+              toast.error('Functionality not implemented yet. Coming soon!')
+            }
+          />
         </button>
         <button className={styles.btn} onClick={() => handleRemove(task.id)}>
           <FaRegTrashAlt size={18} color={'red'} />
