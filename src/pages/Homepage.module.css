@@ -5,9 +5,11 @@
   background-color: white;
   color: var(--home-dark-grey);
   min-height: 100vh;
+  max-width: 120rem;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   gap: 4rem;
 }
@@ -19,16 +21,17 @@
 .header {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  max-width: 84rem;
   border-bottom: 2px solid var(--cartoon-blue);
 }
 
 .header h1 {
   font-family: 'Londrina Sketch', cursive;
   /* font-family: 'Rubik Doodle Shadow', cursive; */
-  font-size: 5.2rem;
+  font-size: 7.2rem;
   letter-spacing: 0.5rem;
-  margin: 3rem 0 3rem 0;
+  /* margin: 3rem 0 3rem 0; */
+  margin: 3rem auto;
   color: var(--cartoon-blue);
 }
 
@@ -68,10 +71,14 @@
 
 .introText {
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .introText span {
   color: var(--cartoon-blue);
+  font-weight: bold;
 }
 
 .introSection img {
@@ -94,6 +101,14 @@
 .introSection a:active {
   background-color: var(--cartoon-blue);
   color: white;
+}
+
+/**********/
+/* Utility classes */
+/**********/
+
+.bold {
+  font-weight: bolder;
 }
 
 /********/
@@ -175,7 +190,8 @@
   font-size: 1.2rem;
   padding: 3rem;
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
+  width: 84rem;
   margin-top: auto;
 }
 .footer p {

@@ -15,9 +15,9 @@ function Homepage() {
 function Header() {
   return (
     <header className={styles.header}>
-      <div className={styles.aboutBtn}>
-        <h1>&lt;bits&bobs/&gt;</h1>
-      </div>
+      {/* <div className={styles.aboutBtn}> */}
+      <h1>&lt;bits&bobs/&gt;</h1>
+      {/* </div> */}
       <Intro />
     </header>
   );
@@ -27,11 +27,26 @@ function Intro() {
   return (
     <div className={styles.introSection}>
       <div className={styles.introText}>
+        <h2>What's this?</h2>
         <p>
           A random collection of simple <span> React components</span> and{' '}
-          <span>mini-apps</span> built in the process of learning how React
-          works, to practice and experiment, and have them all in one place as a
-          reference. I add as I go along while building larger apps.
+          <span>mini-apps</span> built while I was learning how React works, to
+          practice and experiment, and have them all in one place as a
+          reference.
+        </p>
+        <p>
+          I've now moved on to Next.js but I still add as I go along while
+          building larger apps. For now it's just a bit of a dump, but later I
+          plan to tidy and re-organise it, implement a search functionality to
+          help find components according to a specific learning topic.
+        </p>
+        <p>
+          <span> 🙏 Credits:</span> Most of these components are my own, because
+          there's no best way to learn other than building from scratch and
+          trying to figure things out on your own. But some were exercices from
+          Jonas Schmedtmann's awesome Udemy React course. I've also learned a
+          lot from Bob Ziroll, Dave Gray for the Redux blog, Jack Herrington and
+          the www. 🙂{' '}
         </p>
         <p className={styles.githubLink}>
           GitHub repo
@@ -42,9 +57,10 @@ function Intro() {
           >
             here
           </a>
-          . Feel free to check it out if you are learning too. Please note that
-          none of these are responsive as the focus was elsewhere.
+          . Feel free to check it out if you are learning too. (Please note that
+          none of these are responsive as the focus was elsewhere).
         </p>
+        <p>Happy coding.</p>
       </div>
       <img
         src={'../../../duddel/codingDuddel.png'}
@@ -144,7 +160,7 @@ function Nav() {
       </div>
       <div>
         <h2>Routing:</h2>
-        <p>React-Router. Static vs dynamic routing.</p>
+        <p>React-Router. Static vs dynamic routing:</p>
         <ul>
           <li>
             <Link to='pizza-menu-details'>Pizza Menu with details</Link>
@@ -153,7 +169,7 @@ function Nav() {
       </div>
       <div>
         <h2>useReducer hook:</h2>
-        <p>Different examples, starting with super simple.</p>
+        <p>Different examples, starting with super simple:</p>
         <ul>
           <li>
             <Link to='use-reducer/date-counter'>Date Counter</Link>
