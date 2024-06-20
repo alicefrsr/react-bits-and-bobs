@@ -78,7 +78,7 @@ button {
 .back-link {
   font-family: 'IBM Plex Mono', monospace;
   position: absolute;
-  top: 6rem;
+  top: 6.5rem;
   left: 1rem;
   /* color: var(--cartoon-blue); */
   color: red;
