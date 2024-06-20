@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { FiPlayCircle, FiPauseCircle } from 'react-icons/fi';
 import { LuTimerReset } from 'react-icons/lu';
 import styles from './stopwatch.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 
 const Stopwatch = () => {
   useEffect(() => {
@@ -31,7 +31,7 @@ const Stopwatch = () => {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
-        <BackLink />
+        <BackHomeLink />
         <h1 className={styles.title} aria-label='stopwatch'>
           {' '}
           ⏱{' '}

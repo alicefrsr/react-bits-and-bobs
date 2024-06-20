@@ -25,7 +25,7 @@ function Header() {
 
 function Intro() {
   return (
-    <div className={styles.introSection}>
+    <section className={styles.introSection}>
       <div className={styles.introText}>
         <h2>What's this?</h2>
         <p>
@@ -36,9 +36,9 @@ function Intro() {
         </p>
         <p>
           I've now moved on to Next.js but I still add as I go along while
-          building larger apps. For now it's just a bit of a dump, but later I
-          plan to tidy and re-organise it, implement a search functionality to
-          help find components according to a specific learning topic.
+          building larger apps. Later I plan to re-organise it and implement a
+          search functionality to help find components according to a specific
+          learning topic.
         </p>
         <p>
           <span> 🙏 Credits:</span> Most of these components are my own, because
@@ -60,13 +60,12 @@ function Intro() {
           . Feel free to check it out if you are learning too. (Please note that
           none of these are responsive as the focus was elsewhere).
         </p>
-        <p>Happy coding.</p>
       </div>
       <img
         src={'../../../duddel/codingDuddel.png'}
         alt='duddel having fun coding'
       />
-    </div>
+    </section>
   );
 }
 

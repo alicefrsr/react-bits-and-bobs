@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectAllPosts } from './features/posts/postsSlice';
 import { selectAllUsers } from './features/users/usersSlice';
 import { postAdded, reactionAdded } from './features/posts/postsSlice';
-import BackLink from '../../BackLink.jsx';
+import BackHomeLink from '../../BackHomeLink.jsx';
 import styles from './BlogApp.module.css';
 
 function BlogApp() {
@@ -17,7 +17,7 @@ function BlogApp() {
   }, []);
   return (
     <main className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
       <h1>⚛️ The React-Redux Blog 📝</h1>
       <div className={styles.container}>
         <AddPostForm />

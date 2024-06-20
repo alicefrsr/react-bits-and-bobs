@@ -1,6 +1,6 @@
 import { useReducer, useState, useEffect } from 'react';
 import styles from './DateCounterReduced.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 
 const initialState = { count: 0, step: 1 };
 const dateCounterReducer = (state, action) => {
@@ -87,7 +87,7 @@ function DateCounter() {
 
   return (
     <main className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
       <div className={styles.counter}>
         <h1>useReducer Date Counter</h1>
         <div className='range'>

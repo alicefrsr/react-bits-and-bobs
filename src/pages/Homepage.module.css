@@ -5,7 +5,7 @@
   background-color: white;
   color: var(--home-dark-grey);
   min-height: 100vh;
-  max-width: 120rem;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -116,8 +116,9 @@
 /********/
 
 .navSection {
-  width: 60%;
-  align-self: center;
+  width: 84rem;
+  padding-left: 4rem;
+
   line-height: 2.6;
   display: flex;
   flex-direction: column;

@@ -3,7 +3,7 @@ import { FiSettings, FiPlayCircle, FiPauseCircle } from 'react-icons/fi';
 import { LuTimerReset } from 'react-icons/lu';
 import styles from './CountdownApp.module.css';
 
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 import { useCountdown } from './useCountdown';
 
 // VERSION 3:
@@ -60,7 +60,7 @@ const CountdownApp = () => {
 
   return (
     <main className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
       <div className={styles.container}>
         <Header timerOn={timerOn} remainingTimeInSecs={remainingTimeInSecs} />
         <Timer

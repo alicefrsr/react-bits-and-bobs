@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import styles from './GetAdviceApp.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 import Note from '../note/Note';
 
 const BASE_URL = 'https://api.adviceslip.com';
@@ -53,7 +53,7 @@ export default function GetAdviceApp() {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
-        <BackLink />
+        <BackHomeLink />
         {/* <Notes />  // REFACTORED */}
         <Note subtitle={noteTitle} content={noteContent} />
         <CountMessage count={count} />

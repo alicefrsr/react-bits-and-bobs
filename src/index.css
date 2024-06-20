@@ -26,15 +26,15 @@ button {
   font-size: inherit;
 }
 
-/* BACK BUTTON ON ALL COMPONENTS */
+/* BACKHOME BUTTON ON ALL COMPONENTS */
 
-.back-link-container {
+.backhome-link-container {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.back-link {
+.backhome-link {
   font-family: 'IBM Plex Mono', monospace;
   position: absolute;
   top: 1rem;
@@ -47,20 +47,61 @@ button {
   transition-duration: 300ms;
 }
 
-.back-link,
-.back-link:visited {
+.backhome-link,
+.backhome-link:visited {
   text-decoration: none;
   color: var(--cartoon-blue);
 }
 
-.back-link:hover,
-.back-link:active {
+.backhome-link:hover,
+.backhome-link:active {
   background-color: var(--cartoon-blue);
   color: white;
 }
 
 .shadow {
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+}
+
+.white {
+  background-color: white;
+}
+
+/* BACK -1 STEP ONLY- BUTTON ON ALL COMPONENTS */
+
+.back-link-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-link {
+  font-family: 'IBM Plex Mono', monospace;
+  position: absolute;
+  top: 6rem;
+  left: 1rem;
+  /* color: var(--cartoon-blue); */
+  color: red;
+  background-color: var(--light-grey);
+  /* border: 2px dotted var(--cartoon-blue); */
+  border: 2px dotted red;
+  border-radius: 5px;
+  padding: 1.2rem;
+  transition-duration: 300ms;
+}
+
+.back-link,
+.back-link:visited {
+  text-decoration: none;
+  /* color: var(--cartoon-blue); */
+  color: red;
+}
+
+.back-link:hover,
+.back-link:active {
+  /* background-color: var(--cartoon-blue); */
+  background-color: red;
+  color: white;
 }
 
 .white {

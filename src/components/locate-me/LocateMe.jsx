@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import BounceLoader from 'react-spinners/BounceLoader';
 import styles from './LocateMe.module.css';
 
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 import { useGeolocation } from './useGeolocation';
 
 const LocateMe = () => {
@@ -49,7 +49,7 @@ const LocateMe = () => {
 
   return (
     <main className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
       <button className={styles.btn} onClick={handleClick} disabled={isLoading}>
         Get my position
       </button>

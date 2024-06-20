@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import faqs from './data/faqs';
 import styles from './AccordionApp.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 import Note from '../note/Note';
 
 // Version 1:
@@ -21,7 +21,7 @@ function AccordionApp() {
 
   return (
     <div className={styles.app}>
-      <BackLink type='white' />
+      <BackHomeLink type='white' />
       <h1>
         <span className={styles.emojiTitle}>💡 </span>Lightbulbs FAQs (v1.0){' '}
       </h1>

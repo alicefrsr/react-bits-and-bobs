@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './StarRatingApp.module.css';
 import RatingCard from './RatingCard';
 import ThankYouCard from './ThankYouCard';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 
 function StarRatingApp() {
   useEffect(() => {
@@ -24,7 +24,7 @@ function StarRatingApp() {
 
   return (
     <main className={styles.container}>
-      <BackLink />
+      <BackHomeLink />
       {showThankYouCard ? (
         <ThankYouCard rating={rating} />
       ) : (

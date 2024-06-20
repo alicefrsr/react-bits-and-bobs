@@ -7,7 +7,7 @@ import AccountOperations from './features/accounts/AccountOperations';
 import BalanceDisplay from './features/accounts/BalanceDisplay';
 
 import styles from './reduxBankApp.module.css';
-import BackLink from '../../BackLink.jsx';
+import BackHomeLink from '../../BackLink.jsx';
 
 function ReduxBankApp() {
   const fullName = useSelector((state) => state.customer.fullName);
@@ -20,7 +20,7 @@ function ReduxBankApp() {
 
   return (
     <div className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
       <h1>⚛️ The React-Redux Bank 🏦 </h1>
       {fullName === '' ? (
         <CreateCustomer />

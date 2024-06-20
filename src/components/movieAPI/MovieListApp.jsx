@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import PuffLoader from 'react-spinners/PuffLoader';
 import styles from './MovieListApp.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 import { ReusableStarRating } from '../star-rating-reusable/ReusableStarRating';
 // import { tempMovieData, tempWatchedData } from './data/tempData';
 
@@ -103,7 +103,8 @@ const MovieListApp = () => {
 
   return (
     <div className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
+
       <Navbar>
         <Search query={query} setQuery={setQuery} />
         {/* <Search query={debounceQuery} setQuery={setQuery} /> */}

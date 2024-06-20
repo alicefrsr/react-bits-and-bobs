@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './DragAndDrop.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 import Note from '../note/Note';
 import toast, { Toaster } from 'react-hot-toast';
 import { v4 as uuidv4 } from 'uuid';
@@ -49,7 +49,7 @@ const DragAndDropApp = () => {
       />
       <Toaster />
       <div className={styles.app}>
-        <BackLink type='white' />
+        <BackHomeLink type='white' />
         <h1>Drag & Drop</h1>
         <h2>Kanban Board</h2>
 

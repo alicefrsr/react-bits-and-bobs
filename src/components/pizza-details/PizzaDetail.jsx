@@ -2,6 +2,9 @@ import { useParams } from 'react-router-dom';
 import { pizzaData } from './data/pizzaData.js';
 import styles from './pizzaDetailsApp.module.css';
 
+import BackHomeLink from '../BackHomeLink.jsx';
+import BackLink from '../BackLink.jsx';
+
 const PizzaDetail = () => {
   const { name, photoName, soldOut, ingredients, price } = pizzaData;
   // if (pizzaObj.soldOut) return null;
@@ -10,6 +13,9 @@ const PizzaDetail = () => {
   return (
     <>
       <section className={styles.app}>
+        <BackHomeLink type='white' />
+        <BackLink type='white' />
+
         <div className={styles.pizzaDetails}>
           <img src={photoName} alt={name} />
           <div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './TextExpander.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 
 const TextExpanderApp = () => {
   useEffect(() => {
@@ -12,7 +12,7 @@ const TextExpanderApp = () => {
 
   return (
     <div className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
       <h1>Customisable text-expander component</h1>
 
       <ul className={styles.demos}>

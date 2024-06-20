@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import flashcards from './data/flashcards';
 import styles from './Flashcards.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 
 function FlashCards() {
   useEffect(() => {
@@ -18,7 +18,7 @@ function FlashCards() {
 
   return (
     <div className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
       <div className={styles.flashcards}>
         {flashcards.map((flashcardObj) => (
           <div

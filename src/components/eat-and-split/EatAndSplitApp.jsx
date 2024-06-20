@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './EatAndSplit.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 
 const initialFriends = [
   {
@@ -84,7 +84,7 @@ const EatAndSplitApp = () => {
 
   return (
     <div className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
       <div className={styles.intro}>
         <h1>Split bills with your friends</h1>
         <p>

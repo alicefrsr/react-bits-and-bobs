@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import styles from './CurrencyConverter.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 
 const CurrencyConverter = () => {
   useEffect(() => {
@@ -53,7 +53,7 @@ const CurrencyConverter = () => {
 
   return (
     <main className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
       <h1>Currency converter</h1>
       <form className={styles.form}>
         Enter amount:

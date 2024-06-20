@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { pizzaData } from './data/pizzaData.js';
 import styles from './pizzaMenuApp.module.css';
-import BackLink from '../BackLink.jsx';
+import BackHomeLink from '../BackHomeLink.jsx';
 
 const PizzaMenuApp = () => {
   useEffect(() => {
@@ -13,7 +13,7 @@ const PizzaMenuApp = () => {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
-        <BackLink type='white' />
+        <BackHomeLink type='white' />
         <Header />
         <Menu />
         <Order />

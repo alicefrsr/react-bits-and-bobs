@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import testingPrinciples from './data/testingPrinciples';
 import styles from './AccordionApp.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 
 // Version 1:
 // --- only one piece of state: isOpen, in Item.
@@ -17,7 +17,7 @@ function AccordionApp() {
 
   return (
     <div className={styles.app}>
-      <BackLink type='white' />
+      <BackHomeLink type='white' />
       <h1>
         <span></span>The 7 Testing Principles{' '}
       </h1>

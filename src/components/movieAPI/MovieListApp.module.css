@@ -32,6 +32,7 @@
 .navBar {
   background-color: #6741d9;
   height: 7.2rem;
+  margin-top: 5rem;
   border-radius: 0.9rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

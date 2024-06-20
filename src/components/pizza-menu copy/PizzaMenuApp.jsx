@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { pizzaData } from './data/pizzaData.js';
-import styles from './pizzaDetailsApp.module.css';
-import BackHomeLink from '../BackHomeLink.jsx';
-import { Link, useNavigate } from 'react-router-dom'; // both option put the id in the url state
+import styles from './pizzaMenuApp.module.css';
+import BackLink from '../BackHomeLink.jsx';
 
-const PizzaDetailsApp = () => {
+const PizzaMenuApp = () => {
   useEffect(() => {
     document.title = 'Pizza Menu';
     // clean up
@@ -14,7 +13,7 @@ const PizzaDetailsApp = () => {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
-        <BackHomeLink type='white' />
+        <BackLink type='white' />
         <Header />
         <Menu />
         <Order />
@@ -44,8 +43,9 @@ const Menu = () => {
       {pizzas.length > 0 ? (
         <>
           <p>
-            Authentic italian cuisine. Straight out from our stone oven, all
-            made with organic and local ingredients.
+            Authentic italian cuisine. 6 delicious pizzas to choose from.
+            Straight out from our stone oven, all made with organic and local
+            ingredients.
           </p>
           <ul className={styles.pizzas}>
             {pizzas.map((pizza) => (
@@ -63,61 +63,55 @@ const Menu = () => {
 };
 
 const PizzaCard = ({ pizzaObj }) => {
-  const { name, photoName, soldOut, ingredients, pizzaId, price } = pizzaObj;
   // if (pizzaObj.soldOut) return null;
-  const navigate = useNavigate();
   return (
     // <li className={` pizza ${pizzaObj.soldOut && 'sold-out'} `}>
-
-    <>
-      {/* EITHER use <Link to={`${.....}` />}*/}
-      {/* <li>
-        <Link
-          to={`${pizzaId}`}
-          className={
-            pizzaObj.soldOut
-              ? `${styles.pizza} ${styles.soldOut}`
-              : `${styles.pizza}`
-          }
-        >
-          <img src={photoName} alt={name} />
-          <div>
-            <h3>{name}</h3>
-            <p>{ingredients}</p>
-            <span>{soldOut ? 'SOLD OUT' : price}</span>
-          </div>
-        </Link>
-      </li> */}
-
-      {/* OR useNavigate hook in onClick  */}
-      <li
-        onClick={() => navigate(`${pizzaId}`)}
-        className={
-          pizzaObj.soldOut
-            ? `${styles.pizza} ${styles.soldOut}`
-            : `${styles.pizza}`
-        }
-      >
-        <img src={photoName} alt={name} />
-        <div>
-          <h3>{name}</h3>
-          <p>{ingredients}</p>
-          <span>{soldOut ? 'SOLD OUT' : `€${price}`}</span>
-        </div>
-      </li>
-    </>
+    <li
+      className={
+        pizzaObj.soldOut
+          ? `${styles.pizza} ${styles.soldOut}`
+          : `${styles.pizza}`
+      }
+    >
+      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
+      <div>
+        <h3>{pizzaObj.name}</h3>
+        <p>{pizzaObj.ingredients}</p>
+        <span>{pizzaObj.soldOut ? 'SOLD OUT' : pizzaObj.price}</span>
+      </div>
+    </li>
   );
 };
 
 const Order = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // // to display current time:
+  // const [timeDisplay, setTimeDisplay] = useState(
+  //   new Date().toLocaleTimeString()
+  // );
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setTimeDisplay(new Date().toLocaleTimeString());
+  //   }, 1000);
+  // }, []);
+
+  const currentHour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  let isOpen = currentHour >= openHour && currentHour < closeHour;
+
   const handleModal = () => {
     setIsModalOpen((isModalOpen) => !isModalOpen);
   };
   return (
     <div className={styles.order}>
-      <p>Please click on any pizza to see more details.</p>
+      <p>
+        {/* (Time now is: {timeDisplay}). */}
+        {isOpen
+          ? ` We're currently open till ${closeHour}:00. Come visit us or order online.`
+          : ` We're currently closed. We're happy to welcome you between ${openHour}:00 and ${closeHour}:00.`}
+      </p>
 
       <div className={styles.message}>
         <button className={styles.btn} onClick={handleModal}>
@@ -137,4 +131,4 @@ const Modal = () => {
   );
 };
 
-export default PizzaDetailsApp;
+export default PizzaMenuApp;

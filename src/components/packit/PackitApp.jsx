@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './PackitApp.module.css';
-import BackLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 
 const initialItems = [
   { id: 1, description: 'Passport', quantity: 1, packed: false },
@@ -56,7 +56,7 @@ function PackitApp() {
 
   return (
     <div className={styles.app}>
-      <BackLink />
+      <BackHomeLink />
       <Header />
       <Form onAddItem={handleAddItem} />
       <PackingList
