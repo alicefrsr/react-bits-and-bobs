@@ -26,7 +26,7 @@ const PageNotFound = () => {
         </p>
 
         <div className={styles.backHome}>
-          <p>Let&#39;s get you back home safe</p>
+          <p>Let&#39;s get you back to base camp safe</p>
           <HiArrowNarrowRight />
           <Link to='/'>Home</Link>
         </div>

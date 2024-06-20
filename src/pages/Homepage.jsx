@@ -143,6 +143,15 @@ function Nav() {
         </ul>
       </div>
       <div>
+        <h2>Routing:</h2>
+        <p>React-Router. Static vs dynamic routing.</p>
+        <ul>
+          <li>
+            <Link to='pizza-menu-details'>Pizza Menu with details</Link>
+          </li>
+        </ul>
+      </div>
+      <div>
         <h2>useReducer hook:</h2>
         <p>Different examples, starting with super simple.</p>
         <ul>

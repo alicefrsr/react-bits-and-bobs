@@ -11,32 +11,40 @@ import ComingSoon from './pages/pages-not-found/ComingSoon';
 
 // Basic section
 import PizzaMenuApp from './components/pizza-menu/PizzaMenuApp';
-import Stopwatch from './components/stopwatch/Stopwatch';
-import GetAdviceApp from './components/adviceAPI/GetAdviceApp';
 import Flashcards from './components/flashcards/Flashcards';
 import AccordionAppV1 from './components/accordion/AccordionAppV1';
 import AccordionAppV2 from './components/accordion/AccordionAppV2';
 import AccordionTesting from './components/accordion/AccordionTesting';
+import GetAdviceApp from './components/adviceAPI/GetAdviceApp';
 import CurrencyConverter from './components/currency-converter/CurrencyConverter';
-import DragAndDrop from './components/drag-and-drop/DragAndDrop';
+import Stopwatch from './components/stopwatch/Stopwatch';
 
-import StarRatingApp from './components/rating/StarRatingApp';
+// Intermediate section
 import PackitApp from './components/packit/PackitApp';
 import EatAndSplitApp from './components/eat-and-split/EatAndSplitApp';
+import MovieListApp from './components/movieAPI/MovieListApp';
+import StarRatingApp from './components/rating/StarRatingApp';
+import ReusableStarRating from './components/star-rating-reusable/ReusableStarRating';
+import TextExpander from './components/text-expander-reusable/TextExpander';
 import CountdownAppV1 from './components/countdown/CountdownAppV1';
 import CountdownAppV2 from './components/countdown/CountdownAppV2';
 import CountdownAppV3 from './components/countdown/CountdownAppV3';
-import ReusableStarRating from './components/star-rating-reusable/ReusableStarRating';
-import TextExpander from './components/text-expander-reusable/TextExpander';
-import MovieListApp from './components/movieAPI/MovieListApp';
 import Geolocation from './components/locate-me/LocateMe';
+import DragAndDrop from './components/drag-and-drop/DragAndDrop';
+
+// Routing
+import PizzaDetailsApp from './components/pizza-details/PizzaDetailsApp';
+import PizzaDetail from './components/pizza-details/PizzaDetail';
 
 // import DateCounterTest from './components/tests/DateCounterTest';
 // import DateCounter from './components/tests/DateCounter';
 // import Steps from './components/tests/Steps';
 
+// useReduder
 import DateCounterReduced from './components/use-reducer/DateCounterReduced';
 import BankAccountReduced from './components/use-reducer/BankAccountReduced';
+
+// Redux
 import ReduxBankApp from './components/redux/bank/ReduxBankApp';
 import BlogApp from './components/redux/blog/BlogApp';
 import Kata1 from './components/kata/Kata1';
@@ -56,6 +64,10 @@ function App() {
             <Route path='page-not-found-gif' element={<PageNotFoundGif />} />
             <Route path='coming-soon' element={<ComingSoon />} />
             <Route path='pizza-menu' element={<PizzaMenuApp />} />
+            <Route path='pizza-menu-details' element={<PizzaDetailsApp />} />
+            {/* dynamic routing, pizza example */}
+            <Route path='pizza-menu-details/:id' element={<PizzaDetail />} />
+
             <Route path='stopwatch' element={<Stopwatch />} />
             <Route path='advice-API' element={<GetAdviceApp />} />
             <Route path='flashcards' element={<Flashcards />} />

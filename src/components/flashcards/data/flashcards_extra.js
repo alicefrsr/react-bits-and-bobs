@@ -1,5 +1,12 @@
 const flashcards = [
   {
+    id: 99,
+    question: 'Why write tests?',
+    answer:
+      'Helps catch bugs earlier. Allows devs to safely refactor code. Provides self documentation for devs. Enforces code splitting and single responsibility.',
+    category: 'testing',
+  },
+  {
     id: 100,
     question: 'What is the virtual DOM?',
     answer:
