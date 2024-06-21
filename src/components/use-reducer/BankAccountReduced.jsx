@@ -1,6 +1,6 @@
 import { useReducer, useEffect } from 'react';
 import styles from './BankAccountReduced.module.css';
-import BackHomeLink from '../BackLink';
+import BackHomeLink from '../BackHomeLink';
 
 const initialState = {
   balance: 0,
