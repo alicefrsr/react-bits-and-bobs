@@ -42,11 +42,11 @@ function Intro() {
         </p>
         <p>
           <span> 🙏 Credits:</span> Most of these components are my own, because
-          there's no best way to learn other than building from scratch and
-          trying to figure things out on your own. But some were exercices from
-          Jonas Schmedtmann's awesome Udemy React course. I've also learned a
-          lot from Bob Ziroll, Dave Gray for the Redux blog, Jack Herrington and
-          the www. 🙂{' '}
+          there's no better way to learn than building from scratch and trying
+          to figure things out on your own. But some were exercices from Jonas
+          Schmedtmann's awesome Udemy React course. I've also learned a lot from
+          Bob Ziroll, Dave Gray for the Redux blog, Jack Herrington and the www.
+          For this, my eternal gratitude.🙂{' '}
         </p>
         <p className={styles.githubLink}>
           GitHub repo
