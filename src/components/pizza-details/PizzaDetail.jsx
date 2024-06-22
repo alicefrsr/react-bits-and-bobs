@@ -6,14 +6,10 @@ import BackHomeLink from '../BackHomeLink.jsx';
 import BackBtn from '../BackBtn.jsx';
 
 const PizzaDetail = () => {
-  const pizzas = pizzaData;
-  const { name, photoName, soldOut, ingredients, price } = pizzas;
+  const { name, photoName, soldOut, ingredients, price } = pizzaData;
   // if (pizzaObj.soldOut) return null;
-
   const { id } = useParams();
   console.log(id);
-  console.log(name);
-
   return (
     <>
       <section className={styles.app}>
@@ -25,7 +21,7 @@ const PizzaDetail = () => {
           <div>
             <h3>Pizza name:{name}</h3>
             <p>
-              Pizza id from the url, with useParams():{' '}
+              Pizza id from the url:{' '}
               <span className={styles.pizzaID}>{id}</span>
             </p>
             <p>Ingredients: {ingredients}</p>
