@@ -9,7 +9,8 @@ const flashcards = [
   {
     id: 101,
     question: 'How does rendering a component affect other components ?',
-    answer: 'Rendering a component will cause all of its child / nested components to be rendered as well, regardless if props chaged or not.',
+    answer:
+      'Rendering a component will cause all of its child / nested components to be rendered as well, regardless if props chaged or not.',
     category: 'render',
   },
   {
@@ -25,6 +26,12 @@ const flashcards = [
     category: 'state management',
   },
   {
+    id: 120,
+    question: 'How to pass data from child to parent components?',
+    answer: 'State',
+    category: 'state management',
+  },
+  {
     id: 104,
     question: 'How to give components memory?',
     answer: 'useState hook',
@@ -32,27 +39,31 @@ const flashcards = [
   },
   {
     id: 105,
-    question: 'What do we call an input element that is completely synchronised with state?',
+    question:
+      'What do we call an input element that is completely synchronised with state?',
     answer: 'Controlled element',
   },
 
   {
     id: 200,
     question: 'What is reconciliation?',
-    answer: 'Deciding which DOM elements actually need to be inserted, deleted, or updated in order to reflect the latest state changes',
+    answer:
+      'Deciding which DOM elements actually need to be inserted, deleted, or updated in order to reflect the latest state changes',
     category: 'render',
   },
 
   {
     id: 108,
-    question: 'What is the reconciler and what other name is it referred to as?',
+    question:
+      'What is the reconciler and what other name is it referred to as?',
     answer: 'It is the engine of React, also known as Fiber',
     category: 'render',
   },
   {
     id: 109,
     question: 'What is the key prop?',
-    answer: 'A special prop we use to tell the diffing algo that an element is unique',
+    answer:
+      'A special prop we use to tell the diffing algo that an element is unique',
     category: 'render',
   },
   {
@@ -88,6 +99,13 @@ const flashcards = [
     answer:
       'It is necessary when the side effect keeps happening after the component has been re-rendered or unmounted. For ex. cancel an http request, cancel an API subscription, stop a timer, removing an event listener etc ',
     category: 'useEffect',
+  },
+  {
+    id: 121,
+    question: 'How to render an element outside of component scope/tree?',
+    answer:
+      "import /createPortal/ from 'react-dom'. In JSX createPortal(<p>modal example</p>, document.getElementById('modal'))",
+    category: 'state management',
   },
 ];
 
