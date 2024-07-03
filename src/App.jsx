@@ -34,7 +34,7 @@ import DragAndDrop from './components/drag-and-drop/DragAndDrop';
 
 // Routing
 import PizzaDetailsApp from './components/pizza-details/PizzaDetailsApp';
-import PizzaDetail from './components/pizza-details/PizzaDetail';
+import PizzaDetails from './components/pizza-details/PizzaDetails';
 
 // import DateCounterTest from './components/tests/DateCounterTest';
 // import DateCounter from './components/tests/DateCounter';
@@ -64,9 +64,11 @@ function App() {
             <Route path='page-not-found-gif' element={<PageNotFoundGif />} />
             <Route path='coming-soon' element={<ComingSoon />} />
             <Route path='pizza-menu' element={<PizzaMenuApp />} />
-            <Route path='pizza-menu-details' element={<PizzaDetailsApp />} />
+
             {/* dynamic routing, pizza example */}
-            <Route path='pizza-menu-details/:id' element={<PizzaDetail />} />
+            <Route path='pizza-menu-details' element={<PizzaDetailsApp />} />
+            <Route path='pizza-menu-details/:id' element={<PizzaDetails />} />
+            <Route />
 
             <Route path='stopwatch' element={<Stopwatch />} />
             <Route path='advice-API' element={<GetAdviceApp />} />

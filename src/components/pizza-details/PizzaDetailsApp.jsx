@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
-import { pizzaData } from './data/pizzaData.js';
+
+import pizzaData from './data/pizzaData.js'; // local
+// url = 'https://dummyjson.com/recipes'
+
 import styles from './pizzaDetailsApp.module.css';
 import BackHomeLink from '../BackHomeLink.jsx';
+
 import { Link, useNavigate } from 'react-router-dom'; // both option put the id in the url state
 
 const PizzaDetailsApp = () => {
@@ -47,9 +51,10 @@ const Menu = () => {
             Authentic italian cuisine. Straight out from our stone oven, all
             made with organic and local ingredients.
           </p>
+          <p>Please select any pizza for more details.</p>
           <ul className={styles.pizzas}>
             {pizzas.map((pizza) => (
-              <PizzaCard key={pizza.name} pizzaObj={pizza} />
+              <PizzaCard key={pizza.name} pizza={pizza} />
             ))}
           </ul>
         </>
@@ -62,22 +67,20 @@ const Menu = () => {
   );
 };
 
-const PizzaCard = ({ pizzaObj }) => {
-  const { name, photoName, soldOut, ingredients, pizzaId, price } = pizzaObj;
+const PizzaCard = ({ pizza }) => {
+  const { name, photoName, soldOut, ingredients, pizzaId, price } = pizza;
   // if (pizzaObj.soldOut) return null;
   const navigate = useNavigate();
   return (
-    // <li className={` pizza ${pizzaObj.soldOut && 'sold-out'} `}>
+    // <li className={` pizza ${soldOut && 'sold-out'} `}>
 
     <>
-      {/* EITHER use <Link to={`${.....}` />}*/}
+      {/* EITHER use <Link to={`${pizzaId}`} /> */}
       {/* <li>
         <Link
-          to={`${pizzaId}`}
+          to={`${pizzaId}`} // pizzaId is a number, we need a string
           className={
-            pizzaObj.soldOut
-              ? `${styles.pizza} ${styles.soldOut}`
-              : `${styles.pizza}`
+            soldOut ? `${styles.pizza} ${styles.soldOut}` : `${styles.pizza}`
           }
         >
           <img src={photoName} alt={name} />
@@ -93,9 +96,7 @@ const PizzaCard = ({ pizzaObj }) => {
       <li
         onClick={() => navigate(`${pizzaId}`)}
         className={
-          pizzaObj.soldOut
-            ? `${styles.pizza} ${styles.soldOut}`
-            : `${styles.pizza}`
+          soldOut ? `${styles.pizza} ${styles.soldOut}` : `${styles.pizza}`
         }
       >
         <img src={photoName} alt={name} />
@@ -117,8 +118,6 @@ const Order = () => {
   };
   return (
     <div className={styles.order}>
-      <p>Please click on any pizza to see more details.</p>
-
       <div className={styles.message}>
         <button className={styles.btn} onClick={handleModal}>
           Order
@@ -137,34 +136,4 @@ const Modal = () => {
   );
 };
 
-const PizzaDetail = (pizza) => {
-  const { name, photoName, soldOut, ingredients, price } = pizza;
-  // if (pizzaObj.soldOut) return null;
-
-  const { id } = useParams();
-  console.log(id);
-  console.log(name);
-
-  return (
-    <>
-      <section className={styles.app}>
-        <BackHomeLink type='white' />
-        <BackBtn type='white' />
-
-        <div className={styles.pizzaDetails}>
-          <img src={photoName} alt={name} />
-          <div>
-            <h3>Pizza name:{name}</h3>
-            <p>
-              Pizza id from the url, with useParams():{' '}
-              <span className={styles.pizzaID}>{id}</span>
-            </p>
-            <p>Ingredients: {ingredients}</p>
-            <span>{soldOut ? 'SOLD OUT' : `Price: ${price}`}</span>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
 export default PizzaDetailsApp;
