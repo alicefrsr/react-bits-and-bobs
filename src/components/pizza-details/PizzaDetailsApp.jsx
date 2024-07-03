@@ -39,8 +39,20 @@ const Header = () => {
 };
 
 const Menu = () => {
+  // data from static js file
   const pizzas = pizzaData;
   // const pizzas = [];
+
+  ///////////////////
+  // How to fetch data from an api:
+  //  const [pizzas, setPizzas] = React.useState([]);
+
+  //  React.useEffect(() => {
+  //    fetch('/api/pizzas')
+  //      .then((res) => res.json())
+  //      .then((data) => setPizzas(data.pizzas));
+  //  }, []);
+  ///////////////////
 
   return (
     <main className={styles.menu}>

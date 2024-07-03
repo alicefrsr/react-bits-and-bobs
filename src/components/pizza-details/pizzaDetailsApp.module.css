@@ -217,12 +217,13 @@
 /* ******************* */
 .pizzaDetails {
   display: flex;
+  margin: auto;
   gap: 3.2rem;
   padding: 3rem;
   border-radius: 10px;
   /* background-color: white; */
   /* border: 2px solid #edc84b; */
-  margin-top: 8rem;
+  /* margin-top: 8rem; */
 }
 
 .pizzaDetails div {
@@ -244,10 +245,13 @@
 .pizzaParams {
   padding: 0.6rem 1rem;
   font-weight: bold;
-  background-color: #e9bb24;
+  background-color: #ed8e4b;
+  padding: 1.4rem 3.2rem;
+  border-radius: 10rem;
 }
-.border {
-  border: 1px solid black;
-  border-radius: 10px;
+.pizzaParams > span {
+  border: 2px solid #252525;
+  border-radius: 100%;
   padding: 0.4rem 0.6rem;
+  background-color: #f7f2e9;
 }

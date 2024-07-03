@@ -151,13 +151,29 @@ function Nav() {
       </div>
       <div>
         <h2>Routing:</h2>
-        <p>React-Router. Static vs dynamic routing:</p>
+        <p>
+          React-Router-6 (before 6.4). Dynamic routing using /:params and
+          useParams():
+        </p>
         <ul>
           <li>
-            <Link to='pizza-menu-details'>Pizza Menu with details</Link>
+            <Link to='pizza-menu-details'>Select Pizza from Menu</Link>
           </li>
+          <ul className={styles.external}>
+            <li>
+              <a
+                href='https://react-router-basics-van-life.netlify.app/'
+                target='_blank'
+                rel='noopener noreferrer'
+                title='External link'
+              >
+                Van Life
+              </a>
+            </li>
+          </ul>
         </ul>
       </div>
+
       <div>
         <h2>useReducer hook:</h2>
         <p>Different examples, starting with super simple:</p>
