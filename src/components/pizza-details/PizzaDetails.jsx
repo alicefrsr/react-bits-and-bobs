@@ -19,8 +19,23 @@ const PizzaDetails = () => {
   // React.useEffect(() => {
   //   fetch(`/api/pizzas/${params.id}`)
   //     .then((res) => res.json())
-  //     .then((data) => setPizza(data.pizzas));
+  //     .then((data) => setPizza(data.pizza));
   // }, [params.id]);
+  ///////////////////
+  ///////////////////
+  // How to fetch data from a db:
+  //  const [pizza, setPizza] = React.useState([]);
+
+  //  React.useEffect(() => {
+  //    async function loadPizza(){
+  // } try {
+  //   const pizza = awaits getPizza()
+  //   setPizza(pizza)
+  // } catch (error) {
+  //   console.log(error)
+  // }
+  // loadPizza()
+  // }, []);
   ///////////////////
 
   // deconstruct the pizza props we need
