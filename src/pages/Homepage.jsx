@@ -167,7 +167,7 @@ function Nav() {
           <ul className={styles.external}>
             <li>
               <a
-                href='https://react-router-basics-van-life.netlify.app/'
+                href='https://heroic-blancmange-263065.netlify.app'
                 target='_blank'
                 rel='noopener noreferrer'
                 title='External link'
