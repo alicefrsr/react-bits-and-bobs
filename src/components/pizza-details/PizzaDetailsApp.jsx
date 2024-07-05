@@ -52,20 +52,20 @@ const Menu = () => {
   //      .then((res) => res.json())
   //      .then((data) => setPizzas(data.pizzas));
   //  }, []);
-  ///////////////////
+  /////////////////// -> extract onto separate api file
   ///////////////////
   // How to fetch data from a db:
   //  const [pizzas, setPizzas] = React.useState([]);
 
   //  React.useEffect(() => {
-  //    async function loadPizzas(){
+  //    async function getPizzas(){
   // } try {
-  //   const pizzas = awaits getPizzas()
+  //   const pizzas = await fetchPizzas()
   //   setPizzas(pizzas)
   // } catch (error) {
   //   console.log(error)
   // }
-  // loadPizzas()
+  // getPizzas()
   // }, []);
   ///////////////////
 
@@ -79,6 +79,7 @@ const Menu = () => {
             made with organic and local ingredients.
           </p>
           <p>Please select any pizza for more details.</p>
+          <span></span>
           <ul className={styles.pizzas}>
             {pizzas.map((pizza) => (
               <PizzaCard key={pizza.name} pizza={pizza} />
@@ -97,13 +98,13 @@ const Menu = () => {
 const PizzaCard = ({ pizza }) => {
   const { name, photoName, soldOut, ingredients, pizzaId, price } = pizza;
   // if (pizzaObj.soldOut) return null;
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     // <li className={` pizza ${soldOut && 'sold-out'} `}>
 
     <>
       {/* EITHER use <Link to={`${pizzaId}`} /> */}
-      <li>
+      {/* <li>
         <Link
           to={`${pizzaId}`} // pizzaId is a number, we need a string
           className={
@@ -118,10 +119,10 @@ const PizzaCard = ({ pizza }) => {
             <span>{soldOut ? 'SOLD OUT' : price}</span>
           </div>
         </Link>
-      </li>
+      </li> */}
 
       {/* OR useNavigate hook in onClick  */}
-      {/* <li
+      <li
         onClick={() => navigate(`${pizzaId}`)}
         className={
           soldOut ? `${styles.pizza} ${styles.soldOut}` : `${styles.pizza}`
@@ -133,7 +134,7 @@ const PizzaCard = ({ pizza }) => {
           <p>{ingredients}</p>
           <span>{soldOut ? 'SOLD OUT' : `€${price}`}</span>
         </div>
-      </li> */}
+      </li>
     </>
   );
 };

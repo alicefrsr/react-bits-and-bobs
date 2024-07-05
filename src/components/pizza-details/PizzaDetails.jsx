@@ -27,14 +27,14 @@ const PizzaDetails = () => {
   //  const [pizza, setPizza] = React.useState([]);
 
   //  React.useEffect(() => {
-  //    async function loadPizza(){
+  //    async function getPizza(){
   // } try {
-  //   const pizza = awaits getPizza()
+  //   const pizza = awaits fetchPizza()
   //   setPizza(pizza)
   // } catch (error) {
   //   console.log(error)
   // }
-  // loadPizza()
+  // getPizza()
   // }, []);
   ///////////////////
 

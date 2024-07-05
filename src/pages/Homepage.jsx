@@ -152,8 +152,10 @@ function Nav() {
       <div>
         <h2>Routing:</h2>
         <p>
-          React-Router-6 (before 6.4). Dynamic routing using /:params and
-          useParams():
+          React-Router-6 (before 6.4): Dynamic routing using /:params and
+          useParams(). Filtering using ?query=whatever and useSearchParams().
+          Nested routes and much much more in VanLife, including Data Layers
+          Apis with v6.4+.
         </p>
         <ul>
           <li>
