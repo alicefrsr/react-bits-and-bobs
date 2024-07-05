@@ -159,6 +159,9 @@ function Nav() {
           <li>
             <Link to='pizza-menu-details'>Select Pizza from Menu</Link>
           </li>
+          <li>
+            <Link to='filter-with-searchParams'>Filter using searchParams</Link>
+          </li>
           <ul className={styles.external}>
             <li>
               <a
@@ -271,7 +274,7 @@ function Nav() {
         </ul>
       </div>
       <div>
-        <h2>Experiments</h2>
+        <h2>Thought experiments</h2>
         <p></p>
         <ul>
           <li>

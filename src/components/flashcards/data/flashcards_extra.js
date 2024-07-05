@@ -181,10 +181,38 @@ const flashcards = [
     category: '',
   },
   {
-    id: 120,
+    id: 126,
     question: 'How to create a counter in React?',
     answer: '',
     category: '',
+  },
+  // react router
+  {
+    id: 127,
+    question: 'What is the primary reason to use a nested route?',
+    answer: 'Whenever we want to use some shared UI berween router in our app.',
+    category: 'React Router',
+  },
+  {
+    id: 128,
+    question: 'What is a "Layout route?"',
+    answer:
+      "It's the parent route of some nested routes that contains just the portion of the UI that will be shared.",
+    category: 'React Router',
+  },
+  {
+    id: 129,
+    question: 'What does the <Outlet/> component do? When do we use it?',
+    answer:
+      "We use it inside a Layout route: anytime we have a parent route that's wrapping children routes. It renders the matching child route's element prop given in its route definition. ",
+    category: 'React Router',
+  },
+  {
+    id: 130,
+    question: 'What  is an index route?',
+    answer:
+      "It's the default route we want to render when the path odf the parent route  matches. ",
+    category: 'React Router',
   },
 ];
 

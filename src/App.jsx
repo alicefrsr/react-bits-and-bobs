@@ -35,6 +35,7 @@ import DragAndDrop from './components/drag-and-drop/DragAndDrop';
 // Routing
 import PizzaDetailsApp from './components/pizza-details/PizzaDetailsApp';
 import PizzaDetails from './components/pizza-details/PizzaDetails';
+import StarWarsFiltering from './components/searchParams/StarWarsFiltering';
 
 // import DateCounterTest from './components/tests/DateCounterTest';
 // import DateCounter from './components/tests/DateCounter';
@@ -68,7 +69,10 @@ function App() {
             {/* dynamic routing, pizza example */}
             <Route path='pizza-menu-details' element={<PizzaDetailsApp />} />
             <Route path='pizza-menu-details/:id' element={<PizzaDetails />} />
-            <Route />
+            <Route
+              path='filter-with-searchParams'
+              element={<StarWarsFiltering />}
+            />
 
             <Route path='stopwatch' element={<Stopwatch />} />
             <Route path='advice-API' element={<GetAdviceApp />} />
